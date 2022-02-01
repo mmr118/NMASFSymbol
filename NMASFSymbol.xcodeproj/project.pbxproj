@@ -17,6 +17,8 @@
 		97C8962027A98C46008E9E3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961F27A98C46008E9E3C /* Persistence.swift */; };
 		97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */; };
 		97C8962827A98CB6008E9E3C /* CategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962727A98CB6008E9E3C /* CategoryListView.swift */; };
+		DD1B41CD27A9D43B00362EAB /* CustomCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CC27A9D43B00362EAB /* CustomCategoryTests.swift */; };
+		DD1B41CF27A9D62600362EAB /* SFSymbolCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CE27A9D62600362EAB /* SFSymbolCategoryTests.swift */; };
 		DDC05E3C27A96E64003BD1E5 /* NMASFSymbol.docc in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E3B27A96E64003BD1E5 /* NMASFSymbol.docc */; };
 		DDC05E4227A96E64003BD1E5 /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
 		DDC05E4727A96E64003BD1E5 /* NMASFSymbolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E4627A96E64003BD1E5 /* NMASFSymbolTests.swift */; };
@@ -70,6 +72,8 @@
 		97C8961F27A98C46008E9E3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemoApp.xcdatamodel; sourceTree = "<group>"; };
 		97C8962727A98CB6008E9E3C /* CategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListView.swift; sourceTree = "<group>"; };
+		DD1B41CC27A9D43B00362EAB /* CustomCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCategoryTests.swift; sourceTree = "<group>"; };
+		DD1B41CE27A9D62600362EAB /* SFSymbolCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCategoryTests.swift; sourceTree = "<group>"; };
 		DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMASFSymbol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC05E3A27A96E64003BD1E5 /* NMASFSymbol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMASFSymbol.h; sourceTree = "<group>"; };
 		DDC05E3B27A96E64003BD1E5 /* NMASFSymbol.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NMASFSymbol.docc; sourceTree = "<group>"; };
@@ -179,6 +183,8 @@
 			isa = PBXGroup;
 			children = (
 				DDC05E4627A96E64003BD1E5 /* NMASFSymbolTests.swift */,
+				DD1B41CE27A9D62600362EAB /* SFSymbolCategoryTests.swift */,
+				DD1B41CC27A9D43B00362EAB /* CustomCategoryTests.swift */,
 			);
 			path = NMASFSymbolTests;
 			sourceTree = "<group>";
@@ -360,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD1B41CF27A9D62600362EAB /* SFSymbolCategoryTests.swift in Sources */,
+				DD1B41CD27A9D43B00362EAB /* CustomCategoryTests.swift in Sources */,
 				DDC05E4727A96E64003BD1E5 /* NMASFSymbolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

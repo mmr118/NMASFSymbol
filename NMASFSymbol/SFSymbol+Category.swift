@@ -39,18 +39,28 @@ public extension SFSymbol {
     static var customCategories = Set<CustomCategory>()
     
     enum Category: SFSymbolCategory, CaseIterable {
-
+        
         public typealias ID = Int
 
+        public static var cachedCustoms = Set<CustomCategory>()
+        
+        public static var allCases: [SFSymbol.Category] { allDefaultCategories + cachedCustoms.map { Category.custom($0) } }
+
+        public static let allDefaultCategories: [Category] = [.allDefaults, whats_new, .multicolor, .communication, .weather, .objects_and_tools, .devices, .gaming, .connectivity, .transportation, .human, .nature, .editing, .text_formatting, .media, .keyboard, .commerce, .time, .health, .shapes, .arrows, .indices, .math]
+        
+        public static func allCases(including customCategories: [CustomCategory]) -> [Category] {
+            return allDefaultCategories + customCategories.map { Category.custom($0) }
+        }
+        
         public var id: ID { return self.hashValue }
 
-        case all
+        case allDefaults
         case whats_new, multicolor, communication, weather, objects_and_tools, devices, gaming, connectivity, transportation, human, nature, editing, text_formatting, media, keyboard, commerce, time, health, shapes, arrows, indices, math
-//        case custom(CustomCategory)
+        case custom(CustomCategory)
 
         public var displayName: String {
             switch self {
-            case .all: return "All"
+            case .allDefaults: return "All"
             case .whats_new: return "What's New"
             case .multicolor: return "Multicolor"
             case .communication: return "Communication"
@@ -73,14 +83,14 @@ public extension SFSymbol {
             case .arrows: return "Arrows"
             case .indices: return "Indices"
             case .math: return "Math"
-//            case .custom(let custom):
-//                return custom.displayName
+            case .custom(let custom):
+                return custom.displayName
             }
         }
         
         public var defaultSymbol: SFSymbol {
             switch self {
-            case .all: return .square_grid_2x2
+            case .allDefaults: return .square_grid_2x2
             case .whats_new: return .sparkles
             case .multicolor: return .paintpalette_fill
             case .communication: return .message
@@ -103,14 +113,14 @@ public extension SFSymbol {
             case .arrows: return .arrow_right
             case .indices: return .a_circle
             case .math: return .function
-//            case .custom(let custom):
-//                return custom.defaultSymbol
+            case .custom(let custom):
+                return custom.defaultSymbol
             }
         }
 
         public func symbols() -> [SFSymbol] {
             switch self {
-            case .all: return SFSymbol.allCases
+            case .allDefaults: return SFSymbol.allCases
             case .whats_new: return SFSymbol.WhatsNew
             case .multicolor: return SFSymbol.Multicolor
             case .communication: return SFSymbol.Communication
@@ -133,8 +143,8 @@ public extension SFSymbol {
             case .arrows: return SFSymbol.Arrows
             case .indices: return SFSymbol.Indices
             case .math: return SFSymbol.Math
-//            case .custom(let custom):
-//                return custom.symbols()
+            case .custom(let custom):
+                return custom.symbols()
             }
         }
         
@@ -144,7 +154,85 @@ public extension SFSymbol {
 
 
 // MARK: - SFSymbol.CustomCategory
+// MARK: - SFSymbol.CustomCategory
 public extension SFSymbol {
+
+    class CustomCategory: NSObject, SFSymbolCategory {
+
+        public var displayName: String
+        public private(set) var defaultSymbol: SFSymbol
+
+        private var symbolSet = Set<SFSymbol>()
+
+        public init(displayName: String, defaultSymbol: SFSymbol, symbols: [SFSymbol]) {
+            self.displayName = displayName
+            self.defaultSymbol = defaultSymbol
+            self.symbolSet = Set(symbols)
+        }
+        
+        public func symbols() -> [SFSymbol] {
+            return Array(symbolSet)
+        }
+
+        public func updateDefaultSymbol(_ newDefault: SFSymbol, addToSymbolsIfNeed: Bool = true, removeExistingDefault: Bool = false) {
+            if removeExistingDefault {
+                symbolSet.remove(defaultSymbol)
+            }
+
+            if addToSymbolsIfNeed {
+                symbolSet.insert(newDefault)
+            }
+
+            self.defaultSymbol = newDefault
+        }
+
+        @discardableResult
+        public func add(_ symbol: SFSymbol) -> Bool {
+            return symbolSet.insert(symbol).inserted
+        }
+
+        public func add(_ symbols: [SFSymbol]) {
+            symbolSet.formUnion(symbols)
+        }
+
+        @discardableResult
+        public func remove(_ symbol: SFSymbol) -> SFSymbol? {
+            return symbolSet.remove(symbol)
+        }
+
+        public func addCategory(_ category: Category) {
+            symbolSet.formUnion(category.symbols())
+        }
+
+        public func addCategories(_ categories: [Category]) {
+            categories.forEach { symbolSet.formUnion($0.symbols()) }
+        }
+
+        public func removeCategory(_ category: Category) {
+            let presentSymbols = symbolSet.intersection(category.symbols())
+            presentSymbols.forEach { symbolSet.remove($0) }
+        }
+        
+        public func contains(_ symbol: SFSymbol) -> Bool {
+            return symbolSet.contains(symbol)
+        }
+        
+        @discardableResult
+        public func cache() -> Bool {
+            return Category.cachedCustoms.insert(self).inserted
+        }
+        
+        public func removeFromCache() {
+            Category.cachedCustoms.remove(self)
+        }
+
+    }
+    
+}
+
+/*
+public extension SFSymbol {
+
 
     struct CustomCategory: SFSymbolCategory {
 
@@ -205,3 +293,4 @@ public extension SFSymbol {
     }
     
 }
+*/
