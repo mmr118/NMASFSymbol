@@ -35,7 +35,7 @@ public extension SFSymbol {
 
 }
 
-// MARK: - Category Array
+// MARK: - System Collection Array
 public extension SFSymbol {
     
     static let WhatsNew: [SFSymbol] = [

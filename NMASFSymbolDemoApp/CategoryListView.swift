@@ -28,7 +28,7 @@ struct CategoryListView: View {
                 }
 
 
-                ForEach(SFSymbol.Category.allCases) { category in
+                ForEach(SFSymbol.SystemCollection.allCases) { category in
 
                     NavigationLink(destination: SFSymbolCollectionView(symbols: category.symbols())) {
                         Label(category.defaultSymbol.name.capitalized, systemImage: category.defaultSymbol.name)
