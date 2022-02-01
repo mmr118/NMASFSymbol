@@ -8,7 +8,9 @@
 import Foundation
 
 // MARK: - SFSymbol
-public enum SFSymbol: Int, CaseIterable {
+public enum SFSymbol: Int, CaseIterable, Identifiable {
+
+    public var id: Int { return rawValue }
 
     case square_and_arrow_up
     case square_and_arrow_up_fill

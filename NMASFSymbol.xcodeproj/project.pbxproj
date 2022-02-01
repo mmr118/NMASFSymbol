@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		97BD1C0B27A9B01E006F2A1A /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
+		97BD1C0C27A9B01E006F2A1A /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		97BD1C1127A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD1C1027A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift */; };
 		97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */; };
 		97C8961927A98C43008E9E3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961827A98C43008E9E3C /* ContentView.swift */; };
 		97C8961B27A98C46008E9E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C8961A27A98C46008E9E3C /* Assets.xcassets */; };
@@ -27,6 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		97BD1C0D27A9B01F006F2A1A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDC05E2E27A96E64003BD1E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDC05E3627A96E64003BD1E5;
+			remoteInfo = NMASFSymbol;
+		};
 		DDC05E4327A96E64003BD1E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDC05E2E27A96E64003BD1E5 /* Project object */;
@@ -36,7 +46,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		97BD1C0F27A9B01F006F2A1A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				97BD1C0C27A9B01E006F2A1A /* NMASFSymbol.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		97BD1C1027A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCategoryViewModel.swift; sourceTree = "<group>"; };
 		97C8961427A98C43008E9E3C /* NMASFSymbolDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMASFSymbolDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolDemoAppApp.swift; sourceTree = "<group>"; };
 		97C8961827A98C43008E9E3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97BD1C0B27A9B01E006F2A1A /* NMASFSymbol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */,
+				97BD1C1027A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift */,
 				97C8961827A98C43008E9E3C /* ContentView.swift */,
 				97C8962727A98CB6008E9E3C /* CategoryListView.swift */,
 				97C8961A27A98C46008E9E3C /* Assets.xcassets */,
@@ -140,8 +167,8 @@
 				DDC05E3A27A96E64003BD1E5 /* NMASFSymbol.h */,
 				DDC05E5527A96F6D003BD1E5 /* Extensions */,
 				DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */,
-				DDC05E5A27A9720D003BD1E5 /* SFSymbol+Internal.swift */,
 				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
+				DDC05E5A27A9720D003BD1E5 /* SFSymbol+Internal.swift */,
 				DDC9E4CD27A973F10029D4F1 /* SFSymbol+Category.swift */,
 				DDC05E3B27A96E64003BD1E5 /* NMASFSymbol.docc */,
 			);
@@ -186,10 +213,12 @@
 				97C8961027A98C43008E9E3C /* Sources */,
 				97C8961127A98C43008E9E3C /* Frameworks */,
 				97C8961227A98C43008E9E3C /* Resources */,
+				97BD1C0F27A9B01F006F2A1A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				97BD1C0E27A9B01F006F2A1A /* PBXTargetDependency */,
 			);
 			name = NMASFSymbolDemoApp;
 			productName = NMASFSymbolDemoApp;
@@ -307,6 +336,7 @@
 				97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */,
 				97C8962027A98C46008E9E3C /* Persistence.swift in Sources */,
 				97C8961927A98C43008E9E3C /* ContentView.swift in Sources */,
+				97BD1C1127A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift in Sources */,
 				97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */,
 				97C8962827A98CB6008E9E3C /* CategoryListView.swift in Sources */,
 			);
@@ -337,6 +367,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		97BD1C0E27A9B01F006F2A1A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDC05E3627A96E64003BD1E5 /* NMASFSymbol */;
+			targetProxy = 97BD1C0D27A9B01F006F2A1A /* PBXContainerItemProxy */;
+		};
 		DDC05E4427A96E64003BD1E5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DDC05E3627A96E64003BD1E5 /* NMASFSymbol */;
@@ -370,7 +405,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -399,7 +434,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

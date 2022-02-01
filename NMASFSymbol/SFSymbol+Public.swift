@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 
 // MARK: Init
@@ -24,8 +25,8 @@ public extension SFSymbol {
     
     var name: String { rawString }
     
-    var image: UIImage? { UIImage(sfSymbol: self) }
-    
+    var uiImage: UIImage? { UIImage(sfSymbol: self) }
+
     var displayName: String { rawString.replacingOccurrences(of: ".", with: " ") }
     
     var nameParts: [String] { rawString.components(separatedBy: ".") }

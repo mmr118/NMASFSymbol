@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - SFSymbolCategory
-public protocol SFSymbolCategory: Hashable {
+public protocol SFSymbolCategory: Hashable, Identifiable {
 
     var displayName: String { get }
 
@@ -18,6 +18,8 @@ public protocol SFSymbolCategory: Hashable {
 }
 
 public extension SFSymbolCategory {
+
+    var id: Int { self.hashValue }
 
     func symbolsEqual<T: SFSymbolCategory>(_ category: T) -> Bool {
         return Set(self.symbols()) == Set(category.symbols())
@@ -36,7 +38,11 @@ public extension SFSymbol {
 
     static var customCategories = Set<CustomCategory>()
     
-    enum Category: SFSymbolCategory {
+    enum Category: SFSymbolCategory, CaseIterable {
+
+        public typealias ID = Int
+
+        public var id: ID { return self.hashValue }
 
         case all
         case whats_new, multicolor, communication, weather, objects_and_tools, devices, gaming, connectivity, transportation, human, nature, editing, text_formatting, media, keyboard, commerce, time, health, shapes, arrows, indices, math
@@ -140,16 +146,14 @@ public extension SFSymbol {
 // MARK: - SFSymbol.CustomCategory
 public extension SFSymbol {
 
-    struct CustomCategory: SFSymbolCategory, Equatable {
+    struct CustomCategory: SFSymbolCategory {
 
-        public let identifier: String
         public var displayName: String
         public private(set) var defaultSymbol: SFSymbol
 
         private var symbolSet = Set<SFSymbol>()
 
-        public init(identifier: String, displayName: String, defaultSymbol: SFSymbol, symbols: [SFSymbol]) {
-            self.identifier = identifier
+        public init(displayName: String, defaultSymbol: SFSymbol, symbols: [SFSymbol]) {
             self.displayName = displayName
             self.defaultSymbol = defaultSymbol
             self.symbolSet = Set(symbols)
