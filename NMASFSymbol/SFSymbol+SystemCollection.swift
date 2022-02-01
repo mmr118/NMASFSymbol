@@ -22,8 +22,8 @@ public extension SFSymbol {
 
         public static let allSystemCollections: [SystemCollection] = [.allSystem, whats_new, .multicolor, .communication, .weather, .objects_and_tools, .devices, .gaming, .connectivity, .transportation, .human, .nature, .editing, .text_formatting, .media, .keyboard, .commerce, .time, .health, .shapes, .arrows, .indices, .math]
         
-        public static func allCases(including customs: [SFSymbolCollection]) -> [SystemCollection] {
-            return allSystemCollections + customs.map { SystemCollection.custom($0) }
+        public static func allCases(including customs: [SFSymbolCollection], customAtTop: Bool = true) -> [SystemCollection] {
+            return customs.map { SystemCollection.custom($0) } + allSystemCollections
         }
         
         public var id: ID { return self.hashValue }
