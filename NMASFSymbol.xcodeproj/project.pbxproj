@@ -130,12 +130,12 @@
 		97C8961527A98C43008E9E3C /* NMASFSymbolDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				9776911B27AAC4E00000D4E6 /* ScratchView.swift */,
 				9776911927AAB50C0000D4E6 /* Utilites.swift */,
 				97BD1C1027A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift */,
 				97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */,
 				97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */,
 				97C8961827A98C43008E9E3C /* SFSymbolCollectionGridView.swift */,
-				9776911B27AAC4E00000D4E6 /* ScratchView.swift */,
 				97C8961A27A98C46008E9E3C /* Assets.xcassets */,
 				97C8961F27A98C46008E9E3C /* Persistence.swift */,
 				97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */,

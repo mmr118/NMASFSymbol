@@ -21,26 +21,59 @@ struct SFSymbolCollectionListView: View {
 
         NavigationView {
 
-            let systemCollectoins = SFSCategoryCollection.allCases
+            List {
+                
+                Section("Collections") {
 
-            ForEach(systemCollectoins) { collection in
+                    let customCollections = SFSCollection.cache.map { $0 }
 
-                NavigationLink(destination: SFSymbolCollectionGridView(collection: collection)) {
-                    Label {
-                        Text(collection.title)
-                    } icon: {
-                        Image(systemName: collection.defaultSymbol.name)
-                            .tint(.purple)
+                    ForEach(customCollections) { collection in
+
+                        NavigationLink(destination: SFSymbolCollectionGridView(collection: collection)) {
+
+                            Label {
+
+                                Text(collection.title)
+                                    .tint(.black)
+
+                            } icon: {
+
+                                Image(systemName: collection.defaultSymbol.name)
+                                    .tint(.black)
+                                    .foregroundColor(.black)
+
+                            }
+                            .imageScale(.large)
+
+                        }
+
                     }
 
                 }
 
+                Section("Categories") {
+
+                    let collections = SFSCategoryCollection.allCases
+
+                    ForEach(collections) { collection in
+
+                        NavigationLink(destination: SFSymbolCollectionGridView(collection: collection)) {
+
+                            Label {
+                                Text(collection.title)
+                                    .tint(.black)
+                            } icon: {
+                                Image(systemName: collection.defaultSymbol.name)
+                                    .tint(.black)
+                                    .foregroundColor(.black)
+                            }
+                            .imageScale(.large)
+                        }
+                    }
+                }
             }
-
         }
-
     }
-
 }
 
 struct SFSymbolCollectionListView_Previews: PreviewProvider {
