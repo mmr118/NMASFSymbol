@@ -13,29 +13,25 @@ import SwiftUI
 public extension SFSymbol {
     
     init?(name: String) {
-        guard let rawValue = Self.nameToRawValueDict[name] else { return nil }
-        guard let value = SFSymbol(rawValue: rawValue) else { return nil }
-        self = value
+        self.init(rawValue: name)
     }
     
 }
 
 // MARK: - Variables
 public extension SFSymbol {
+
+    var id: String { return rawValue }
     
-    var name: String { rawString }
+    var name: String { rawValue }
     
     var uiImage: UIImage? { UIImage(sfSymbol: self) }
 
-    var displayName: String { rawString.replacingOccurrences(of: ".", with: " ") }
-    
-    var nameParts: [String] { rawString.components(separatedBy: ".") }
-    
-    var nameJoined: String { rawString.replacingOccurrences(of: ".", with: "") }
+    var displayName: String { rawValue.replacingOccurrences(of: ".", with: " ") }
 
 }
 
-// MARK: - System Collection Array
+// MARK: - System Category Collection Arrays
 public extension SFSymbol {
     
     static let WhatsNew: [SFSymbol] = [

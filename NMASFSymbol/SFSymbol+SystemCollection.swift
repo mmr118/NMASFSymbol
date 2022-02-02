@@ -7,32 +7,31 @@
 
 import Foundation
 
-public typealias SFSSystemCollection = SFSymbol.SystemCollection
+// MARK: - SFSCategoryCollection (SFSymbol.Category)
 
-// MARK: - SFSymbol.SystemCollection
+public typealias SFSCategoryCollection = SFSymbol.Category
+
 public extension SFSymbol {
-    
-    enum SystemCollection: SFSCollectionProtocol, CaseIterable, Identifiable {
-        
+
+    enum Category: SFSCollectionProtocol, CaseIterable, Identifiable  {
+
         public typealias ID = Int
 
-        public static var cache = Set<SFSCollection>()
-        
-        public static var allCases: [SFSymbol.SystemCollection] { cache.map { SystemCollection.custom($0) }  + allSystemCollections }
+        public static let allCategoryCollections: [Self] = [.allSystem, whats_new, .multicolor, .communication, .weather, .objects_and_tools, .devices, .gaming, .connectivity, .transportation, .human, .nature, .editing, .text_formatting, .media, .keyboard, .commerce, .time, .health, .shapes, .arrows, .indices, .math]
 
-        public static let allSystemCollections: [SystemCollection] = [.allSystem, whats_new, .multicolor, .communication, .weather, .objects_and_tools, .devices, .gaming, .connectivity, .transportation, .human, .nature, .editing, .text_formatting, .media, .keyboard, .commerce, .time, .health, .shapes, .arrows, .indices, .math]
-        
-        public static func allCases(including customs: [SFSCollection], customAtTop: Bool = true) -> [SystemCollection] {
-            return customs.map { SystemCollection.custom($0) } + allSystemCollections
+        public static var allCases: [Self] { SFSCollection.cache.map { Self.custom($0) }  + allCategoryCollections }
+
+        public static func allCases(including customs: [SFSCollection], includeCache: Bool = true) -> [Self] {
+            return customs.map { Self.custom($0) } + allCategoryCollections
         }
-        
-        public var id: ID { return self.hashValue }
 
         case allSystem
         case whats_new, multicolor, communication, weather, objects_and_tools, devices, gaming, connectivity, transportation, human, nature, editing, text_formatting, media, keyboard, commerce, time, health, shapes, arrows, indices, math
         case custom(SFSCollection)
 
-        public var displayName: String {
+        public var id: ID { return self.hashValue }
+
+        public var title: String {
             switch self {
             case .allSystem: return "All"
             case .whats_new: return "What's New"
@@ -58,10 +57,10 @@ public extension SFSymbol {
             case .indices: return "Indices"
             case .math: return "Math"
             case .custom(let custom):
-                return custom.displayName
+                return custom.title
             }
         }
-        
+
         public var defaultSymbol: SFSymbol {
             switch self {
             case .allSystem: return .square_grid_2x2
@@ -121,7 +120,7 @@ public extension SFSymbol {
                 return custom.symbols()
             }
         }
-        
+
     }
 
 }

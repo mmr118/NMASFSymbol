@@ -9,26 +9,28 @@ import Foundation
 
 public protocol SFSCollectionProtocol: Hashable, Identifiable {
 
-    var displayName: String { get }
+    var title: String { get }
 
     var defaultSymbol: SFSymbol { get }
 
     func symbols() -> [SFSymbol]
 }
 
-public extension SFSCollectionProtocol {
+extension SFSCollectionProtocol {
 
-    var id: Int { self.hashValue }
 
-    func symbolsEqual<T: SFSCollectionProtocol>(_ category: T) -> Bool {
+    public func symbolsEqual<T: SFSCollectionProtocol>(_ category: T) -> Bool {
         return Set(self.symbols()) == Set(category.symbols())
     }
 
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        guard lhs.displayName == rhs.displayName else { return false }
-        guard lhs.defaultSymbol == rhs.defaultSymbol else { return false }
-        return Set(lhs.symbols()) == Set(rhs.symbols())
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        return (lhs.title == rhs.title) && (lhs.defaultSymbol == rhs.defaultSymbol) && (Set(lhs.symbols()) == Set(rhs.symbols()))
     }
 
 }
 
+
+extension SFSCollectionProtocol where Self: RawRepresentable {
+
+    internal var selfString: String { String(describing: self.self) }
+}

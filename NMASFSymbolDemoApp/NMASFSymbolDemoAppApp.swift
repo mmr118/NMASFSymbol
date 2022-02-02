@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import NMASFSymbol
 
 @main
 struct NMASFSymbolDemoAppApp: App {
@@ -13,7 +14,7 @@ struct NMASFSymbolDemoAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CategoryListView()
+            SFSymbolCollectionListView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
