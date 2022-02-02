@@ -12,17 +12,17 @@ public typealias SFSSystemCollection = SFSymbol.SystemCollection
 // MARK: - SFSymbol.SystemCollection
 public extension SFSymbol {
     
-    enum SystemCollection: SFSymbolCollectionProtocol, CaseIterable, Identifiable {
+    enum SystemCollection: SFSCollectionProtocol, CaseIterable, Identifiable {
         
         public typealias ID = Int
 
-        public static var cache = Set<SFSymbolCollection>()
+        public static var cache = Set<SFSCollection>()
         
         public static var allCases: [SFSymbol.SystemCollection] { cache.map { SystemCollection.custom($0) }  + allSystemCollections }
 
         public static let allSystemCollections: [SystemCollection] = [.allSystem, whats_new, .multicolor, .communication, .weather, .objects_and_tools, .devices, .gaming, .connectivity, .transportation, .human, .nature, .editing, .text_formatting, .media, .keyboard, .commerce, .time, .health, .shapes, .arrows, .indices, .math]
         
-        public static func allCases(including customs: [SFSymbolCollection], customAtTop: Bool = true) -> [SystemCollection] {
+        public static func allCases(including customs: [SFSCollection], customAtTop: Bool = true) -> [SystemCollection] {
             return customs.map { SystemCollection.custom($0) } + allSystemCollections
         }
         
@@ -30,7 +30,7 @@ public extension SFSymbol {
 
         case allSystem
         case whats_new, multicolor, communication, weather, objects_and_tools, devices, gaming, connectivity, transportation, human, nature, editing, text_formatting, media, keyboard, commerce, time, health, shapes, arrows, indices, math
-        case custom(SFSymbolCollection)
+        case custom(SFSCollection)
 
         public var displayName: String {
             switch self {

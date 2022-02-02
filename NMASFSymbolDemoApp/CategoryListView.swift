@@ -30,7 +30,7 @@ struct CategoryListView: View {
 
                 ForEach(SFSymbol.SystemCollection.allCases) { category in
 
-                    NavigationLink(destination: SFSymbolCollectionView(symbols: category.symbols())) {
+                    NavigationLink(destination: SFSCollectionView(symbols: category.symbols())) {
                         Label(category.defaultSymbol.name.capitalized, systemImage: category.defaultSymbol.name)
                     }
 
@@ -42,15 +42,15 @@ struct CategoryListView: View {
 
     }
 
-    private func createCategory(from categoryData: CustomCategoryData) -> SFSymbol.CustomCategory {
-        guard let defaultSymbol = SFSymbol(rawValue: Int(categoryData.defaultSymbolRawValue)) else { fatalError() }
-        guard let symbolRawValues = categoryData.sfSymbolRawValues else { fatalError() }
-        guard let displayName = categoryData.displayName else { fatalError() }
-        let symbols = symbolRawValues.compactMap(SFSymbol.init(rawValue:))
-        let customCategory = SFSymbol.CustomCategory(displayName: displayName, defaultSymbol: defaultSymbol, symbols: Array(symbols))
-        return customCategory
-    }
-
+//    private func createCategory(from collectionData: SFSCollectionData) -> SFSCollection {
+//        guard let defaultSymbol = SFSymbol(rawValue: Int(collectionData.defaultSFSymbolRawValue)) else { fatalError() }
+//        guard let symbolRawValues = collectionData.sfSymbolRawValues else { fatalError() }
+//        guard let displayName = collectionData.displayName else { fatalError() }
+//        let symbols = symbolRawValues.compactMap(SFSymbol(rawValue: Int($0)))
+//        let customCategory = SFSymbol.CustomCategory(displayName: displayName, defaultSymbol: defaultSymbol, symbols: Array(symbols))
+//        return customCategory
+//    }
+//
 
 }
 
@@ -64,7 +64,7 @@ struct CategoryListView_Previews: PreviewProvider {
 
 
 
-struct SFSymbolCollectionView: View {
+struct SFSCollectionView: View {
 
     let columns: [GridItem] = (0..<3).map { _ in GridItem(.flexible()) }
 

@@ -1,5 +1,5 @@
 //
-//  SFSymbolCollectionProtocol.swift
+//  SFSCollectionProtocol.swift
 //  NMASFSymbol
 //
 //  Created by Monica Rondón on 2/1/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SFSymbolCollectionProtocol: Hashable, Identifiable {
+public protocol SFSCollectionProtocol: Hashable, Identifiable {
 
     var displayName: String { get }
 
@@ -16,11 +16,11 @@ public protocol SFSymbolCollectionProtocol: Hashable, Identifiable {
     func symbols() -> [SFSymbol]
 }
 
-public extension SFSymbolCollectionProtocol {
+public extension SFSCollectionProtocol {
 
     var id: Int { self.hashValue }
 
-    func symbolsEqual<T: SFSymbolCollectionProtocol>(_ category: T) -> Bool {
+    func symbolsEqual<T: SFSCollectionProtocol>(_ category: T) -> Bool {
         return Set(self.symbols()) == Set(category.symbols())
     }
 

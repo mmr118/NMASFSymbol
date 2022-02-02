@@ -1,5 +1,5 @@
 //
-//  SFSymbolCollection.swift
+//  SFSCollection.swift
 //  NMASFSymbol
 //
 //  Created by Monica Rondón on 2/1/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-open class SFSymbolCollection: SFSymbolCollectionProtocol {
+open class SFSCollection: SFSCollectionProtocol {
     
     private let uuid = UUID()
     
@@ -81,7 +81,7 @@ open class SFSymbolCollection: SFSymbolCollectionProtocol {
 }
 
 
-extension SFSymbolCollection: Hashable {
+extension SFSCollection: Hashable {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(uuid.hashValue)

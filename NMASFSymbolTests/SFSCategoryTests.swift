@@ -13,17 +13,17 @@ class SFSCategoryTests: XCTestCase {
 
     func testCustomCategoryCache() throws {
         
-        let sfSymbolCollection = makeSFSymbolCollection()
+        let sfsCollection = makeSFSCollection()
     
-        XCTAssertFalse(SFSymbol.SystemCollection.allCases.contains(.custom(sfSymbolCollection)))
+        XCTAssertFalse(SFSymbol.SystemCollection.allCases.contains(.custom(sfsCollection)))
         
-        sfSymbolCollection.cache()
+        sfsCollection.cache()
         
-        XCTAssertTrue(SFSymbol.SystemCollection.allCases.contains(.custom(sfSymbolCollection)))
+        XCTAssertTrue(SFSymbol.SystemCollection.allCases.contains(.custom(sfsCollection)))
         
-        sfSymbolCollection.removeFromCache()
+        sfsCollection.removeFromCache()
                 
-        XCTAssertFalse(SFSymbol.SystemCollection.allCases.contains(.custom(sfSymbolCollection)))
+        XCTAssertFalse(SFSymbol.SystemCollection.allCases.contains(.custom(sfsCollection)))
         
     }
     
@@ -31,45 +31,45 @@ class SFSCategoryTests: XCTestCase {
 
     func testAddRemoveNewSymbols() throws {
         
-        let sfSymbolCollection = makeSFSymbolCollection()
+        let sfsCollection = makeSFSCollection()
         
         // Confirm no hammer
-        XCTAssertFalse(sfSymbolCollection.contains(.hammer))
+        XCTAssertFalse(sfsCollection.contains(.hammer))
         
         // Confirm hammer added result == true
-        XCTAssert(sfSymbolCollection.add(.hammer))
+        XCTAssert(sfsCollection.add(.hammer))
         
         // Confirm confirm hammer was added
-        XCTAssert(sfSymbolCollection.contains(.hammer))
+        XCTAssert(sfsCollection.contains(.hammer))
         
         // Confirm hammer removed result
-        XCTAssertNotNil(sfSymbolCollection.remove(.hammer))
+        XCTAssertNotNil(sfsCollection.remove(.hammer))
         
         // Confirm hammer was removed
-        XCTAssertFalse(sfSymbolCollection.contains(.hammer))
+        XCTAssertFalse(sfsCollection.contains(.hammer))
 
     }
     
     
     func testAddRemoveExisitingSymbols() throws {
-        let sfSymbolCollection = makeSFSymbolCollection()
+        let sfsCollection = makeSFSCollection()
 
         // Confirm hammer_circle_fill is present
-        XCTAssert(sfSymbolCollection.contains(.hammer_circle_fill))
+        XCTAssert(sfsCollection.contains(.hammer_circle_fill))
 
         // Confirm hammer added result == false
-        XCTAssertFalse(sfSymbolCollection.add(.hammer_circle_fill))
+        XCTAssertFalse(sfsCollection.add(.hammer_circle_fill))
         
         // Confirm hammer is still present
-        XCTAssert(sfSymbolCollection.contains(.hammer_circle_fill))
+        XCTAssert(sfsCollection.contains(.hammer_circle_fill))
         
     }
     
-    private func makeSFSymbolCollection() -> SFSymbolCollection {
+    private func makeSFSCollection() -> SFSCollection {
         
         let symbols = SFSymbol.allCases.filter { $0.rawString.contains("circle") && $0.rawString.contains("fill") }
         
-        let customCategory = SFSymbolCollection(displayName: "Circle Filled", defaultSymbol: .hammer_circle_fill, symbols: symbols)
+        let customCategory = SFSCollection(displayName: "Circle Filled", defaultSymbol: .hammer_circle_fill, symbols: symbols)
         
         return customCategory
         

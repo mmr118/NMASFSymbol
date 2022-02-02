@@ -1,5 +1,5 @@
 //
-//  SFSymbolCollectionTests.swift
+//  SFSCollectionTests.swift
 //  NMASFSymbolTests
 //
 //  Created by Monica Rondón on 2/1/22.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import NMASFSymbol
 
-class SFSymbolCollectionTests: XCTestCase {
+class SFSyCollectionTests: XCTestCase {
 
     func testExample() throws {
         // This is an example of a functional test case.
