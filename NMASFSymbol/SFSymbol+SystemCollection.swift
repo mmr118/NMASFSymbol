@@ -18,7 +18,7 @@ public extension SFSymbol {
 
         public static var cache = Set<SFSymbolCollection>()
         
-        public static var allCases: [SFSymbol.SystemCollection] { allSystemCollections + cache.map { SystemCollection.custom($0) } }
+        public static var allCases: [SFSymbol.SystemCollection] { cache.map { SystemCollection.custom($0) }  + allSystemCollections }
 
         public static let allSystemCollections: [SystemCollection] = [.allSystem, whats_new, .multicolor, .communication, .weather, .objects_and_tools, .devices, .gaming, .connectivity, .transportation, .human, .nature, .editing, .text_formatting, .media, .keyboard, .commerce, .time, .health, .shapes, .arrows, .indices, .math]
         
