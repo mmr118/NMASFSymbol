@@ -14,8 +14,7 @@ struct NMASFSymbolDemoAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SFSymbolCollectionListView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            SFSymbolCollectionListView().environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

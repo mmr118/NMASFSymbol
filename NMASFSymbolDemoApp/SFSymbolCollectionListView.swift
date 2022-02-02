@@ -10,74 +10,68 @@ import CoreData
 import NMASFSymbol
 
 struct SFSymbolCollectionListView: View {
-    //    @Environment(\.managedObjectContext) private var viewContext
-    //
-    //    @FetchRequest(
-    //        sortDescriptors: [NSSortDescriptor(keyPath: \CustomCategoryData.displayName, ascending: true)],
-    //        animation: .default)
-    //    private var customCategoryData: FetchedResults<CustomCategoryData>
+
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SFSCollectionData.title, ascending: true)], animation: .default)
+
+    private var customCategoryData: FetchedResults<SFSCollectionData>
 
     var body: some View {
 
         NavigationView {
 
             List {
-                
-                Section("Collections") {
 
-                    let customCollections = SFSCollection.cache.map { $0 }
+                let customCollections = customCategoryData.map(makeCollections(_:))
 
-                    ForEach(customCollections) { collection in
-
-                        NavigationLink(destination: SFSymbolCollectionGridView(collection: collection)) {
-
-                            Label {
-
-                                Text(collection.title)
-                                    .tint(.black)
-
-                            } icon: {
-
-                                Image(systemName: collection.defaultSymbol.name)
-                                    .tint(.black)
-                                    .foregroundColor(.black)
-
-                            }
-                            .imageScale(.large)
-
+                if !customCollections.isEmpty {
+                    Section("Collections") {
+                        ForEach(customCollections) { collection in
+                            GridViewNavigationLink(collection: collection)
                         }
-
                     }
 
+                }
+
+                if !SFSCollection.cache.isEmpty {
+                    Section {
+                        let cachedCollections = SFSCollection.cache.map { $0 }
+                        ForEach(cachedCollections) { collection in
+                            GridViewNavigationLink(collection: collection)
+                        }
+                    } header: {
+                        Text("Cached Collections")
+                    } footer: {
+                        Text("These will delete when the app is closed.")
+                    }
                 }
 
                 Section("Categories") {
 
                     let collections = SFSCategoryCollection.allCases
-
                     ForEach(collections) { collection in
-
-                        NavigationLink(destination: SFSymbolCollectionGridView(collection: collection)) {
-
-                            Label {
-                                Text(collection.title)
-                                    .tint(.black)
-                            } icon: {
-                                Image(systemName: collection.defaultSymbol.name)
-                                    .tint(.black)
-                                    .foregroundColor(.black)
-                            }
-                            .imageScale(.large)
-                        }
+                        GridViewNavigationLink(collection: collection)
                     }
                 }
             }
-        }
     }
+        .navigationTitle("NMA SFSymbol")
+    }
+
+    private func makeCollections(_ data: SFSCollectionData) -> SFSCollection {
+        guard let title = data.title else { fatalError() }
+        guard let defaultSymbolRawValue = data.defaultSFSymbolRawValue else { fatalError() }
+        guard let defaultSymbol = SFSymbol(rawValue: defaultSymbolRawValue) else { fatalError() }
+        guard let sfSymbolRawValuesSet = data.symbolsRawValues else { fatalError() }
+        let sfSymbols = sfSymbolRawValuesSet.compactMap(SFSymbol.init(rawValue:))
+        assert(data.sfSymbolRawValues?.count == sfSymbols.count)
+        return SFSCollection(title: title, defaultSymbol: defaultSymbol, symbols: sfSymbols)
+    }
+
 }
 
 struct SFSymbolCollectionListView_Previews: PreviewProvider {
     static var previews: some View {
-        SFSymbolCollectionListView() //collections: SFSCategory.allCases) // .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        SFSymbolCollectionListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		975B197227AB270300BCDBBA /* GridViewNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */; };
+		975B197627AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */; };
 		9776911A27AAB50C0000D4E6 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776911927AAB50C0000D4E6 /* Utilites.swift */; };
 		9776911C27AAC4E00000D4E6 /* ScratchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776911B27AAC4E00000D4E6 /* ScratchView.swift */; };
 		97BD1C0B27A9B01E006F2A1A /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
 		97BD1C0C27A9B01E006F2A1A /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		97BD1C1127A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BD1C1027A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift */; };
 		97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */; };
-		97C8961927A98C43008E9E3C /* SFSymbolCollectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961827A98C43008E9E3C /* SFSymbolCollectionGridView.swift */; };
 		97C8961B27A98C46008E9E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C8961A27A98C46008E9E3C /* Assets.xcassets */; };
 		97C8961E27A98C46008E9E3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C8961D27A98C46008E9E3C /* Preview Assets.xcassets */; };
 		97C8962027A98C46008E9E3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961F27A98C46008E9E3C /* Persistence.swift */; };
@@ -66,12 +66,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewNavigationLink.swift; sourceTree = "<group>"; };
+		975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionGridView.swift; sourceTree = "<group>"; };
 		9776911927AAB50C0000D4E6 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		9776911B27AAC4E00000D4E6 /* ScratchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchView.swift; sourceTree = "<group>"; };
-		97BD1C1027A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCategoryViewModel.swift; sourceTree = "<group>"; };
 		97C8961427A98C43008E9E3C /* NMASFSymbolDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMASFSymbolDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolDemoAppApp.swift; sourceTree = "<group>"; };
-		97C8961827A98C43008E9E3C /* SFSymbolCollectionGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionGridView.swift; sourceTree = "<group>"; };
 		97C8961A27A98C46008E9E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C8961D27A98C46008E9E3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		97C8961F27A98C46008E9E3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -132,10 +132,10 @@
 			children = (
 				9776911B27AAC4E00000D4E6 /* ScratchView.swift */,
 				9776911927AAB50C0000D4E6 /* Utilites.swift */,
-				97BD1C1027A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift */,
 				97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */,
 				97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */,
-				97C8961827A98C43008E9E3C /* SFSymbolCollectionGridView.swift */,
+				975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */,
+				975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */,
 				97C8961A27A98C46008E9E3C /* Assets.xcassets */,
 				97C8961F27A98C46008E9E3C /* Persistence.swift */,
 				97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */,
@@ -350,8 +350,8 @@
 			files = (
 				97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */,
 				97C8962027A98C46008E9E3C /* Persistence.swift in Sources */,
-				97C8961927A98C43008E9E3C /* SFSymbolCollectionGridView.swift in Sources */,
-				97BD1C1127A9BF92006F2A1A /* SFSymbolCategoryViewModel.swift in Sources */,
+				975B197227AB270300BCDBBA /* GridViewNavigationLink.swift in Sources */,
+				975B197627AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift in Sources */,
 				97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */,
 				97C8962827A98CB6008E9E3C /* SFSymbolCollectionListView.swift in Sources */,
 				9776911A27AAB50C0000D4E6 /* Utilites.swift in Sources */,

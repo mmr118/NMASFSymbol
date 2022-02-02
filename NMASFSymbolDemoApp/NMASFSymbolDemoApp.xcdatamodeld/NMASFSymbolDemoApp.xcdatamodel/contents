@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20F71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="SFSCollectionData" representedClassName="SFSCollectionData" syncable="YES" codeGenerationType="class">
-        <attribute name="defaultSFSymbolRawValue" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="displayName" optional="YES" attributeType="String"/>
-        <attribute name="identifier" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="sfSymbolRawValues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SFSymbolRawValue" inverseName="sfsCollection" inverseEntity="SFSymbolRawValue"/>
-    </entity>
-    <entity name="SFSymbolRawValue" representedClassName="SFSymbolRawValue" syncable="YES" codeGenerationType="class">
-        <attribute name="value" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="sfsCollection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SFSCollectionData" inverseName="sfSymbolRawValues" inverseEntity="SFSCollectionData"/>
+        <attribute name="defaultSFSymbolRawValue" optional="YES" attributeType="String"/>
+        <attribute name="symbolsRawValues" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="Set&lt;String&gt;"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="SFSCollectionData" positionX="-63" positionY="-9" width="128" height="89"/>
-        <element name="SFSymbolRawValue" positionX="-63" positionY="18" width="128" height="59"/>
+        <element name="SFSCollectionData" positionX="-63" positionY="-9" width="128" height="74"/>
     </elements>
 </model>
