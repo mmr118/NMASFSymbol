@@ -9,12 +9,13 @@ import Foundation
 
 public extension SFSCollection {
     
+    static let all: Set<SFSCollection> = Set(cache.elements() + SystemCategory.allCases.map { SFSCollection.System($0) })
+    
     enum SystemCategory: Int, CaseIterable, Identifiable {
         
         public var id: Int { rawValue }
         
         case allSymbols, whats_new, multicolor, communication, weather, objects_and_tools, devices, gaming, connectivity, transportation, human, nature, editing, text_formatting, media, keyboard, commerce, time, health, shapes, arrows, indices, math
-        
     }
     
     static let allSymbols = SFSCollection(title: "All", defaultSymbol: .square_grid_2x2, symbols: SFSymbol.allCases)

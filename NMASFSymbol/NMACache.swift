@@ -7,18 +7,30 @@
 
 import Foundation
 
-@frozen public enum NMACacheError: Error {
-    case elementExistsInCache(String)
+public enum NMACacheError: Error, Equatable {
+    case elementExisits(String)
+    case elementDNE(String)
     case capacityLimitReached(String)
+    var localizedDescription: String {
+        switch self {
+        case .elementExisits(let string):
+            return "NMACacheError.elemntExisits: `add(_:)` did not add the element \"\(string)\"; it already exisits in the Cache."
+        case .elementDNE(let string):
+            return "NMACacheError.elemntDNE: `remove(_:)` did not remove the element \"\(string)\"; it does not exisits in the Cache."
+        case .capacityLimitReached(let string):
+            return "NMACacheError.capacityLimitReached: `add(_:)` did not add the element \"\(string)\"; Cache capacity limit has been reached."
+
+        }
+    }
 }
 
 
 final public class NMACache<T: Any> where T: Equatable {
 
     public typealias CacheResult = Result<T, Error>
-    public typealias CacheResults = (insertedAll: Bool, results: Array<CacheResult>)
+    public typealias CacheResultsReport = (insertedAll: Bool, results: Array<CacheResult>)
 
-    public enum ClearCycle {
+    public enum DumpCycle {
         case never
         case onceOn(on: Date)
         case onceIn(interval: TimeInterval)
@@ -26,27 +38,29 @@ final public class NMACache<T: Any> where T: Equatable {
         case capacityLimit(count: Int)
     }
     
-    private var clearCycleTimer: Timer?
+    private var dumpCycleTimer: Timer?
     private var contents = [T]()
     
+    public var isEmpty: Bool { contents.isEmpty }
     public var count: Int { contents.count }
-    public var clearContentsHander: (([T]) -> Void)?
-    public var clearCapacityLimit: Int {
-        guard case let .capacityLimit(limit) = clearCycle else { return 0 }
+    public var dumpHander: (([T]) -> Void)?
+    
+    public var capcityLimit: Int? {
+        guard case let .capacityLimit(limit) = dumpCycle else { return nil }
         return limit
     }
     
     public var allowsDuplicates: Bool = false {
-        didSet {  }
+        didSet { removeDuplacates() }
     }
     
-    public var clearCycle: ClearCycle = .never {
+    public var dumpCycle: DumpCycle = .never {
         didSet { configureCycleTimer() }
     }
     
     // MARK: - Init
-    public init(clearCycle: ClearCycle = .never, allowsDuplicates: Bool = false) {
-        self.clearCycle = clearCycle
+    public init(dumpCycle: DumpCycle = .never, allowsDuplicates: Bool = false) {
+        self.dumpCycle = dumpCycle
         self.allowsDuplicates = allowsDuplicates
     }
     
@@ -62,31 +76,18 @@ final public class NMACache<T: Any> where T: Equatable {
     // MARK: Add
     @discardableResult
     public func add(_ elem: T) -> CacheResult {
-        
-        if case .capacityLimit(let limit) = clearCycle {
-            if contents.count >= limit {
-                clear()
-            }
-        }
-        
-        do {
-            let result = try privateAdd(elem)
-            return .success(result)
-        } catch {
-            return .failure(error)
-        }
+        return throwWrapper(elem, privateAdd)
     }
     
     @discardableResult
-    public func add<S: Sequence>(elems: S) -> CacheResults where S.Element == T {
+    public func add<S: Sequence>(elems: S) -> CacheResultsReport where S.Element == T {
         var results = [CacheResult]()
         var insertedAll = true
+        
         for elem in elems {
             let result = add(elem)
-            if case .failure = result {
-                insertedAll = false
-            }
-            results.append(remove(elem))
+            if case .failure = result { insertedAll = false }
+            results.append(result)
         }
         
         return (insertedAll, results)
@@ -95,41 +96,35 @@ final public class NMACache<T: Any> where T: Equatable {
     // MARK: Remove
     @discardableResult
     public func remove(_ elem: T) -> CacheResult {
-        do {
-            let result = try privateRemove(elem)
-            return .success(result)
-        } catch {
-            return .failure(error)
-        }
+        return throwWrapper(elem, privateRemove)
     }
     
     @discardableResult
-    public func remove<S: Sequence>(elems: S) -> CacheResults where S.Element == T {
+    public func remove<S: Sequence>(elems: S) -> CacheResultsReport where S.Element == T {
         var results = [CacheResult]()
         var insertedAll = true
+        
         for elem in elems {
             let result = remove(elem)
-            if case .failure = result {
-                insertedAll = false
-            }
-            results.append(remove(elem))
+            if case .failure = result { insertedAll = false }
+            results.append(result)
         }
         
         return (insertedAll, results)
     }
     
     @discardableResult
-    public func clear() -> [T] {
+    public func dump() -> [T] {
         let removedElems = contents
         contents.removeAll()
         return removedElems
     }
     
-    @objc private func timerClearHandler() {
-        clear()
-        switch clearCycle {
+    @objc private func timerDumpHandler() {
+        dump()
+        switch dumpCycle {
         case .onceOn, .onceIn:
-            clearCycle = .never
+            dumpCycle = .never
         default:
             break
         }
@@ -143,37 +138,51 @@ final public class NMACache<T: Any> where T: Equatable {
 extension NMACache {
 
     private func privateAdd(_ elem: T) throws -> T {
-        if allowsDuplicates && contents.contains(elem) {
-            let info = String(describing: elem)
-            throw NMACacheError.elementExistsInCache(info)
-        } else {
+        dumpContentsIfNeeded()
+        
+        if canAdd(elem) {
+            contents.append(elem)
             return elem
+        } else {
+            let info = String(describing: elem)
+            throw NMACacheError.elementExisits(info)
         }
+        
     }
     
     private func privateRemove(_ elem: T) throws -> T {
-        if let _ = contents.firstIndex(of: elem) {
-            let info = String(describing: elem)
-            throw NMACacheError.elementExistsInCache(info)
-        } else {
-            contents.append(elem)
+        if let index = contents.firstIndex(of: elem) {
+            contents.remove(at: index)
             return elem
+        } else {
+            let info = String(describing: elem)
+            throw NMACacheError.elementDNE(info)
         }
+    }
+    
+    private func isAddAvailable(_ elem: T) -> Bool {
+        clearIfLimitReached()
+        assert(clearIfLimitReached() == false )
+        return allowsDuplicates == false && contents.contains(elem)
+    }
         
+    @discardableResult
+    private func clearIfLimitReached() -> Bool {
+        guard case .capacityLimit(let limit) = dumpCycle else { return false }
+        if contents.count >= limit {
+            dumpHander?(dump())
+            return true
+        } else {
+            return false
+        }
     }
-    
-    private func cacheLimitReached() -> Bool {
-        guard case .capacityLimit(let limit) = clearCycle else { return false }
-        return contents.count >= limit
-    }
-    
+        
     private func configureCycleTimer() {
-        
-        switch clearCycle {
+        switch dumpCycle {
             
         case .never:
-            clearCycleTimer?.invalidate()
-            clearCycleTimer = nil
+            dumpCycleTimer?.invalidate()
+            dumpCycleTimer = nil
             
         case .capacityLimit:
             break
@@ -196,13 +205,13 @@ extension NMACache {
             guard let strongSelf = self else { return }
             
             DispatchQueue.main.async {
-                let removedElems = strongSelf.clear()
-                strongSelf.clearContentsHander?(removedElems)
+                let removedElems = strongSelf.dump()
+                strongSelf.dumpHander?(removedElems)
             }
         }
         
         timer.fire()
-        self.clearCycleTimer = timer
+        self.dumpCycleTimer = timer
 
     }
     
@@ -217,6 +226,30 @@ extension NMACache {
             
         }
             
+    }
+    
+}
+
+extension NMACache {
+    
+    private func dumpContentsIfNeeded() {
+        if case .capacityLimit(let limit) = dumpCycle {
+            if contents.count >= limit {
+                dumpHander?(dump())
+            }
+        }
+    }
+    
+    private func canAdd(_ elem: T) -> Bool {
+        if allowsDuplicates == false {
+            return !contents.contains(elem)
+        } else {
+            return true
+        }
+    }
+    
+    private func throwWrapper(_ elem: T, _ f: (T) throws -> T) -> CacheResult {
+        return CacheResult { try f(elem) }
     }
     
 }

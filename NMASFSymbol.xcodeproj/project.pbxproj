@@ -21,6 +21,7 @@
 		DD0A708327AC1935009CE835 /* SFSCollection+SystemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */; };
 		DD0A708527AC2645009CE835 /* SFSCollection+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */; };
 		DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708627AC49C9009CE835 /* NMACache.swift */; };
+		DD0A708927AC51C4009CE835 /* NMACacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708827AC51C4009CE835 /* NMACacheTests.swift */; };
 		DD1B41CD27A9D43B00362EAB /* SFSCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */; };
 		DD1B41CF27A9D62600362EAB /* SFSCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */; };
 		DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41DA27A9E23600362EAB /* SFSCollection.swift */; };
@@ -82,6 +83,7 @@
 		DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSCollection+SystemCategory.swift"; sourceTree = "<group>"; };
 		DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSCollection+Cache.swift"; sourceTree = "<group>"; };
 		DD0A708627AC49C9009CE835 /* NMACache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMACache.swift; sourceTree = "<group>"; };
+		DD0A708827AC51C4009CE835 /* NMACacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMACacheTests.swift; sourceTree = "<group>"; };
 		DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCollectionTests.swift; sourceTree = "<group>"; };
 		DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCategoryTests.swift; sourceTree = "<group>"; };
 		DD1B41DA27A9E23600362EAB /* SFSCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCollection.swift; sourceTree = "<group>"; };
@@ -166,8 +168,8 @@
 				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
 				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
 				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
-				DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */,
 				DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */,
+				DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */,
 				DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */,
 			);
 			name = SFSymbol;
@@ -211,6 +213,7 @@
 				DDC05E4627A96E64003BD1E5 /* NMASFSymbolTests.swift */,
 				DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */,
 				DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */,
+				DD0A708827AC51C4009CE835 /* NMACacheTests.swift */,
 			);
 			path = NMASFSymbolTests;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD1B41CF27A9D62600362EAB /* SFSCategoryTests.swift in Sources */,
+				DD0A708927AC51C4009CE835 /* NMACacheTests.swift in Sources */,
 				DD1B41CD27A9D43B00362EAB /* SFSCollectionTests.swift in Sources */,
 				DDC05E4727A96E64003BD1E5 /* NMASFSymbolTests.swift in Sources */,
 			);

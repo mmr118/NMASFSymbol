@@ -18,9 +18,6 @@ class SFSCollectionTests: XCTestCase {
         // Confirm collection is not in cache
         XCTAssertFalse(SFSCollection.cache.contains(sfsCollection))
 
-        // Confirm collection is not in SFSymbol.Category.allCases
-        XCTAssertFalse(SFSCategoryCollection.allCases.contains(.custom(sfsCollection)))
-
         // Confirm true is returned when collection is cached
         XCTAssert(try sfsCollection.cache())
 
@@ -123,5 +120,3 @@ class SFSCollectionTests: XCTestCase {
     }
 
 }
-
-

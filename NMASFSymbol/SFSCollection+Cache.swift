@@ -11,12 +11,12 @@ extension SFSCollection {
     
     public typealias Cache = NMACache<SFSCollection>
     public typealias CacheResult = Cache.CacheResult
-    public typealias CacheResults = Cache.CacheResults
+    public typealias CacheResults = Cache.CacheResultsReport
 
     public static let cache = Cache()
     
     public static func clearCache() {
-        cache.clear()
+        cache.dump()
     }
     
     @discardableResult
