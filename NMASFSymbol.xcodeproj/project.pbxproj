@@ -152,6 +152,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DD27380427AB65A3005B224A /* SFSymbol */ = {
+			isa = PBXGroup;
+			children = (
+				DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */,
+				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
+				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
+				DDC9E4CD27A973F10029D4F1 /* SFSymbol+SystemCollection.swift */,
+				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
+			);
+			name = SFSymbol;
+			sourceTree = "<group>";
+		};
 		DDC05E2D27A96E64003BD1E5 = {
 			isa = PBXGroup;
 			children = (
@@ -177,12 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				DDC05E3A27A96E64003BD1E5 /* NMASFSymbol.h */,
+				DD27380427AB65A3005B224A /* SFSymbol */,
 				DDC05E5527A96F6D003BD1E5 /* Extensions */,
-				DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */,
-				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
-				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
-				DDC9E4CD27A973F10029D4F1 /* SFSymbol+SystemCollection.swift */,
-				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
 				DDC05E3B27A96E64003BD1E5 /* NMASFSymbol.docc */,
 			);
 			path = NMASFSymbol;
