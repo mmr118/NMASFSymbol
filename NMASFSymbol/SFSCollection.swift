@@ -10,27 +10,21 @@ import Foundation
 open class SFSCollection: SFSCollectionProtocol {
 
     private let uuid = UUID()
+    
     private var symbolSet = Set<SFSymbol>()
-    private var isSFSCategory: Bool = false
-    private var sfCategoryType: SFSCategoryCollection?
-
+    internal var systemCategory: SFSCollection.SystemCategory? = nil
+    
     public private(set) var defaultSymbol: SFSymbol
 
     public var title: String
 
+    // MARK: Init
     public init(title: String, defaultSymbol: SFSymbol, symbols: [SFSymbol]) {
         self.title = title
         self.defaultSymbol = defaultSymbol
         self.symbolSet = Set(symbols)
     }
 
-    public init(_ sfsCategoryCollection: SFSCategoryCollection) {
-        self.sfCategoryType = sfsCategoryCollection
-        self.title = sfsCategoryCollection.title
-        self.defaultSymbol = sfsCategoryCollection.defaultSymbol
-        self.symbolSet = Set(sfsCategoryCollection.symbols())
-    }
-    
     public func symbols() -> [SFSymbol] {
         return Array(symbolSet)
     }
@@ -61,75 +55,8 @@ open class SFSCollection: SFSCollectionProtocol {
         return symbolSet.remove(symbol)
     }
     
-    public func addCategory(_ category: SFSCategoryCollection) {
-        symbolSet.formUnion(category.symbols())
-    }
-    
-    public func addCategories(_ categories: [SFSCategoryCollection]) {
-        categories.forEach { symbolSet.formUnion($0.symbols()) }
-    }
-    
-    public func removeCategory(_ category: SFSCategoryCollection) {
-        let presentSymbols = symbolSet.intersection(category.symbols())
-        presentSymbols.forEach { symbolSet.remove($0) }
-    }
-    
     public func contains(_ symbol: SFSymbol) -> Bool {
         return symbolSet.contains(symbol)
     }
-
-}
-
-
-extension SFSCollection: Hashable {
     
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(uuid.hashValue)
-        hasher.combine(title.hashValue)
-        hasher.combine(defaultSymbol.hashValue)
-        hasher.combine(symbolSet.hashValue)
-    }
-    
-}
-
-
-// MARK: - Collection Cache
-public enum SFSCollectionCacheError: Error {
-
-    case cannotCacheSFSCategory(String)
-
-
-}
-
-
-extension SFSCollection {
-
-    public static internal(set) var cache = Set<SFSCollection>()
-
-    public static func clearCache() {
-        cache.removeAll()
-    }
-
-    @discardableResult
-    public func cache() throws -> Bool {
-
-        switch sfCategoryType {
-
-        case .some(.custom(_)), .none:
-            break
-
-        case .some(let sfCategory):
-            if case .custom = sfCategory { break }
-            throw SFSCollectionCacheError.cannotCacheSFSCategory(String(describing: sfCategory.self))
-        }
-
-        return Self.cache.insert(self).inserted
-
-    }
-
-    @discardableResult
-    public func removeFromCache() -> Bool {
-        return Self.cache.remove(self) != nil
-    }
-
 }

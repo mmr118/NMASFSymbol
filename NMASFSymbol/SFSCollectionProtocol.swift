@@ -26,6 +26,13 @@ extension SFSCollectionProtocol {
     public static func == (lhs: Self, rhs: Self) -> Bool {
         return (lhs.title == rhs.title) && (lhs.defaultSymbol == rhs.defaultSymbol) && (Set(lhs.symbols()) == Set(rhs.symbols()))
     }
+    
+    public func hash(into hasher: inout Hasher) {
+//        hasher.combine(uuid.hashValue)
+        hasher.combine(title.hashValue)
+        hasher.combine(defaultSymbol.hashValue)
+//        hasher.combine(symbolSet.hashValue)
+    }
 
 }
 
@@ -33,4 +40,5 @@ extension SFSCollectionProtocol {
 extension SFSCollectionProtocol where Self: RawRepresentable {
 
     internal var selfString: String { String(describing: self.self) }
+    
 }

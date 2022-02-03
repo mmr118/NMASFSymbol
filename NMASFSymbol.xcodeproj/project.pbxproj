@@ -18,6 +18,9 @@
 		97C8962027A98C46008E9E3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961F27A98C46008E9E3C /* Persistence.swift */; };
 		97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */; };
 		97C8962827A98CB6008E9E3C /* SFSymbolCollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */; };
+		DD0A708327AC1935009CE835 /* SFSCollection+SystemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */; };
+		DD0A708527AC2645009CE835 /* SFSCollection+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */; };
+		DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708627AC49C9009CE835 /* NMACache.swift */; };
 		DD1B41CD27A9D43B00362EAB /* SFSCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */; };
 		DD1B41CF27A9D62600362EAB /* SFSCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */; };
 		DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41DA27A9E23600362EAB /* SFSCollection.swift */; };
@@ -30,7 +33,7 @@
 		DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */; };
 		DDC05E5727A96F87003BD1E5 /* RawRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5627A96F87003BD1E5 /* RawRepresentable+Extensions.swift */; };
 		DDC05E5927A970EA003BD1E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5827A970EA003BD1E5 /* UIImage+Extensions.swift */; };
-		DDC9E4CE27A973F10029D4F1 /* SFSymbol+SystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9E4CD27A973F10029D4F1 /* SFSymbol+SystemCollection.swift */; };
+		DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */; };
 		DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,9 @@
 		97C8961F27A98C46008E9E3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemoApp.xcdatamodel; sourceTree = "<group>"; };
 		97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionListView.swift; sourceTree = "<group>"; };
+		DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSCollection+SystemCategory.swift"; sourceTree = "<group>"; };
+		DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSCollection+Cache.swift"; sourceTree = "<group>"; };
+		DD0A708627AC49C9009CE835 /* NMACache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMACache.swift; sourceTree = "<group>"; };
 		DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCollectionTests.swift; sourceTree = "<group>"; };
 		DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCategoryTests.swift; sourceTree = "<group>"; };
 		DD1B41DA27A9E23600362EAB /* SFSCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCollection.swift; sourceTree = "<group>"; };
@@ -89,7 +95,7 @@
 		DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Public.swift"; sourceTree = "<group>"; };
 		DDC05E5627A96F87003BD1E5 /* RawRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		DDC05E5827A970EA003BD1E5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
-		DDC9E4CD27A973F10029D4F1 /* SFSymbol+SystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+SystemCollection.swift"; sourceTree = "<group>"; };
+		DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSSystemCollection.swift; sourceTree = "<group>"; };
 		DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,11 +161,14 @@
 		DD27380427AB65A3005B224A /* SFSymbol */ = {
 			isa = PBXGroup;
 			children = (
+				DD0A708627AC49C9009CE835 /* NMACache.swift */,
 				DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */,
 				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
 				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
-				DDC9E4CD27A973F10029D4F1 /* SFSymbol+SystemCollection.swift */,
 				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
+				DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */,
+				DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */,
+				DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */,
 			);
 			name = SFSymbol;
 			sourceTree = "<group>";
@@ -372,13 +381,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDC05E5227A96E80003BD1E5 /* SFSymbol.swift in Sources */,
+				DD0A708527AC2645009CE835 /* SFSCollection+Cache.swift in Sources */,
 				DDC05E5927A970EA003BD1E5 /* UIImage+Extensions.swift in Sources */,
 				DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */,
+				DD0A708327AC1935009CE835 /* SFSCollection+SystemCategory.swift in Sources */,
 				DDC05E3C27A96E64003BD1E5 /* NMASFSymbol.docc in Sources */,
 				DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */,
 				DDC05E5727A96F87003BD1E5 /* RawRepresentable+Extensions.swift in Sources */,
 				DD1B41DD27A9E46600362EAB /* SFSCollectionProtocol.swift in Sources */,
-				DDC9E4CE27A973F10029D4F1 /* SFSymbol+SystemCollection.swift in Sources */,
+				DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */,
+				DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
