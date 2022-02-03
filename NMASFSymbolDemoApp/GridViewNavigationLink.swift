@@ -13,7 +13,7 @@ struct GridViewNavigationLink<T>: View where T: SFSCollectionProtocol {
 
     var body: some View {
 
-        NavigationLink(destination: SFSymbolCollectionGridView(searchText: .constant(""), collection: collection)) {
+        NavigationLink(destination: SFSymbolCollectionGridView(title: collection.title, symbols: collection.symbols())) {
 
             Label {
                 Text(collection.title + " \(collection.symbols().count)")

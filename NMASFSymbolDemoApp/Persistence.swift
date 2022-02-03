@@ -17,7 +17,8 @@ struct PersistenceController {
 //    static let shared = PersistenceController()
     static let shared: PersistenceController = {
         let result = PersistenceController()
-//        loadMockData(result.container.viewContext)
+        clearStorage(result.container.viewContext)
+        loadMockData(result.container.viewContext)
         return result
     }()
 
@@ -52,6 +53,24 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+    }
+    
+    
+}
+
+extension PersistenceController {
+    
+    private static func clearStorage(_ context: NSManagedObjectContext) {
+        do {
+            let datas = try context.fetch(SFSCollectionData.fetchRequest())
+            for data in datas {
+                context.delete(data)
+            }
+            
+            try context.save()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
     }
 
     private static func loadMockData(_ context: NSManagedObjectContext) {

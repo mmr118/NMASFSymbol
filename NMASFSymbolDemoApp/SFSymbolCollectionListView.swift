@@ -64,7 +64,7 @@ struct SFSymbolCollectionListView: View {
         guard let defaultSymbol = SFSymbol(rawValue: defaultSymbolRawValue) else { fatalError() }
         guard let sfSymbolRawValuesSet = data.symbolsRawValues else { fatalError() }
         let sfSymbols = sfSymbolRawValuesSet.compactMap(SFSymbol.init(rawValue:))
-        assert(data.sfSymbolRawValues?.count == sfSymbols.count)
+        assert(data.symbolsRawValues?.count == sfSymbols.count)
         return SFSCollection(title: title, defaultSymbol: defaultSymbol, symbols: sfSymbols)
     }
 

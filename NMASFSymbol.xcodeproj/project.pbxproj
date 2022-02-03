@@ -10,7 +10,6 @@
 		975B197227AB270300BCDBBA /* GridViewNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */; };
 		975B197627AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */; };
 		9776911A27AAB50C0000D4E6 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776911927AAB50C0000D4E6 /* Utilites.swift */; };
-		9776911C27AAC4E00000D4E6 /* ScratchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776911B27AAC4E00000D4E6 /* ScratchView.swift */; };
 		97BD1C0B27A9B01E006F2A1A /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
 		97BD1C0C27A9B01E006F2A1A /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */; };
@@ -32,6 +31,7 @@
 		DDC05E5727A96F87003BD1E5 /* RawRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5627A96F87003BD1E5 /* RawRepresentable+Extensions.swift */; };
 		DDC05E5927A970EA003BD1E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5827A970EA003BD1E5 /* UIImage+Extensions.swift */; };
 		DDC9E4CE27A973F10029D4F1 /* SFSymbol+SystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9E4CD27A973F10029D4F1 /* SFSymbol+SystemCollection.swift */; };
+		DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 		975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewNavigationLink.swift; sourceTree = "<group>"; };
 		975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionGridView.swift; sourceTree = "<group>"; };
 		9776911927AAB50C0000D4E6 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
-		9776911B27AAC4E00000D4E6 /* ScratchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchView.swift; sourceTree = "<group>"; };
 		97C8961427A98C43008E9E3C /* NMASFSymbolDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMASFSymbolDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolDemoAppApp.swift; sourceTree = "<group>"; };
 		97C8961A27A98C46008E9E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +90,7 @@
 		DDC05E5627A96F87003BD1E5 /* RawRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Extensions.swift"; sourceTree = "<group>"; };
 		DDC05E5827A970EA003BD1E5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		DDC9E4CD27A973F10029D4F1 /* SFSymbol+SystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+SystemCollection.swift"; sourceTree = "<group>"; };
+		DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,12 +130,12 @@
 		97C8961527A98C43008E9E3C /* NMASFSymbolDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				9776911B27AAC4E00000D4E6 /* ScratchView.swift */,
 				9776911927AAB50C0000D4E6 /* Utilites.swift */,
 				97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */,
 				97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */,
 				975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */,
 				975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */,
+				DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */,
 				97C8961A27A98C46008E9E3C /* Assets.xcassets */,
 				97C8961F27A98C46008E9E3C /* Persistence.swift */,
 				97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */,
@@ -322,6 +322,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */,
 				97C8961E27A98C46008E9E3C /* Preview Assets.xcassets in Resources */,
 				97C8961B27A98C46008E9E3C /* Assets.xcassets in Resources */,
 			);
@@ -355,7 +356,6 @@
 				97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */,
 				97C8962827A98CB6008E9E3C /* SFSymbolCollectionListView.swift in Sources */,
 				9776911A27AAB50C0000D4E6 /* Utilites.swift in Sources */,
-				9776911C27AAC4E00000D4E6 /* ScratchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +414,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,6 +444,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
