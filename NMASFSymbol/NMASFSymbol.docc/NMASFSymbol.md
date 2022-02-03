@@ -1,10 +1,10 @@
 # ``NMASFSymbol``
 
-<!--@START_MENU_TOKEN@-->Summary<!--@END_MENU_TOKEN@-->
+**NMASFSymbol** is a framework that uses enums to safely initiate initiate iOS system symbols. 
 
 ## Overview
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+
 
 ## Topics
 
