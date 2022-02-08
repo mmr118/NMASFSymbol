@@ -31,7 +31,7 @@ struct GridViewNavigationLink<T>: View where T: SFSCollectionProtocol {
 
 struct GridViewNavigationLink_Previews: PreviewProvider {
     static var previews: some View {
-        GridViewNavigationLink(collection: SFSCategoryCollection.human)
+        GridViewNavigationLink(collection: SFSSystemCollection.human)
             .preferredColorScheme(.dark)
     }
 }

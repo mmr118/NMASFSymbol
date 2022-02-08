@@ -35,7 +35,7 @@ struct SFSymbolCollectionListView: View {
                 
                 if !SFSCollection.cache.isEmpty {
                     Section {
-                        let cachedCollections = SFSCollection.cache.map { $0 }
+                        let cachedCollections = SFSCollection.cachedCollections.map { $0 }
                         ForEach(cachedCollections) { collection in
                             GridViewNavigationLink(collection: collection)
                         }
@@ -48,7 +48,7 @@ struct SFSymbolCollectionListView: View {
                 
                 Section("Categories") {
                     
-                    let collections = SFSCategoryCollection.allCases
+                    let collections = SFSSystemCollection.allCollections.map { $0 }
                     ForEach(collections) { collection in
                         GridViewNavigationLink(collection: collection)
                     }

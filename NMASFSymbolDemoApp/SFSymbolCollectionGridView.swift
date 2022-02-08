@@ -69,7 +69,7 @@ struct SFSymbolCollectionGridView: View {
 
 struct SFSymbolCollectionView_Previews: PreviewProvider {
     static var previews: some View {
-        let collection = SFSCategoryCollection.devices
+        let collection = SFSSystemCollection.devices
         Group {
             SFSymbolCollectionGridView(title: collection.title, symbols: collection.symbols())
             

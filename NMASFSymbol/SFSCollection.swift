@@ -11,12 +11,12 @@ open class SFSCollection: SFSCollectionProtocol {
     
     /// Returns all SystemCategory Collections and Cached collections
     /// Cached collections will be the first values in the return result.
-    static let allCollections: Set<SFSCollection> = Set(cache.elements() + SFSSystemCollection.SFSCategory.allCases.map { $0.collection() })
-    
-    private var symbolSet = Set<SFSymbol>()
-    
-    public private(set) var defaultSymbol: SFSymbol
+    public static let allCollections: Set<SFSCollection> = Set(cache.elements() + SFSSystemCollection.SFSCategory.allCases.map { $0.collection() })
+    public static let cachedCollections: Set<SFSCollection> = Set(cache.elements())
+    public static let systemCollections: Set<SFSCollection> = Set(SFSSystemCollection.allCollections)
 
+    private var symbolSet = Set<SFSymbol>()
+    public private(set) var defaultSymbol: SFSymbol
     public var title: String
 
     // MARK: Init
