@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: Static functions
 extension SFSCollection {
     
     public typealias Cache = NMACache<SFSCollection>
@@ -28,6 +29,25 @@ extension SFSCollection {
         return cache.remove(elems: collections)
     }
     
+    public static func contains(_ collection: SFSCollection) -> Bool {
+        return cache.contains(collection)
+    }
+    
+//    public static func filter(_ isIncluded: (SFSCollection) throws -> Bool) rethrows -> [SFSCollection] {
+//        let results = try cache.elements().filter { try isIncluded($0) }
+//        return results
+//    }
+//
+//    public static func filter(_ isIncluded: (SFSCollection) -> Bool) -> [SFSCollection] {
+//        return cache.elements().filter(isIncluded)
+//    }
+
+}
+
+// MARK: Caching `self`
+extension SFSCollection {
+    
+    // MARK: for caching `self`
     @discardableResult
     public func cache() -> CacheResult {
         return SFSCollection.cache.add(self)

@@ -12,23 +12,19 @@ import SwiftUI
 // MARK: Init
 public extension SFSymbol {
     
-    init?(name: String) {
-        self.init(rawValue: name)
-    }
-    
-}
-
-// MARK: - Variables
-public extension SFSymbol {
-
     var id: String { return rawValue }
     
     var name: String { rawValue }
     
     var uiImage: UIImage? { UIImage(sfSymbol: self) }
-
+    
     var displayName: String { rawValue.replacingOccurrences(of: ".", with: " ") }
+    
 
+    init?(name: String) {
+        self.init(rawValue: name)
+    }
+    
 }
 
 // MARK: - System Category Collection Arrays

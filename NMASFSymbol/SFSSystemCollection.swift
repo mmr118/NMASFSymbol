@@ -7,115 +7,72 @@
 
 import Foundation
 
-final class SFSSystemCollection: SFSCollectionProtocol {
-    
-    public let title: String
-    public let defaultSymbol: SFSymbol
-    public var id: Int
 
-    private let symbolSet: Set<SFSymbol>
+final public class SFSSystemCollection: SFSCollection {
     
-    private init(category: SFSCollection.SystemCategory) {
-        switch category {
-        case .allSymbols:
-            self.title = "All"
-            self.defaultSymbol = .square_grid_2x2
-            self.symbolSet = Set(SFSymbol.allCases)
-        case .whats_new:
-            self.title = "What's New"
-            self.defaultSymbol = .sparkles
-            self.symbolSet = Set(SFSymbol.WhatsNew)
-        case .multicolor:
-            self.title = "Multicolor"
-            self.defaultSymbol = .sparkles
-            self.symbolSet = Set(SFSymbol.Multicolor)
-        case .communication:
-            self.title = "Communication"
-            self.defaultSymbol = .message
-            self.symbolSet = Set(SFSymbol.Communication)
-        case .weather:
-            self.title = "Weather"
-            self.defaultSymbol = .cloud_sun
-            self.symbolSet = Set(SFSymbol.Weather)
-        case .objects_and_tools:
-            self.title = "Objects & Tools"
-            self.defaultSymbol = .folder
-            self.symbolSet = Set(SFSymbol.ObjectsAndTools)
-        case .devices:
-            self.title = "Devices"
-            self.defaultSymbol = .desktopcomputer
-            self.symbolSet = Set(SFSymbol.Devices)
-        case .gaming:
-            self.title = "Gaming"
-            self.defaultSymbol = .gamecontroller
-            self.symbolSet = Set(SFSymbol.Gaming)
-        case .connectivity:
-            self.title = "Connectivity"
-            self.defaultSymbol = .antenna_radiowaves_left_and_right
-            self.symbolSet = Set(SFSymbol.Connectivity)
-        case .transportation:
-            self.title = "Transportation"
-            self.defaultSymbol = .car_fill
-            self.symbolSet = Set(SFSymbol.Transportation)
-        case .human:
-            self.title = "Human"
-            self.defaultSymbol = .person_crop_circle
-            self.symbolSet = Set(SFSymbol.Human)
-        case .nature:
-            self.title = "Nature"
-            self.defaultSymbol = .leaf
-            self.symbolSet = Set(SFSymbol.Nature)
-        case .editing:
-            self.title = "Editing"
-            self.defaultSymbol = .slider_horizontal_3
-            self.symbolSet = Set(SFSymbol.Editing)
-        case .text_formatting:
-            self.title = "Text Formatting"
-            self.defaultSymbol = .textformat
-            self.symbolSet = Set(SFSymbol.TextFormatting)
-        case .media:
-            self.title = "Media"
-            self.defaultSymbol = .playpause
-            self.symbolSet = Set(SFSymbol.Media)
-        case .keyboard:
-            self.title = "Keyboard"
-            self.defaultSymbol = .keyboard
-            self.symbolSet = Set(SFSymbol.Keyboard)
-        case .commerce:
-            self.title = "Commerce"
-            self.defaultSymbol = .cart
-            self.symbolSet = Set(SFSymbol.Commerce)
-        case .time:
-            self.title = "Time"
-            self.defaultSymbol = .clock
-            self.symbolSet = Set(SFSymbol.Time)
-        case .health:
-            self.title = "Health"
-            self.defaultSymbol = .staroflife_fill
-            self.symbolSet = Set(SFSymbol.Health)
-        case .shapes:
-            self.title = "Shapes"
-            self.defaultSymbol = .square_on_circle
-            self.symbolSet = Set(SFSymbol.Shapes)
-        case .arrows:
-            self.title = "Arrows"
-            self.defaultSymbol = .arrow_right
-            self.symbolSet = Set(SFSymbol.Arrows)
-        case .indices:
-            self.title = "Indices"
-            self.defaultSymbol = .a_circle
-            self.symbolSet = Set(SFSymbol.Indices)
-        case .math:
-            self.title = "Math"
-            self.defaultSymbol = .function
-            self.symbolSet = Set(SFSymbol.Math)
-        }
+    public enum SFSCategory: Int, CaseIterable, Identifiable {
+        public var id: Int { rawValue }
+        case allSymbols, whats_new, multicolor, communication, weather, objects_and_tools, devices, gaming, connectivity, transportation, human, nature, editing, text_formatting, media, keyboard, commerce, time, health, shapes, arrows, indices, math
         
-        self.id = category.id
+        public func collection() -> SFSSystemCollection {
+            return SFSSystemCollection(self)
+        }
     }
     
-    public func symbols() -> [SFSymbol] {
-        return Array(symbolSet)
+    public static let allSymbols =         SFSSystemCollection(.allSymbols)
+    public static let whats_new =          SFSSystemCollection(.whats_new)
+    public static let multicolor =         SFSSystemCollection(.multicolor)
+    public static let communication =      SFSSystemCollection(.communication)
+    public static let weather =            SFSSystemCollection(.weather)
+    public static let objects_and_tools =  SFSSystemCollection(.objects_and_tools)
+    public static let devices =            SFSSystemCollection(.devices)
+    public static let gaming =             SFSSystemCollection(.gaming)
+    public static let connectivity =       SFSSystemCollection(.connectivity)
+    public static let transportation =     SFSSystemCollection(.transportation)
+    public static let human =              SFSSystemCollection(.human)
+    public static let nature =             SFSSystemCollection(.nature)
+    public static let editing =            SFSSystemCollection(.editing)
+    public static let text_formatting =    SFSSystemCollection(.text_formatting)
+    public static let media =              SFSSystemCollection(.media)
+    public static let keyboard =           SFSSystemCollection(.keyboard)
+    public static let commerce =           SFSSystemCollection(.commerce)
+    public static let time =               SFSSystemCollection(.time)
+    public static let health =             SFSSystemCollection(.health)
+    public static let shapes =             SFSSystemCollection(.shapes)
+    public static let arrows =             SFSSystemCollection(.arrows)
+    public static let indices =            SFSSystemCollection(.indices)
+    public static let math =               SFSSystemCollection(.math)
+    
+    
+    let category: SFSCategory
+    
+    private init(_ category: SFSCategory) {
+        self.category = category
+        switch category {
+        case .allSymbols: super.init(title: "All", defaultSymbol: .square_grid_2x2, symbols: SFSymbol.allCases)  // , id: category.id)
+        case .whats_new: super.init(title: "What's New", defaultSymbol: .sparkles, symbols: SFSymbol.WhatsNew)  // , id: category.id)
+        case .multicolor: super.init(title: "Multicolor", defaultSymbol: .sparkles, symbols: SFSymbol.Multicolor)  // , id: category.id)
+        case .communication: super.init(title: "Communication", defaultSymbol: .message, symbols: SFSymbol.Communication)  // , id: category.id)
+        case .weather: super.init(title: "Weather", defaultSymbol: .cloud_sun, symbols: SFSymbol.Weather)  // , id: category.id)
+        case .objects_and_tools: super.init(title: "Objects & Tools", defaultSymbol: .folder, symbols: SFSymbol.ObjectsAndTools)  // , id: category.id)
+        case .devices: super.init(title: "Devices", defaultSymbol: .desktopcomputer, symbols: SFSymbol.Devices)  // , id: category.id)
+        case .gaming: super.init(title: "Gaming", defaultSymbol: .gamecontroller, symbols: SFSymbol.Gaming)  // , id: category.id)
+        case .connectivity: super.init(title: "Connectivity", defaultSymbol: .antenna_radiowaves_left_and_right, symbols: SFSymbol.Connectivity)  // , id: category.id)
+        case .transportation: super.init(title: "Transportation", defaultSymbol: .car_fill, symbols: SFSymbol.Transportation)  // , id: category.id)
+        case .human: super.init(title: "Human", defaultSymbol: .person_crop_circle, symbols: SFSymbol.Human)  // , id: category.id)
+        case .nature: super.init(title: "Nature", defaultSymbol: .leaf, symbols: SFSymbol.Nature)  // , id: category.id)
+        case .editing: super.init(title: "Editing", defaultSymbol: .slider_horizontal_3, symbols: SFSymbol.Editing)  // , id: category.id)
+        case .text_formatting: super.init(title: "Text Formatting", defaultSymbol: .textformat, symbols: SFSymbol.TextFormatting)  // , id: category.id)
+        case .media: super.init(title: "Media", defaultSymbol: .playpause, symbols: SFSymbol.Media)  // , id: category.id)
+        case .keyboard: super.init(title: "Keyboard", defaultSymbol: .keyboard, symbols: SFSymbol.Keyboard)  // , id: category.id)
+        case .commerce: super.init(title: "Commerce", defaultSymbol: .cart, symbols: SFSymbol.Commerce)  // , id: category.id)
+        case .time: super.init(title: "Time", defaultSymbol: .clock, symbols: SFSymbol.Time)  // , id: category.id)
+        case .health: super.init(title: "Health", defaultSymbol: .staroflife_fill, symbols: SFSymbol.Health)  // , id: category.id)
+        case .shapes: super.init(title: "Shapes", defaultSymbol: .square_on_circle, symbols: SFSymbol.Shapes)  // , id: category.id)
+        case .arrows: super.init(title: "Arrows", defaultSymbol: .arrow_right, symbols: SFSymbol.Arrows)  // , id: category.id)
+        case .indices: super.init(title: "Indices", defaultSymbol: .a_circle, symbols: SFSymbol.Indices)  // , id: category.id)
+        case .math: super.init(title: "Math", defaultSymbol: .function, symbols: SFSymbol.Math)  // , id: category.id)
+        }
     }
     
 }

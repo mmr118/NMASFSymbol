@@ -8,11 +8,12 @@
 import Foundation
 
 open class SFSCollection: SFSCollectionProtocol {
-
-    private let uuid = UUID()
+    
+    /// Returns all SystemCategory Collections and Cached collections
+    /// Cached collections will be the first values in the return result.
+    static let allCollections: Set<SFSCollection> = Set(cache.elements() + SFSSystemCollection.SFSCategory.allCases.map { $0.collection() })
     
     private var symbolSet = Set<SFSymbol>()
-    internal var systemCategory: SFSCollection.SystemCategory? = nil
     
     public private(set) var defaultSymbol: SFSymbol
 

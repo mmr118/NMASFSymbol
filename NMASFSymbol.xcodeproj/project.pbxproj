@@ -18,7 +18,6 @@
 		97C8962027A98C46008E9E3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961F27A98C46008E9E3C /* Persistence.swift */; };
 		97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */; };
 		97C8962827A98CB6008E9E3C /* SFSymbolCollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */; };
-		DD0A708327AC1935009CE835 /* SFSCollection+SystemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */; };
 		DD0A708527AC2645009CE835 /* SFSCollection+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */; };
 		DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708627AC49C9009CE835 /* NMACache.swift */; };
 		DD0A708927AC51C4009CE835 /* NMACacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708827AC51C4009CE835 /* NMACacheTests.swift */; };
@@ -80,7 +79,6 @@
 		97C8961F27A98C46008E9E3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemoApp.xcdatamodel; sourceTree = "<group>"; };
 		97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionListView.swift; sourceTree = "<group>"; };
-		DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSCollection+SystemCategory.swift"; sourceTree = "<group>"; };
 		DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSCollection+Cache.swift"; sourceTree = "<group>"; };
 		DD0A708627AC49C9009CE835 /* NMACache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMACache.swift; sourceTree = "<group>"; };
 		DD0A708827AC51C4009CE835 /* NMACacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMACacheTests.swift; sourceTree = "<group>"; };
@@ -168,9 +166,8 @@
 				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
 				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
 				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
-				DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */,
-				DD0A708227AC1935009CE835 /* SFSCollection+SystemCategory.swift */,
 				DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */,
+				DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */,
 			);
 			name = SFSymbol;
 			sourceTree = "<group>";
@@ -387,7 +384,6 @@
 				DD0A708527AC2645009CE835 /* SFSCollection+Cache.swift in Sources */,
 				DDC05E5927A970EA003BD1E5 /* UIImage+Extensions.swift in Sources */,
 				DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */,
-				DD0A708327AC1935009CE835 /* SFSCollection+SystemCategory.swift in Sources */,
 				DDC05E3C27A96E64003BD1E5 /* NMASFSymbol.docc in Sources */,
 				DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */,
 				DDC05E5727A96F87003BD1E5 /* RawRepresentable+Extensions.swift in Sources */,
