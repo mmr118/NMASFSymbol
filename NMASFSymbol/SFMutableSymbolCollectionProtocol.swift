@@ -1,5 +1,5 @@
 //
-//  MutableSymbolCollectionProtocol.swift
+//  SFMutableSymbolCollectionProtocol.swift
 //  NMASFSymbol
 //
 //  Created by Monica Rondón on 2/10/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol MutableSymbolCollectionProtocol: SymbolCollectionProtocol {
+public protocol SFMutableSymbolCollectionProtocol: SFSymbolCollectionProtocol {
     
     /// Adds symbol in to `self` if it is not already present
     /// - Parameter symbol: `SFSymbol` to add

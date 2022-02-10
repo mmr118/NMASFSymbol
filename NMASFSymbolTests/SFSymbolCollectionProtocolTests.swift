@@ -1,5 +1,5 @@
 //
-//  SymbolCollectionProtocolTests.swift
+//  SFSymbolCollectionProtocolTests.swift
 //  NMASFSymbolTests
 //
 //  Created by Monica Rondón on 2/10/22.
@@ -8,9 +8,9 @@
 import XCTest
 @testable import NMASFSymbol
 
-class SymbolCollectionProtocolTests: XCTestCase {
+class SFSymbolCollectionProtocolTests: XCTestCase {
     
-    var symbolCollectionProtcolUT: SymbolCollectionProtocol!
+    var symbolCollectionProtcolUT: SFSymbolCollectionProtocol!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -33,7 +33,7 @@ class SymbolCollectionProtocolTests: XCTestCase {
         XCTAssertEqual(Set(symbolCollectionProtcolUT.symbols()), Set(expectedSymbols))
         // After this, an assertFailure should be produuced because
         // `TestSymbolCollection_NotInternalSetHolder` is not an InternalSetHolder
-        // and does not manuually handle conformance SymbolCollectionProtocol Conformance
+        // and does not manuually handle conformance SFSymbolCollectionProtocol Conformance
         // CONFIRMED
         
     }
@@ -43,7 +43,7 @@ class SymbolCollectionProtocolTests: XCTestCase {
         let expectedSymbolsPart = expectedSymbols[..<2]
         let notIncludedSymbols: [SFSymbol] = [.helm, .heart, .hare]
         
-        symbolCollectionProtcolUT = TestSymbolCollection_NotInternalSetHolder_HandlesConformance() as! TestSymbolCollection_NotInternalSetHolder_HandlesConformance
+        symbolCollectionProtcolUT = TestSymbolCollection_NotInternalSetHolder_HandlesConformance()
         
         var handles: TestSymbolCollection_NotInternalSetHolder_HandlesConformance { symbolCollectionProtcolUT as! TestSymbolCollection_NotInternalSetHolder_HandlesConformance }
         
@@ -120,7 +120,7 @@ class SymbolCollectionProtocolTests: XCTestCase {
 
 
 
-class TestSymbolCollection_NotInternalSetHolder_DoesNotHandleConformance: SymbolCollectionProtocol {
+class TestSymbolCollection_NotInternalSetHolder_DoesNotHandleConformance: SFSymbolCollectionProtocol {
     
     let _testSymbols: [SFSymbol] = [.beats_fit_pro, .beats_fit_pro_left, .beats_fit_pro_right, .house_fill, .house_circle, .house_circle_fill, .gamecontroller]
     

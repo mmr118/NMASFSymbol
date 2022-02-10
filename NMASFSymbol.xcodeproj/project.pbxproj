@@ -18,10 +18,10 @@
 		97C8962027A98C46008E9E3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961F27A98C46008E9E3C /* Persistence.swift */; };
 		97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */; };
 		97C8962827A98CB6008E9E3C /* SFSymbolCollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */; };
-		DD008F5227B3DE6800EEFA2A /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008F5127B3DE6800EEFA2A /* Image+Extensions.swift */; };
+		DD008F5227B3DE6800EEFA2A /* Extensions+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008F5127B3DE6800EEFA2A /* Extensions+Internal.swift */; };
 		DD008F5427B3FC7C00EEFA2A /* Persistence+Perview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008F5327B3FC7C00EEFA2A /* Persistence+Perview.swift */; };
 		DD008F5827B4313200EEFA2A /* LiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008F5727B4313200EEFA2A /* LiteLogger.swift */; };
-		DD0A708527AC2645009CE835 /* SFSCollection+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */; };
+		DD07EE9427B5BD43001C4F28 /* Extensions+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD07EE9327B5BD43001C4F28 /* Extensions+Public.swift */; };
 		DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708627AC49C9009CE835 /* NMACache.swift */; };
 		DD1B41CD27A9D43B00362EAB /* SFSCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */; };
 		DD1B41CF27A9D62600362EAB /* SFSCategoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */; };
@@ -30,12 +30,10 @@
 		DD31EE8527B5329100C022E4 /* SFSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */; };
 		DD31EE8927B53B5600C022E4 /* SFSymbolCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */; };
 		DD31EE8B27B57D7300C022E4 /* SFSystemSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */; };
-		DD31EE8D27B5871F00C022E4 /* SystemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8C27B5871F00C022E4 /* SystemCategory.swift */; };
 		DD31EE8F27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */; };
-		DD31EE9127B5900D00C022E4 /* SymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9027B5900D00C022E4 /* SymbolCollectionProtocol.swift */; };
-		DD31EE9327B5984B00C022E4 /* InternalSymbolSetHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9227B5984B00C022E4 /* InternalSymbolSetHolder.swift */; };
-		DD31EE9527B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9427B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift */; };
-		DD31EE9727B5A16400C022E4 /* SymbolCollectionProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9627B5A16400C022E4 /* SymbolCollectionProtocolTests.swift */; };
+		DD31EE9127B5900D00C022E4 /* SFSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9027B5900D00C022E4 /* SFSymbolCollectionProtocol.swift */; };
+		DD31EE9527B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9427B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift */; };
+		DD31EE9727B5A16400C022E4 /* SFSymbolCollectionProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9627B5A16400C022E4 /* SFSymbolCollectionProtocolTests.swift */; };
 		DD5F8A1627B47EEC00F1135F /* CacheUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5F8A1527B47EEC00F1135F /* CacheUtility.swift */; };
 		DD68C94F27B329F4009DDEEA /* SFSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68C94E27B329F4009DDEEA /* SFSymbolView.swift */; };
 		DD68C95127B3385A009DDEEA /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68C95027B3385A009DDEEA /* SelectionViewModel.swift */; };
@@ -45,8 +43,6 @@
 		DDC05E4827A96E64003BD1E5 /* NMASFSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC05E3A27A96E64003BD1E5 /* NMASFSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDC05E5227A96E80003BD1E5 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */; };
 		DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */; };
-		DDC05E5727A96F87003BD1E5 /* RawRepresentable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5627A96F87003BD1E5 /* RawRepresentable+Extensions.swift */; };
-		DDC05E5927A970EA003BD1E5 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5827A970EA003BD1E5 /* UIImage+Extensions.swift */; };
 		DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */; };
 		DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */; };
 		DDE3428D27B4566A00EF0851 /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3428C27B4566A00EF0851 /* CommonViews.swift */; };
@@ -95,10 +91,10 @@
 		97C8961F27A98C46008E9E3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemoApp.xcdatamodel; sourceTree = "<group>"; };
 		97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionListView.swift; sourceTree = "<group>"; };
-		DD008F5127B3DE6800EEFA2A /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		DD008F5127B3DE6800EEFA2A /* Extensions+Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Internal.swift"; sourceTree = "<group>"; };
 		DD008F5327B3FC7C00EEFA2A /* Persistence+Perview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Perview.swift"; sourceTree = "<group>"; };
 		DD008F5727B4313200EEFA2A /* LiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteLogger.swift; sourceTree = "<group>"; };
-		DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSCollection+Cache.swift"; sourceTree = "<group>"; };
+		DD07EE9327B5BD43001C4F28 /* Extensions+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Public.swift"; sourceTree = "<group>"; };
 		DD0A708627AC49C9009CE835 /* NMACache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMACache.swift; sourceTree = "<group>"; };
 		DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCollectionTests.swift; sourceTree = "<group>"; };
 		DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCategoryTests.swift; sourceTree = "<group>"; };
@@ -107,12 +103,10 @@
 		DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollection.swift; sourceTree = "<group>"; };
 		DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionTests.swift; sourceTree = "<group>"; };
 		DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSymbolCollection.swift; sourceTree = "<group>"; };
-		DD31EE8C27B5871F00C022E4 /* SystemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCategory.swift; sourceTree = "<group>"; };
 		DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSymbolCollectionTests.swift; sourceTree = "<group>"; };
-		DD31EE9027B5900D00C022E4 /* SymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCollectionProtocol.swift; sourceTree = "<group>"; };
-		DD31EE9227B5984B00C022E4 /* InternalSymbolSetHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSymbolSetHolder.swift; sourceTree = "<group>"; };
-		DD31EE9427B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
-		DD31EE9627B5A16400C022E4 /* SymbolCollectionProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCollectionProtocolTests.swift; sourceTree = "<group>"; };
+		DD31EE9027B5900D00C022E4 /* SFSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
+		DD31EE9427B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMutableSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
+		DD31EE9627B5A16400C022E4 /* SFSymbolCollectionProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionProtocolTests.swift; sourceTree = "<group>"; };
 		DD5F8A1527B47EEC00F1135F /* CacheUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheUtility.swift; sourceTree = "<group>"; };
 		DD68C94E27B329F4009DDEEA /* SFSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolView.swift; sourceTree = "<group>"; };
 		DD68C95027B3385A009DDEEA /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
@@ -123,8 +117,6 @@
 		DDC05E4627A96E64003BD1E5 /* SFSymbolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolTests.swift; sourceTree = "<group>"; };
 		DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Public.swift"; sourceTree = "<group>"; };
-		DDC05E5627A96F87003BD1E5 /* RawRepresentable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RawRepresentable+Extensions.swift"; sourceTree = "<group>"; };
-		DDC05E5827A970EA003BD1E5 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSSystemCollection.swift; sourceTree = "<group>"; };
 		DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DDE3428C27B4566A00EF0851 /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
@@ -192,32 +184,40 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DD07EE9227B5BCE9001C4F28 /* Deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */,
+				DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */,
+			);
+			name = Deprecated;
+			sourceTree = "<group>";
+		};
 		DD27380427AB65A3005B224A /* SFSymbol */ = {
 			isa = PBXGroup;
 			children = (
 				DD0A708627AC49C9009CE835 /* NMACache.swift */,
-				DD31EE8627B53B0000C022E4 /* Update */,
-				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
-				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
-				DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */,
-				DD0A708427AC2645009CE835 /* SFSCollection+Cache.swift */,
+				DD31EE8627B53B0000C022E4 /* Deprecated */,
+				DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */,
+				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
+				DD31EE9027B5900D00C022E4 /* SFSymbolCollectionProtocol.swift */,
+				DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */,
+				DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */,
+				DD31EE9427B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift */,
+				DD07EE9327B5BD43001C4F28 /* Extensions+Public.swift */,
+				DD008F5127B3DE6800EEFA2A /* Extensions+Internal.swift */,
 			);
 			name = SFSymbol;
 			sourceTree = "<group>";
 		};
-		DD31EE8627B53B0000C022E4 /* Update */ = {
+		DD31EE8627B53B0000C022E4 /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				DD31EE9427B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift */,
-				DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */,
-				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
-				DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */,
-				DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */,
-				DD31EE8C27B5871F00C022E4 /* SystemCategory.swift */,
-				DD31EE9027B5900D00C022E4 /* SymbolCollectionProtocol.swift */,
-				DD31EE9227B5984B00C022E4 /* InternalSymbolSetHolder.swift */,
+				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
+				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
+				DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */,
 			);
-			name = Update;
+			name = Deprecated;
 			sourceTree = "<group>";
 		};
 		DD31EE8727B53B1900C022E4 /* Update */ = {
@@ -226,7 +226,7 @@
 				DDC05E4627A96E64003BD1E5 /* SFSymbolTests.swift */,
 				DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */,
 				DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */,
-				DD31EE9627B5A16400C022E4 /* SymbolCollectionProtocolTests.swift */,
+				DD31EE9627B5A16400C022E4 /* SFSymbolCollectionProtocolTests.swift */,
 			);
 			name = Update;
 			sourceTree = "<group>";
@@ -257,7 +257,6 @@
 			children = (
 				DDC05E3A27A96E64003BD1E5 /* NMASFSymbol.h */,
 				DD27380427AB65A3005B224A /* SFSymbol */,
-				DDC05E5527A96F6D003BD1E5 /* Extensions */,
 				DDC05E3B27A96E64003BD1E5 /* NMASFSymbol.docc */,
 			);
 			path = NMASFSymbol;
@@ -266,21 +265,10 @@
 		DDC05E4527A96E64003BD1E5 /* NMASFSymbolTests */ = {
 			isa = PBXGroup;
 			children = (
+				DD07EE9227B5BCE9001C4F28 /* Deprecated */,
 				DD31EE8727B53B1900C022E4 /* Update */,
-				DD1B41CE27A9D62600362EAB /* SFSCategoryTests.swift */,
-				DD1B41CC27A9D43B00362EAB /* SFSCollectionTests.swift */,
 			);
 			path = NMASFSymbolTests;
-			sourceTree = "<group>";
-		};
-		DDC05E5527A96F6D003BD1E5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				DDC05E5627A96F87003BD1E5 /* RawRepresentable+Extensions.swift */,
-				DDC05E5827A970EA003BD1E5 /* UIImage+Extensions.swift */,
-				DD008F5127B3DE6800EEFA2A /* Image+Extensions.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		DDE3428A27B450FC00EF0851 /* Views */ = {
@@ -468,21 +456,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDC05E5227A96E80003BD1E5 /* SFSymbol.swift in Sources */,
-				DD0A708527AC2645009CE835 /* SFSCollection+Cache.swift in Sources */,
 				DD31EE8B27B57D7300C022E4 /* SFSystemSymbolCollection.swift in Sources */,
 				DD31EE8527B5329100C022E4 /* SFSymbolCollection.swift in Sources */,
-				DDC05E5927A970EA003BD1E5 /* UIImage+Extensions.swift in Sources */,
-				DD31EE9327B5984B00C022E4 /* InternalSymbolSetHolder.swift in Sources */,
-				DD31EE8D27B5871F00C022E4 /* SystemCategory.swift in Sources */,
 				DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */,
 				DDC05E3C27A96E64003BD1E5 /* NMASFSymbol.docc in Sources */,
 				DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */,
-				DDC05E5727A96F87003BD1E5 /* RawRepresentable+Extensions.swift in Sources */,
-				DD31EE9527B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift in Sources */,
+				DD31EE9527B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift in Sources */,
 				DD1B41DD27A9E46600362EAB /* SFSCollectionProtocol.swift in Sources */,
+				DD07EE9427B5BD43001C4F28 /* Extensions+Public.swift in Sources */,
 				DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */,
-				DD31EE9127B5900D00C022E4 /* SymbolCollectionProtocol.swift in Sources */,
-				DD008F5227B3DE6800EEFA2A /* Image+Extensions.swift in Sources */,
+				DD31EE9127B5900D00C022E4 /* SFSymbolCollectionProtocol.swift in Sources */,
+				DD008F5227B3DE6800EEFA2A /* Extensions+Internal.swift in Sources */,
 				DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,7 +480,7 @@
 				DD31EE8927B53B5600C022E4 /* SFSymbolCollectionTests.swift in Sources */,
 				DD31EE8F27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift in Sources */,
 				DDC05E4727A96E64003BD1E5 /* SFSymbolTests.swift in Sources */,
-				DD31EE9727B5A16400C022E4 /* SymbolCollectionProtocolTests.swift in Sources */,
+				DD31EE9727B5A16400C022E4 /* SFSymbolCollectionProtocolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

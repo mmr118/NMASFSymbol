@@ -8,6 +8,7 @@
 import Foundation
 
 
+/*
 final public class SFSSystemCollection: SFSCollection {
     
     public enum SFSCategory: Int, CaseIterable, Identifiable {
@@ -76,3 +77,4 @@ final public class SFSSystemCollection: SFSCollection {
     }
     
 }
+*/

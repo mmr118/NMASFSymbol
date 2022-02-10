@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/*
 open class SFSCollection: SFSCollectionProtocol {
     
     /// Returns all SystemCategory Collections and Cached collections
@@ -65,3 +67,4 @@ open class SFSCollection: SFSCollectionProtocol {
     }
     
 }
+*/

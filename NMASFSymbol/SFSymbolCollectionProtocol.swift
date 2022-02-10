@@ -1,5 +1,5 @@
 //
-//  SymbolCollectionProtocol.swift
+//  SFSymbolCollectionProtocol.swift
 //  NMASFSymbol
 //
 //  Created by Monica Rondón on 2/10/22.
@@ -9,10 +9,7 @@ import Foundation
 
 /// A type that contains a collection of unique `SFSymbol`s and basic
 /// identifiable information; such as a title and infoSymbol.
-///
-/// When `Self` also conforms to `SymbolSetManager`,
-/// default conformance is handled.
-public protocol SymbolCollectionProtocol {
+public protocol SFSymbolCollectionProtocol {
     
     /// The title of the collection
     var title: String { get }
@@ -51,41 +48,5 @@ public protocol SymbolCollectionProtocol {
     /// - Parameter symbol: the symbols to look for
     /// - Returns: `true` if `self` does not contain any of the passed symbols; otherwise, `false`.
     func contains<S: Sequence>(noneOf symbols: S) -> Bool where S.Element == SFSymbol
-    
-}
-
-
-// MARK: Default conformance when self conforms to `InternalSymbolSetHolder`
-extension SymbolCollectionProtocol {
-
-    // Helper for allowing auto-conformance
-    private var symbolSet: Set<SFSymbol> {
-        if let selfSH = self as? InternalSymbolSetHolder {
-            return selfSH.symbolSet
-        } else {
-            assertionFailure("Default conformance depends on self conforming to internal protocols.")
-            return Set(symbols())
-        }
-    }
-    
-    public var count: Int { symbolSet.count }
-    
-    public var isEmpty: Bool { symbolSet.isEmpty }
-    
-    public func contains(_ symbol: SFSymbol) -> Bool {
-        return symbolSet.contains(symbol)
-    }
-    
-    public func contains<S: Sequence>(allOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return symbolSet.isSuperset(of: symbols)
-    }
-    
-    public func contains<S: Sequence>(anyOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return !symbolSet.isDisjoint(with: symbols)
-    }
-
-    public func contains<S: Sequence>(noneOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return !contains(anyOf: symbols)
-    }
     
 }

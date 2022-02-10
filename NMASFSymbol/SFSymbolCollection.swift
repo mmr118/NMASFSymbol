@@ -10,7 +10,7 @@ import Foundation
 
 /// A subject that represents a collection of unique `SFSymbol`s and basic
 /// identifiable information; such as a title and infoSymbol.
-open class SFSymbolCollection: MutableSymbolCollectionProtocol {
+open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     
     private static let defaultTitle = "New Collection"
     
@@ -18,9 +18,13 @@ open class SFSymbolCollection: MutableSymbolCollectionProtocol {
     
     public var title: String = defaultTitle
     
+    public var count: Int { symbolSet.count }
+    
+    public var isEmpty: Bool { symbolSet.isEmpty }
+    
     public private(set) lazy var infoSymbol: SFSymbol = Self.defaultInfoSymbol
 
-    internal var symbolSet = Set<SFSymbol>()
+    private var symbolSet = Set<SFSymbol>()
 
 
     /// Create a new collection with no symbols.
@@ -57,10 +61,6 @@ open class SFSymbolCollection: MutableSymbolCollectionProtocol {
         updateInfoSymbol(infoSymbol, includeNew: includeInfoInCollection, removeOld: shouldRemove)
     }
     
-    public func symbols() -> [SFSymbol] {
-        return Array(symbolSet)
-    }
-    
     /// Updates the symbol used for information/summary purposes.
     ///
     /// If `removeOld` is set to `false`, the old symbol will be added to the
@@ -93,7 +93,31 @@ open class SFSymbolCollection: MutableSymbolCollectionProtocol {
         infoSymbol = newSymbol
         return oldSymbol
     }
+    
+    
+    // MARK: - SFSymbolCollectionProtocol function conformance
+    public func symbols() -> [SFSymbol] {
+        return Array(symbolSet)
+    }
+    
+    public func contains(_ symbol: SFSymbol) -> Bool {
+        return symbolSet.contains(symbol)
+    }
+    
+    public func contains<S: Sequence>(allOf symbols: S) -> Bool where S.Element == SFSymbol {
+        return symbolSet.isSuperset(of: symbols)
+    }
+    
+    public func contains<S: Sequence>(anyOf symbols: S) -> Bool where S.Element == SFSymbol {
+        return !symbolSet.isDisjoint(with: symbols)
+    }
+    
+    public func contains<S: Sequence>(noneOf symbols: S) -> Bool where S.Element == SFSymbol {
+        return !contains(anyOf: symbols)
+    }
 
+    
+    // MARK: - SFMutableSymbolCollectionProtocol conformance
     @discardableResult
     public func add(_ symbol: SFSymbol) -> Bool {
         return symbolSet.insert(symbol).inserted
@@ -111,5 +135,5 @@ open class SFSymbolCollection: MutableSymbolCollectionProtocol {
     public func remove<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
         return symbolSet.subtract(symbols)
     }
-    
+        
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 
+/*
 public protocol SFSCollectionProtocol: Hashable, Identifiable {
     
     var title: String { get }
@@ -40,3 +41,4 @@ public func ==<T: SFSCollectionProtocol>(lhs: T, rhs: T) -> Bool {
     && Set(lhs.symbols()) == Set(rhs.symbols())
 }
 
+*/
