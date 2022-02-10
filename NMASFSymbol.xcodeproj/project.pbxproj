@@ -30,7 +30,12 @@
 		DD31EE8527B5329100C022E4 /* SFSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */; };
 		DD31EE8927B53B5600C022E4 /* SFSymbolCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */; };
 		DD31EE8B27B57D7300C022E4 /* SFSystemSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */; };
-		DD31EE8D27B5871F00C022E4 /* SFSSystemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8C27B5871F00C022E4 /* SFSSystemCategory.swift */; };
+		DD31EE8D27B5871F00C022E4 /* SystemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8C27B5871F00C022E4 /* SystemCategory.swift */; };
+		DD31EE8F27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */; };
+		DD31EE9127B5900D00C022E4 /* SymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9027B5900D00C022E4 /* SymbolCollectionProtocol.swift */; };
+		DD31EE9327B5984B00C022E4 /* InternalSymbolSetHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9227B5984B00C022E4 /* InternalSymbolSetHolder.swift */; };
+		DD31EE9527B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9427B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift */; };
+		DD31EE9727B5A16400C022E4 /* SymbolCollectionProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9627B5A16400C022E4 /* SymbolCollectionProtocolTests.swift */; };
 		DD5F8A1627B47EEC00F1135F /* CacheUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5F8A1527B47EEC00F1135F /* CacheUtility.swift */; };
 		DD68C94F27B329F4009DDEEA /* SFSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68C94E27B329F4009DDEEA /* SFSymbolView.swift */; };
 		DD68C95127B3385A009DDEEA /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68C95027B3385A009DDEEA /* SelectionViewModel.swift */; };
@@ -102,7 +107,12 @@
 		DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollection.swift; sourceTree = "<group>"; };
 		DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionTests.swift; sourceTree = "<group>"; };
 		DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSymbolCollection.swift; sourceTree = "<group>"; };
-		DD31EE8C27B5871F00C022E4 /* SFSSystemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSSystemCategory.swift; sourceTree = "<group>"; };
+		DD31EE8C27B5871F00C022E4 /* SystemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemCategory.swift; sourceTree = "<group>"; };
+		DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSymbolCollectionTests.swift; sourceTree = "<group>"; };
+		DD31EE9027B5900D00C022E4 /* SymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCollectionProtocol.swift; sourceTree = "<group>"; };
+		DD31EE9227B5984B00C022E4 /* InternalSymbolSetHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalSymbolSetHolder.swift; sourceTree = "<group>"; };
+		DD31EE9427B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
+		DD31EE9627B5A16400C022E4 /* SymbolCollectionProtocolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCollectionProtocolTests.swift; sourceTree = "<group>"; };
 		DD5F8A1527B47EEC00F1135F /* CacheUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheUtility.swift; sourceTree = "<group>"; };
 		DD68C94E27B329F4009DDEEA /* SFSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolView.swift; sourceTree = "<group>"; };
 		DD68C95027B3385A009DDEEA /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
@@ -198,11 +208,14 @@
 		DD31EE8627B53B0000C022E4 /* Update */ = {
 			isa = PBXGroup;
 			children = (
+				DD31EE9427B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift */,
 				DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */,
 				DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */,
 				DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */,
 				DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */,
-				DD31EE8C27B5871F00C022E4 /* SFSSystemCategory.swift */,
+				DD31EE8C27B5871F00C022E4 /* SystemCategory.swift */,
+				DD31EE9027B5900D00C022E4 /* SymbolCollectionProtocol.swift */,
+				DD31EE9227B5984B00C022E4 /* InternalSymbolSetHolder.swift */,
 			);
 			name = Update;
 			sourceTree = "<group>";
@@ -212,6 +225,8 @@
 			children = (
 				DDC05E4627A96E64003BD1E5 /* SFSymbolTests.swift */,
 				DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */,
+				DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */,
+				DD31EE9627B5A16400C022E4 /* SymbolCollectionProtocolTests.swift */,
 			);
 			name = Update;
 			sourceTree = "<group>";
@@ -457,13 +472,16 @@
 				DD31EE8B27B57D7300C022E4 /* SFSystemSymbolCollection.swift in Sources */,
 				DD31EE8527B5329100C022E4 /* SFSymbolCollection.swift in Sources */,
 				DDC05E5927A970EA003BD1E5 /* UIImage+Extensions.swift in Sources */,
-				DD31EE8D27B5871F00C022E4 /* SFSSystemCategory.swift in Sources */,
+				DD31EE9327B5984B00C022E4 /* InternalSymbolSetHolder.swift in Sources */,
+				DD31EE8D27B5871F00C022E4 /* SystemCategory.swift in Sources */,
 				DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */,
 				DDC05E3C27A96E64003BD1E5 /* NMASFSymbol.docc in Sources */,
 				DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */,
 				DDC05E5727A96F87003BD1E5 /* RawRepresentable+Extensions.swift in Sources */,
+				DD31EE9527B5995D00C022E4 /* MutableSymbolCollectionProtocol.swift in Sources */,
 				DD1B41DD27A9E46600362EAB /* SFSCollectionProtocol.swift in Sources */,
 				DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */,
+				DD31EE9127B5900D00C022E4 /* SymbolCollectionProtocol.swift in Sources */,
 				DD008F5227B3DE6800EEFA2A /* Image+Extensions.swift in Sources */,
 				DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */,
 			);
@@ -476,7 +494,9 @@
 				DD1B41CF27A9D62600362EAB /* SFSCategoryTests.swift in Sources */,
 				DD1B41CD27A9D43B00362EAB /* SFSCollectionTests.swift in Sources */,
 				DD31EE8927B53B5600C022E4 /* SFSymbolCollectionTests.swift in Sources */,
+				DD31EE8F27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift in Sources */,
 				DDC05E4727A96E64003BD1E5 /* SFSymbolTests.swift in Sources */,
+				DD31EE9727B5A16400C022E4 /* SymbolCollectionProtocolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

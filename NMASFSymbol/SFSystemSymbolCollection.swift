@@ -7,9 +7,8 @@
 
 import UIKit
 import SwiftUI
-
     
-public final class SFSystemSymbolCollection: SFSymbolCollection {
+public final class SFSystemSymbolCollection: SymbolCollectionProtocol {
     
     static let allSymbols = SFSystemSymbolCollection(.allSymbols, symbols: SFSymbol.allCases, infoSymbol: .square_grid_2x2)
     static let whats_new = SFSystemSymbolCollection(.whats_new, symbols: SFSymbol.WhatsNew, infoSymbol: .sparkles)
@@ -35,12 +34,23 @@ public final class SFSystemSymbolCollection: SFSymbolCollection {
     static let indices = SFSystemSymbolCollection(.indices, symbols: SFSymbol.Indices, infoSymbol: .a_circle)
     static let math = SFSystemSymbolCollection(.math, symbols: SFSymbol.Math, infoSymbol: .function)
 
-    let category: SFSSystemCategory
+    public let category: SystemCategory
+    public let title: String
+    public let infoSymbol: SFSymbol
+    public let count: Int
+    public let isEmpty: Bool = false
+    internal let symbolSet: Set<SFSymbol>
     
-    private init(_ category: SFSSystemCategory, symbols: [SFSymbol], infoSymbol: SFSymbol) {
+    private init(_ category: SystemCategory, symbols: [SFSymbol], infoSymbol: SFSymbol) {
         self.category = category
-        super.init(title: category.title, symbols: symbols)
-        self.updateInfoSymbol(infoSymbol)
+        self.title = category.title
+        self.infoSymbol = infoSymbol
+        self.count = symbols.count
+        self.symbolSet = Set(symbols)
     }
     
+    public func symbols() -> [SFSymbol] {
+        return Array(symbolSet)
+    }
+        
 }

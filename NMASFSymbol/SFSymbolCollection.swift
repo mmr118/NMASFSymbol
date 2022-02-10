@@ -10,26 +10,18 @@ import Foundation
 
 /// A subject that represents a collection of unique `SFSymbol`s and basic
 /// identifiable information; such as a title and infoSymbol.
-open class SFSymbolCollection {
+open class SFSymbolCollection: MutableSymbolCollectionProtocol {
     
     private static let defaultTitle = "New Collection"
     
     internal static let defaultInfoSymbol: SFSymbol = .square_grid_2x2
     
-    private var symbolSet = Set<SFSymbol>()
-    
-    /// The symbol used for quick information or summary purposes,
-    /// e.g. the symbol for the image when the collection is in a `UITableView` or `List`
-    public private(set) lazy var infoSymbol: SFSymbol = Self.defaultInfoSymbol
-    
-    /// The title of the collection
     public var title: String = defaultTitle
+    
+    public private(set) lazy var infoSymbol: SFSymbol = Self.defaultInfoSymbol
 
-    /// A `Bool` indicating if the collection does not have symbols
-    public var isEmpty: Bool { symbolSet.isEmpty }
+    internal var symbolSet = Set<SFSymbol>()
 
-    /// The number of symbols in the collection
-    public var count: Int { symbolSet.count }
 
     /// Create a new collection with no symbols.
     ///
@@ -65,7 +57,6 @@ open class SFSymbolCollection {
         updateInfoSymbol(infoSymbol, includeNew: includeInfoInCollection, removeOld: shouldRemove)
     }
     
-    /// - Returns: The `SFSymbol`s in `self`
     public func symbols() -> [SFSymbol] {
         return Array(symbolSet)
     }
@@ -104,59 +95,21 @@ open class SFSymbolCollection {
     }
 
     @discardableResult
-    /// Adds symbol in to `self` if it is not already present
-    /// - Parameter symbol: `SFSymbol` to add
-    /// - Returns: `true` if it was not already included; otherwise `false`
     public func add(_ symbol: SFSymbol) -> Bool {
         return symbolSet.insert(symbol).inserted
     }
 
-    /// Adds the symbols that are not present to `self`'s symbols
     public func add<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
         symbolSet.formUnion(symbols)
     }
 
     @discardableResult
-    /// Removes the symbol from `self`'s symbols
-    /// - Parameter symbol: `SFSymbol` to remove
-    /// - Returns: The `SFSymbol` if it was found; otherwise, nil.
     public func remove(_ symbol: SFSymbol) -> SFSymbol? {
         return symbolSet.remove(symbol)
     }
 
-    /// Removes the symbols from `self`.
     public func remove<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
         return symbolSet.subtract(symbols)
-    }
-
-    /// Returns a `Bool` that indicates if the symbol exists in `self`
-    /// - Parameter symbol: the symbol to look for
-    /// - Returns: `true` if it exists in the collection; otherwise, `false`.
-    public func contains(_ symbol: SFSymbol) -> Bool {
-        return symbolSet.contains(symbol)
-    }
-
-    /// Returns a `Bool` indicating if ALL of the passed symbols exist in `self`
-    /// - Parameter symbol: the symbols to look for
-    /// - Returns: `true` if ALL symbols are present in collection; otherwise, `false`.
-    public func contains<S: Sequence>(allOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return symbolSet.isSuperset(of: symbols)
-    }
-
-    /// Returns a `Bool` indicating if `self` contains at least 1 of the
-    /// passed symbols
-    /// - Parameter symbol: the symbols to look for
-    /// - Returns: `true` if at least 1 symbol is present in collection; otherwise, `false`.
-    public func contains<S: Sequence>(anyOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return !symbolSet.isDisjoint(with: symbols)
-    }
-
-    /// Returns a `Bool` indicating if `self` does not contain any of the
-    /// passed symbols
-    /// - Parameter symbol: the symbols to look for
-    /// - Returns: `true` if `self` does not contain any of the passed symbols; otherwise, `false`.
-    public func contains<S: Sequence>(noneOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return !contains(anyOf: symbols)
     }
     
 }
