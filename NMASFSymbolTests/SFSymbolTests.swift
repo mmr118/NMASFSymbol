@@ -8,6 +8,7 @@
 import XCTest
 import UIKit
 import SwiftUI
+import UIKit
 @testable import NMASFSymbol
 
 class SFSymbolTests: XCTestCase {
@@ -57,6 +58,9 @@ class SFSymbolTests: XCTestCase {
     
     private func assertAttributeValues(for symbol: SFSymbol) {
         XCTAssertNotNil(symbol.uiImage)
+        if symbol.uiImage == nil {
+            print()
+        }
         XCTAssertNotNil(symbol.image)
         
         if symbol.systemName.contains(".") {
