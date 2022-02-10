@@ -12,9 +12,10 @@ import NMASFSymbol
 struct SFSymbolCollectionListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SFSCollectionData.title, ascending: true)], animation: .default)
     
-    private var customCategoryData: FetchedResults<SFSCollectionData>
+    var title: String = "NMASFSymbol Demo"
+    
+    @State private var isPresenting: Bool = false
     
     var body: some View {
         
@@ -22,18 +23,22 @@ struct SFSymbolCollectionListView: View {
             
             List {
                 
-                let customCollections = customCategoryData.map(makeCollections(_:))
-                
-                if !customCollections.isEmpty {
-                    Section("Collections") {
-                        ForEach(customCollections) { collection in
+                // Persisted Collections
+                if !SFSCollection.loadedCache.isEmpty {
+
+                    Section("Custom Collections") {
+                        let persistedCollections = SFSCollection.loadedCache.elements()
+                        ForEach(persistedCollections) { collection in
                             GridViewNavigationLink(collection: collection)
                         }
+                        
                     }
                     
                 }
                 
+                // Cached Collections
                 if !SFSCollection.cache.isEmpty {
+                    
                     Section {
                         let cachedCollections = SFSCollection.cachedCollections.map { $0 }
                         ForEach(cachedCollections) { collection in
@@ -42,31 +47,40 @@ struct SFSymbolCollectionListView: View {
                     } header: {
                         Text("Cached Collections")
                     } footer: {
-                        Text("These will delete when the app is closed.")
+                        Text("These will delete when the app shuts down, toggle \"Save\" in the collection to store.")
                     }
                 }
                 
+                // System Collections
                 Section("Categories") {
-                    
+                     
                     let collections = SFSSystemCollection.allCollections.map { $0 }
                     ForEach(collections) { collection in
                         GridViewNavigationLink(collection: collection)
                     }
+                    
                 }
+                .navigationTitle(title)
+                .sheet(isPresented: $isPresenting) {
+                    // handle dismiss
+                    EditSFSCollectionView(model: SFSCollectionModel())
+                        .environment(\.managedObjectContext, viewContext)
+                }
+                .toolbar {
+                    ToolbarItem(placement: .confirmationAction) {
+                        Button {
+                            isPresenting = true
+                        } label: {
+                            Image(sfSymbol: .plus)
+                        }
+                        
+                    }
+                }
+                
             }
-            .navigationTitle("NMA SFSymbol")
+            
         }
         
-    }
-    
-    private func makeCollections(_ data: SFSCollectionData) -> SFSCollection {
-        guard let title = data.title else { fatalError() }
-        guard let defaultSymbolRawValue = data.defaultSFSymbolRawValue else { fatalError() }
-        guard let defaultSymbol = SFSymbol(rawValue: defaultSymbolRawValue) else { fatalError() }
-        guard let sfSymbolRawValuesSet = data.symbolsRawValues else { fatalError() }
-        let sfSymbols = sfSymbolRawValuesSet.compactMap(SFSymbol.init(rawValue:))
-        assert(data.symbolsRawValues?.count == sfSymbols.count)
-        return SFSCollection(title: title, defaultSymbol: defaultSymbol, symbols: sfSymbols)
     }
     
 }

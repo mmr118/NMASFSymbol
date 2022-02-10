@@ -9,14 +9,17 @@ import SwiftUI
 import CoreData
 import NMASFSymbol
 
-struct SFSymbolCollectionGridView: View {
+
+struct SFSymbolCollectionGridView<T: SFSCollectionProtocol>: View {
     
     @State private var searchText = ""
-    
-    let title: String
-    let symbols: [SFSymbol]
+    @State var editMode: EditMode = .inactive
+    @State var collection: T
+    var selectionModel: SFSymbolSelectionViewModel<T>
     
     private let gridItemLayout = (1...3).map { _ in GridItem(.fixed(100)) }
+    
+    private var filteredSymbols: [SFSymbol] { searchText.isEmpty ? collection.symbols() : collection.symbols().filter { $0.systemName.contains(searchText) } }
     
     var body: some View {
         
@@ -28,40 +31,27 @@ struct SFSymbolCollectionGridView: View {
                     
                     ForEach(filteredSymbols, id: \.self) { symbol in
                         
-                        GroupBox {
-                            
-                            Image(systemName: symbol.name)
-                                .foregroundColor(.pealWIU)
-                                .font(.system(size: 35))
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 40, maxHeight: .infinity, alignment: .top)
-                                .cornerRadius(10)
-                                .padding(0)
-                            
-                            Text(symbol.name)
-                                .font(.system(size: 12))
-                                .lineLimit(2)
-                                .multilineTextAlignment(.center)
-                                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 30, maxHeight: .infinity, alignment: .center)
-                        }
-
+                        SFSymbolView(sfSymbol: symbol, isSelected: selectionModel.isExistingOrSelected(symbol)).environment(\.editMode, $editMode)
+                            .environment(\.editMode, $editMode)
+                            .onTapGesture {
+                                $editMode.animation().wrappedValue = ($editMode.wrappedValue == .inactive) ? .active : .inactive
+                            }
+                        
                     }
                     
                 }
                 .searchable(text: $searchText)
+                .navigationBarTitle(collection.title, displayMode: .large)
+                .navigationBarItems(trailing: EditButton().tint(.accentColor))
+                .environment(\.editMode, $editMode)
             }
-            .navigationTitle(title)
+            .navigationTitle(collection.title)
         }
         
     }
     
-    var filteredSymbols: [SFSymbol] {
-        
-        if searchText.isEmpty {
-            return symbols
-        } else {
-            return symbols.filter { $0.name.contains(searchText) }
-        }
-        
+    private func handleSymbolViewTap(_ selectedSymbol: SFSymbol) {
+        selectionModel.handleSelection(selectedSymbol)
     }
     
 }
@@ -69,19 +59,17 @@ struct SFSymbolCollectionGridView: View {
 
 struct SFSymbolCollectionView_Previews: PreviewProvider {
     static var previews: some View {
+        
         let collection = SFSSystemCollection.devices
+        let modelCollection = SFSCollection(title: "CircleFill", defaultSymbol: .circle_fill, symbols: SFSymbol.CircleFillSymbols)
+        let selectionModel = SFSymbolSelectionViewModel(collection: modelCollection)
+        let comboCollection = SFSCollection(title: "Combo", defaultSymbol: .circle_fill, symbols: (collection.symbols() + modelCollection.symbols()).shuffled())
         Group {
-            SFSymbolCollectionGridView(title: collection.title, symbols: collection.symbols())
+            SFSymbolCollectionGridView(collection: comboCollection, selectionModel: selectionModel)
             
-            SFSymbolCollectionGridView(title: collection.title, symbols: collection.symbols())
+            SFSymbolCollectionGridView(collection: comboCollection, selectionModel: selectionModel)
                 .preferredColorScheme(.dark)
         }
     }
 }
 
-extension SFSymbol {
-    
-    var nameComponents: [String] { name.components(separatedBy: ".") }
-    
-    var nameNoSpace: String { name.replacingOccurrences(of: ".", with: " ") }
-}

@@ -1,6 +1,6 @@
 //
 //  SFSCategoryCollectionTests.swift
-//  NMASFSymbolTests
+//  SFSymbolTests
 //
 //  Created by Monica Rondón on 2/1/22.
 //

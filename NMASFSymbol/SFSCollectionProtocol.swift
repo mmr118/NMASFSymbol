@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol SFSCollectionProtocol: Hashable, Identifiable {
+    
     var title: String { get }
     var defaultSymbol: SFSymbol { get }
 

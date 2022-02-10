@@ -11,11 +11,11 @@ import UIKit
 public extension UIImage {
     
     convenience init?(sfSymbol: SFSymbol, withConfiguration config: UIImage.SymbolConfiguration) {
-        self.init(systemName: sfSymbol.name, withConfiguration: config)
+        self.init(systemName: sfSymbol.systemName, withConfiguration: config)
     }
     
     convenience init?(sfSymbol: SFSymbol) {
-        self.init(systemName: sfSymbol.name)
+        self.init(systemName: sfSymbol.systemName)
     }
     
 }

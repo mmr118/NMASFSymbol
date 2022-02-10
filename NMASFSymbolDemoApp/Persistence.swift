@@ -8,28 +8,13 @@
 import CoreData
 import NMASFSymbol
 
-extension RawRepresentable {
-    var selfString: String { String(describing: self.self) }
-}
-
 struct PersistenceController {
 
-//    static let shared = PersistenceController()
-    static let shared: PersistenceController = {
-        let result = PersistenceController()
-        clearStorage(result.container.viewContext)
-        loadMockData(result.container.viewContext)
-        return result
-    }()
-
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        loadMockData(viewContext)
-        return result
-    }()
+    static let shared = PersistenceController()
 
     let container: NSPersistentContainer
+    
+    var mainContext: NSManagedObjectContext { container.viewContext }
 
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "NMASFSymbolDemoApp")
@@ -55,48 +40,72 @@ struct PersistenceController {
         })
     }
     
+    public func saveMainContext(child childContext: NSManagedObjectContext? = nil, function: StaticString = #function, line: UInt = #line) {
+        
+        if let childContext = childContext {
+            assert(childContext != mainContext)
+            
+            if childContext != mainContext {
+                
+                llog.msg("Child context sent")
+                saveContext(childContext, function: function, line: line)
+            }
+            saveContext(mainContext, function: function, line: line)
+        } else {
+            saveContext(mainContext, function: function, line: line)
+        }
+        
+    }
+    
+    public static func save(_ context: NSManagedObjectContext) {
+        if context.hasChanges {
+            
+            context.perform {
+                
+                do {
+                    try context.save()
+                    
+                } catch let nserror as NSError {
+                    
+                    llog.stop(nserror.userInfo.description)
+                    
+                }
+                
+            }
+        } else {
+            llog.warn("Static Attempt to save context with no changes--No save.")
+        }
+    }
     
 }
 
 extension PersistenceController {
     
-    private static func clearStorage(_ context: NSManagedObjectContext) {
-        do {
-            let datas = try context.fetch(SFSCollectionData.fetchRequest())
-            for data in datas {
-                context.delete(data)
+    // MARK: - Private
+    private func saveContext(_ context: NSManagedObjectContext, function: StaticString = #function, line: UInt = #line) {
+        
+        let header = (context == mainContext) ? "Ⓜ️" : "🔸"
+        
+        if context.hasChanges {
+            
+            context.perform {
+                
+                do {
+                    
+                    try context.save()
+                    llog.suc("\(header) Context was saved")
+                    
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+                
             }
             
-            try context.save()
-        } catch {
-            fatalError(error.localizedDescription)
+        } else {
+            
+            llog.warn("\(header) Attempted to save context with no changes--No save.")
+            
         }
     }
-
-    private static func loadMockData(_ context: NSManagedObjectContext) {
-        let titleSymbolsDict: [String: [SFSymbol]] = [
-            "trash": SFSymbol.allCases.filter { $0.name.contains("trash") },
-            "numbers": SFSymbol.allCases.filter { ($0.selfString[$0.selfString.startIndex] == "_") && (Int(String($0.name[$0.selfString.index(after: $0.selfString.startIndex)])) != nil) },
-            "Circle Filled": CircleFillSymbols
-        ]
-
-        for (title, symbols) in titleSymbolsDict {
-            let data = SFSCollectionData(context: context)
-            data.title = title
-            data.defaultSFSymbolRawValue = symbols.randomElement()?.name ?? SFSymbol.questionmark_circle.name
-            data.symbolsRawValues = Set(symbols.map { $0.rawValue })
-        }
-
-        print()
-
-        do {
-            try context.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-
-    }
+    
 }

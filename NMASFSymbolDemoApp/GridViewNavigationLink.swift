@@ -8,19 +8,19 @@
 import SwiftUI
 import NMASFSymbol
 
-struct GridViewNavigationLink<T>: View where T: SFSCollectionProtocol {
+struct GridViewNavigationLink<T: SFSCollectionProtocol>: View {
     
     let collection: T
 
     var body: some View {
 
-        NavigationLink(destination: SFSymbolCollectionGridView(title: collection.title, symbols: collection.symbols())) {
-
+        NavigationLink(destination: SFSymbolCollectionGridView<T>(collection: collection, selectionModel: SFSymbolSelectionViewModel<T>(collection: collection))) {
+                        
             Label {
                 Text(collection.title)
                     .tint(.black)
             } icon: {
-                Image(systemName: collection.defaultSymbol.name.capitalized)
+                Image(systemName: collection.defaultSymbol.systemName.capitalized)
                     .font(.system(size: 25))
                     .foregroundColor(.tealNMA)
             }

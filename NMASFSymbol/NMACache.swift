@@ -26,7 +26,7 @@ public enum NMACacheError: Error, Equatable {
 
 
 final public class NMACache<T: Any> where T: Equatable {
-
+    
     public typealias CacheResult = Result<T, Error>
     public typealias CacheResultsReport = (insertedAll: Bool, results: Array<CacheResult>)
 
@@ -37,6 +37,8 @@ final public class NMACache<T: Any> where T: Equatable {
         case loop(interval: TimeInterval)
         case capacityLimit(count: Int)
     }
+    
+    internal let uuid = UUID()
     
     private var dumpCycleTimer: Timer?
     private var contents = [T]()
@@ -62,6 +64,11 @@ final public class NMACache<T: Any> where T: Equatable {
     public init(dumpCycle: DumpCycle = .never, allowsDuplicates: Bool = false) {
         self.dumpCycle = dumpCycle
         self.allowsDuplicates = allowsDuplicates
+    }
+    
+    public convenience init<S: Sequence>(contents: S, dumpCycle: DumpCycle = .never, allowsDuplicates: Bool = false) where S.Element == T {
+        self.init(dumpCycle: dumpCycle, allowsDuplicates: allowsDuplicates)
+        self.contents = contents.map { $0 }
     }
     
     // MARK: Access
@@ -128,6 +135,19 @@ final public class NMACache<T: Any> where T: Equatable {
         default:
             break
         }
+    }
+    
+}
+
+extension NMACache: Hashable {
+    
+    // MARK: Hashable
+    public static func == (lhs: NMACache<T>, rhs: NMACache<T>) -> Bool {
+        return lhs.uuid == rhs.uuid
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(uuid.hashValue)
     }
     
 }

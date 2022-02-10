@@ -11,9 +11,9 @@ open class SFSCollection: SFSCollectionProtocol {
     
     /// Returns all SystemCategory Collections and Cached collections
     /// Cached collections will be the first values in the return result.
-    public static let allCollections: Set<SFSCollection> = Set(cache.elements() + SFSSystemCollection.SFSCategory.allCases.map { $0.collection() })
-    public static let cachedCollections: Set<SFSCollection> = Set(cache.elements())
-    public static let systemCollections: Set<SFSCollection> = Set(SFSSystemCollection.allCollections)
+//    public static let allCollections: Set<SFSCollection> = Set(cache.elements() + SFSSystemCollection.SFSCategory.allCases.map { $0.collection() })
+//    public static let cachedCollections: Set<SFSCollection> = Set(cache.elements())
+//    public static let systemCollections: Set<SFSCollection> = Set(SFSSystemCollection.allCollections)
 
     private var symbolSet = Set<SFSymbol>()
     public private(set) var defaultSymbol: SFSymbol
@@ -47,7 +47,7 @@ open class SFSCollection: SFSCollectionProtocol {
         return symbolSet.insert(symbol).inserted
     }
     
-    public func add(_ symbols: [SFSymbol]) {
+    public func add<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
         symbolSet.formUnion(symbols)
     }
     
@@ -55,7 +55,11 @@ open class SFSCollection: SFSCollectionProtocol {
     public func remove(_ symbol: SFSymbol) -> SFSymbol? {
         return symbolSet.remove(symbol)
     }
-    
+
+    public func remove<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
+        return symbolSet.subtract(symbols)
+    }
+
     public func contains(_ symbol: SFSymbol) -> Bool {
         return symbolSet.contains(symbol)
     }

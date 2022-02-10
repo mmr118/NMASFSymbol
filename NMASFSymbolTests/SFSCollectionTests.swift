@@ -1,6 +1,6 @@
 //
 //  SFSCollectionTests.swift
-//  NMASFSymbolTests
+//  SFSymbolTests
 //
 //  Created by Monica Rondón on 2/1/22.
 //
@@ -9,7 +9,7 @@ import XCTest
 @testable import NMASFSymbol
 
 typealias CacheResult = NMASFSymbol.NMACache<SFSCollection>.CacheResult
-
+/*
 class SFSCollectionTests: XCTestCase {
     
     func throwWrapper(_ f: () -> CacheResult) throws -> SFSCollection? {
@@ -133,3 +133,4 @@ class SFSCollectionTests: XCTestCase {
     }
 
 }
+*/

@@ -10,6 +10,6 @@ import SwiftUI
 public extension Image {
     
     init(sfSymbol: SFSymbol) {
-        self.init(systemName: sfSymbol.name)
+        self.init(systemName: sfSymbol.systemName)
     }
 }
