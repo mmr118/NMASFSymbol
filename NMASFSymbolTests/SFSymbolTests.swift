@@ -64,9 +64,9 @@ class SFSymbolTests: XCTestCase {
         XCTAssertNotNil(symbol.image)
         
         if symbol.systemName.contains(".") {
-            XCTAssertNotEqual(symbol.systemName, symbol.displayName, symbol.selfString)
+            XCTAssertNotEqual(symbol.systemName, symbol.displayName, symbol.caseString)
         } else {
-            XCTAssertEqual(symbol.systemName, symbol.displayName, symbol.selfString)
+            XCTAssertEqual(symbol.systemName, symbol.displayName, symbol.caseString)
         }
     }
     
