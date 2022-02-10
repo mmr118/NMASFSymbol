@@ -41,6 +41,14 @@
 		DDC05E5227A96E80003BD1E5 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */; };
 		DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */; };
 		DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */; };
+		DDD15CBF27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CBE27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift */; };
+		DDD15CC127B5C57E006A6ADF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CC027B5C57E006A6ADF /* ContentView.swift */; };
+		DDD15CC327B5C57F006A6ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD15CC227B5C57F006A6ADF /* Assets.xcassets */; };
+		DDD15CC627B5C57F006A6ADF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD15CC527B5C57F006A6ADF /* Preview Assets.xcassets */; };
+		DDD15CC827B5C57F006A6ADF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CC727B5C57F006A6ADF /* Persistence.swift */; };
+		DDD15CCB27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */; };
+		DDD15CCF27B5C591006A6ADF /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
+		DDD15CD027B5C591006A6ADF /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */; };
 		DDE3428D27B4566A00EF0851 /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3428C27B4566A00EF0851 /* CommonViews.swift */; };
 		DDE3428F27B458F100EF0851 /* EditSFSCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3428E27B458F100EF0851 /* EditSFSCollectionView.swift */; };
@@ -61,6 +69,13 @@
 			remoteGlobalIDString = DDC05E3627A96E64003BD1E5;
 			remoteInfo = NMASFSymbol;
 		};
+		DDD15CD127B5C591006A6ADF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DDC05E2E27A96E64003BD1E5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DDC05E3627A96E64003BD1E5;
+			remoteInfo = NMASFSymbol;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -71,6 +86,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				97BD1C0C27A9B01E006F2A1A /* NMASFSymbol.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD15CD327B5C591006A6ADF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DDD15CD027B5C591006A6ADF /* NMASFSymbol.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +138,14 @@
 		DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Public.swift"; sourceTree = "<group>"; };
 		DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSSystemCollection.swift; sourceTree = "<group>"; };
+		DDD15CBC27B5C57E006A6ADF /* NMASFSymbolDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMASFSymbolDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDD15CBE27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolDemoApp.swift; sourceTree = "<group>"; };
+		DDD15CC027B5C57E006A6ADF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DDD15CC227B5C57F006A6ADF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DDD15CC527B5C57F006A6ADF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DDD15CC727B5C57F006A6ADF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		DDD15CCA27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemo.xcdatamodel; sourceTree = "<group>"; };
+		DDD15CD427B5C5D6006A6ADF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DDE3428C27B4566A00EF0851 /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
 		DDE3428E27B458F100EF0851 /* EditSFSCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSFSCollectionView.swift; sourceTree = "<group>"; };
@@ -138,6 +172,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDC05E4227A96E64003BD1E5 /* NMASFSymbol.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD15CB927B5C57E006A6ADF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD15CCF27B5C591006A6ADF /* NMASFSymbol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +263,7 @@
 				DDC05E3927A96E64003BD1E5 /* NMASFSymbol */,
 				DDC05E4527A96E64003BD1E5 /* NMASFSymbolTests */,
 				97C8961527A98C43008E9E3C /* NMASFSymbolDemoApp */,
+				DDD15CBD27B5C57E006A6ADF /* NMASFSymbolDemo */,
 				DDC05E3827A96E64003BD1E5 /* Products */,
 				97C8960A27A98B57008E9E3C /* Frameworks */,
 			);
@@ -232,6 +275,7 @@
 				DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */,
 				DDC05E4127A96E64003BD1E5 /* NMASFSymbolTests.xctest */,
 				97C8961427A98C43008E9E3C /* NMASFSymbolDemoApp.app */,
+				DDD15CBC27B5C57E006A6ADF /* NMASFSymbolDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,6 +296,28 @@
 				DD31EE8727B53B1900C022E4 /* Update */,
 			);
 			path = NMASFSymbolTests;
+			sourceTree = "<group>";
+		};
+		DDD15CBD27B5C57E006A6ADF /* NMASFSymbolDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DDD15CBE27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift */,
+				DDD15CC027B5C57E006A6ADF /* ContentView.swift */,
+				DDD15CC227B5C57F006A6ADF /* Assets.xcassets */,
+				DDD15CC727B5C57F006A6ADF /* Persistence.swift */,
+				DDD15CD427B5C5D6006A6ADF /* Launch Screen.storyboard */,
+				DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */,
+				DDD15CC427B5C57F006A6ADF /* Preview Content */,
+			);
+			path = NMASFSymbolDemo;
+			sourceTree = "<group>";
+		};
+		DDD15CC427B5C57F006A6ADF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DDD15CC527B5C57F006A6ADF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		DDE3428A27B450FC00EF0851 /* Views */ = {
@@ -344,6 +410,25 @@
 			productReference = DDC05E4127A96E64003BD1E5 /* NMASFSymbolTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DDD15CBB27B5C57E006A6ADF /* NMASFSymbolDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DDD15CCE27B5C57F006A6ADF /* Build configuration list for PBXNativeTarget "NMASFSymbolDemo" */;
+			buildPhases = (
+				DDD15CB827B5C57E006A6ADF /* Sources */,
+				DDD15CB927B5C57E006A6ADF /* Frameworks */,
+				DDD15CBA27B5C57E006A6ADF /* Resources */,
+				DDD15CD327B5C591006A6ADF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DDD15CD227B5C591006A6ADF /* PBXTargetDependency */,
+			);
+			name = NMASFSymbolDemo;
+			productName = NMASFSymbolDemo;
+			productReference = DDD15CBC27B5C57E006A6ADF /* NMASFSymbolDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -361,6 +446,9 @@
 						CreatedOnToolsVersion = 13.2.1;
 					};
 					DDC05E4027A96E64003BD1E5 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					DDD15CBB27B5C57E006A6ADF = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
@@ -381,6 +469,7 @@
 				DDC05E3627A96E64003BD1E5 /* NMASFSymbol */,
 				DDC05E4027A96E64003BD1E5 /* NMASFSymbolTests */,
 				97C8961327A98C43008E9E3C /* NMASFSymbolDemoApp */,
+				DDD15CBB27B5C57E006A6ADF /* NMASFSymbolDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -407,6 +496,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DDD15CBA27B5C57E006A6ADF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD15CC627B5C57F006A6ADF /* Preview Assets.xcassets in Resources */,
+				DDD15CC327B5C57F006A6ADF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +562,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DDD15CB827B5C57E006A6ADF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDD15CCB27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld in Sources */,
+				DDD15CC827B5C57F006A6ADF /* Persistence.swift in Sources */,
+				DDD15CC127B5C57E006A6ADF /* ContentView.swift in Sources */,
+				DDD15CBF27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -476,6 +585,11 @@
 			isa = PBXTargetDependency;
 			target = DDC05E3627A96E64003BD1E5 /* NMASFSymbol */;
 			targetProxy = DDC05E4327A96E64003BD1E5 /* PBXContainerItemProxy */;
+		};
+		DDD15CD227B5C591006A6ADF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DDC05E3627A96E64003BD1E5 /* NMASFSymbol */;
+			targetProxy = DDD15CD127B5C591006A6ADF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -760,6 +874,64 @@
 			};
 			name = Release;
 		};
+		DDD15CCC27B5C57F006A6ADF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NMASFSymbolDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DHQU43U3E;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.NMASFSymbolDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DDD15CCD27B5C57F006A6ADF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NMASFSymbolDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DHQU43U3E;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.NMASFSymbolDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -799,6 +971,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		DDD15CCE27B5C57F006A6ADF /* Build configuration list for PBXNativeTarget "NMASFSymbolDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DDD15CCC27B5C57F006A6ADF /* Debug */,
+				DDD15CCD27B5C57F006A6ADF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
@@ -809,6 +990,16 @@
 			);
 			currentVersion = 97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */;
 			path = NMASFSymbolDemoApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DDD15CCA27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodel */,
+			);
+			currentVersion = DDD15CCA27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodel */;
+			path = NMASFSymbolDemo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
