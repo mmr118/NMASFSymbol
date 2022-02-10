@@ -49,6 +49,10 @@
 		DDD15CCB27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */; };
 		DDD15CCF27B5C591006A6ADF /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
 		DDD15CD027B5C591006A6ADF /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DDD15CD627B5C7DA006A6ADF /* LiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CD527B5C7DA006A6ADF /* LiteLogger.swift */; };
+		DDD15CD827B5C803006A6ADF /* Persistence+Perview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CD727B5C803006A6ADF /* Persistence+Perview.swift */; };
+		DDD15CDA27B5C827006A6ADF /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CD927B5C827006A6ADF /* Utilites.swift */; };
+		DDD15CDE27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CDD27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift */; };
 		DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */; };
 		DDE3428D27B4566A00EF0851 /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3428C27B4566A00EF0851 /* CommonViews.swift */; };
 		DDE3428F27B458F100EF0851 /* EditSFSCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3428E27B458F100EF0851 /* EditSFSCollectionView.swift */; };
@@ -146,6 +150,10 @@
 		DDD15CC727B5C57F006A6ADF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DDD15CCA27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemo.xcdatamodel; sourceTree = "<group>"; };
 		DDD15CD427B5C5D6006A6ADF /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DDD15CD527B5C7DA006A6ADF /* LiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteLogger.swift; sourceTree = "<group>"; };
+		DDD15CD727B5C803006A6ADF /* Persistence+Perview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Perview.swift"; sourceTree = "<group>"; };
+		DDD15CD927B5C827006A6ADF /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		DDD15CDD27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolCollectionMO+Extensions.swift"; sourceTree = "<group>"; };
 		DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DDE3428C27B4566A00EF0851 /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
 		DDE3428E27B458F100EF0851 /* EditSFSCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSFSCollectionView.swift; sourceTree = "<group>"; };
@@ -301,12 +309,13 @@
 		DDD15CBD27B5C57E006A6ADF /* NMASFSymbolDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DDD15CBE27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift */,
-				DDD15CC027B5C57E006A6ADF /* ContentView.swift */,
-				DDD15CC227B5C57F006A6ADF /* Assets.xcassets */,
-				DDD15CC727B5C57F006A6ADF /* Persistence.swift */,
+				DDD15CD927B5C827006A6ADF /* Utilites.swift */,
+				DDD15CD527B5C7DA006A6ADF /* LiteLogger.swift */,
+				DDD15CDB27B5C8D9006A6ADF /* Views */,
 				DDD15CD427B5C5D6006A6ADF /* Launch Screen.storyboard */,
-				DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */,
+				DDD15CC227B5C57F006A6ADF /* Assets.xcassets */,
+				DDD15CBE27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift */,
+				DDD15CDC27B5C8F7006A6ADF /* Core Data */,
 				DDD15CC427B5C57F006A6ADF /* Preview Content */,
 			);
 			path = NMASFSymbolDemo;
@@ -318,6 +327,25 @@
 				DDD15CC527B5C57F006A6ADF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DDD15CDB27B5C8D9006A6ADF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDD15CC027B5C57E006A6ADF /* ContentView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		DDD15CDC27B5C8F7006A6ADF /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				DDD15CC727B5C57F006A6ADF /* Persistence.swift */,
+				DDD15CDD27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift */,
+				DDD15CD727B5C803006A6ADF /* Persistence+Perview.swift */,
+				DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */,
+			);
+			name = "Core Data";
 			sourceTree = "<group>";
 		};
 		DDE3428A27B450FC00EF0851 /* Views */ = {
@@ -566,10 +594,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDD15CD827B5C803006A6ADF /* Persistence+Perview.swift in Sources */,
+				DDD15CD627B5C7DA006A6ADF /* LiteLogger.swift in Sources */,
 				DDD15CCB27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld in Sources */,
 				DDD15CC827B5C57F006A6ADF /* Persistence.swift in Sources */,
 				DDD15CC127B5C57E006A6ADF /* ContentView.swift in Sources */,
 				DDD15CBF27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift in Sources */,
+				DDD15CDA27B5C827006A6ADF /* Utilites.swift in Sources */,
+				DDD15CDE27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

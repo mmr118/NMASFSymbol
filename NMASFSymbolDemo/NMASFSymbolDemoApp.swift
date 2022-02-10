@@ -18,3 +18,14 @@ struct NMASFSymbolDemoApp: App {
         }
     }
 }
+
+
+/*
+ 
+ PLAN
+ 
+ - Handle everything as SFSymbolCollectionProtocol
+ - Only allow editing on SFMutableSymbolCollectionProtocol
+ - MO have dateCreate on them
+ 
+ */
