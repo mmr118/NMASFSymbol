@@ -36,8 +36,11 @@
 		DD222DFA27B6DDB7001AE5F6 /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */; };
 		DD222DFB27B6DDB7001AE5F6 /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD222E0027B6DF1C001AE5F6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD222DFF27B6DF1C001AE5F6 /* Launch Screen.storyboard */; };
+		DD241E9827B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241E9627B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift */; };
+		DD241E9927B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241E9727B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift */; };
+		DD241E9B27B701A60062234A /* SymbolGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241E9A27B701A60062234A /* SymbolGridView.swift */; };
 		DDC17E4027B6E1C400D7D72B /* Persistence+Perview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC17E3F27B6E1C400D7D72B /* Persistence+Perview.swift */; };
-		DDC17E4227B6E60800D7D72B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC17E4127B6E60800D7D72B /* Utility.swift */; };
+		DDC17E4227B6E60800D7D72B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC17E4127B6E60800D7D72B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,8 +104,11 @@
 		DD222DF127B6DCCF001AE5F6 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		DD222DF427B6DCCF001AE5F6 /* NMASFSymbolDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemo.xcdatamodel; sourceTree = "<group>"; };
 		DD222DFF27B6DF1C001AE5F6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DD241E9627B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolCollectionMONonOpt+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DD241E9727B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolCollectionMONonOpt+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD241E9A27B701A60062234A /* SymbolGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolGridView.swift; sourceTree = "<group>"; };
 		DDC17E3F27B6E1C400D7D72B /* Persistence+Perview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Perview.swift"; sourceTree = "<group>"; };
-		DDC17E4127B6E60800D7D72B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		DDC17E4127B6E60800D7D72B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +188,7 @@
 		DD222DE727B6DCCD001AE5F6 /* NMASFSymbolDemo */ = {
 			isa = PBXGroup;
 			children = (
-				DDC17E4127B6E60800D7D72B /* Utility.swift */,
+				DDC17E4127B6E60800D7D72B /* Constants.swift */,
 				DD222E0327B6DF91001AE5F6 /* Views */,
 				DD222DEC27B6DCCF001AE5F6 /* Assets.xcassets */,
 				DD222DFF27B6DF1C001AE5F6 /* Launch Screen.storyboard */,
@@ -211,9 +217,11 @@
 		DD222E0127B6DF64001AE5F6 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				DDC17E3F27B6E1C400D7D72B /* Persistence+Perview.swift */,
 				DD222DF127B6DCCF001AE5F6 /* Persistence.swift */,
+				DDC17E3F27B6E1C400D7D72B /* Persistence+Perview.swift */,
 				DD222DF327B6DCCF001AE5F6 /* NMASFSymbolDemo.xcdatamodeld */,
+				DD241E9627B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift */,
+				DD241E9727B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -222,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				DD222DEA27B6DCCD001AE5F6 /* SymbolCollectionListView.swift */,
+				DD241E9A27B701A60062234A /* SymbolGridView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -425,10 +434,13 @@
 			files = (
 				DD222DF527B6DCCF001AE5F6 /* NMASFSymbolDemo.xcdatamodeld in Sources */,
 				DD222DF227B6DCCF001AE5F6 /* Persistence.swift in Sources */,
-				DDC17E4227B6E60800D7D72B /* Utility.swift in Sources */,
+				DDC17E4227B6E60800D7D72B /* Constants.swift in Sources */,
+				DD241E9927B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift in Sources */,
+				DD241E9B27B701A60062234A /* SymbolGridView.swift in Sources */,
 				DDC17E4027B6E1C400D7D72B /* Persistence+Perview.swift in Sources */,
 				DD222DEB27B6DCCD001AE5F6 /* SymbolCollectionListView.swift in Sources */,
 				DD222DE927B6DCCD001AE5F6 /* NMASFSymbolDemoApp.swift in Sources */,
+				DD241E9827B6FD050062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

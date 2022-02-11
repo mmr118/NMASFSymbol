@@ -24,13 +24,36 @@ extension PersistenceController {
         circleFillCollection.dateCreated = Date()
         circleFillCollection.title = "Circle Fill"
         circleFillCollection.infoSymbolRawValue = SFSymbol.folder_circle_fill.rawValue
-        circleFillCollection.symbolsRawValues = Set(Utility.circleFillSymbols().map { $0.rawValue })
+        circleFillCollection.symbolsRawValues = Set(Constants.circleFillSymbols().map { $0.rawValue })
         
         let checkmarkCollection = SymbolCollectionMO(context: context)
         checkmarkCollection.dateCreated = Date()
         checkmarkCollection.title = "Checkmark"
         checkmarkCollection.infoSymbolRawValue = SFSymbol.checkmark_seal_fill.rawValue
-        checkmarkCollection.symbolsRawValues = Set(Utility.checkmarkSymbols().map { $0.rawValue })
+        checkmarkCollection.symbolsRawValues = Set(Constants.checkmarkSymbols().map { $0.rawValue })
+        
+        let emptyCollection = SymbolCollectionMO(context: context)
+        emptyCollection.dateCreated = Date()
+        emptyCollection.symbolsRawValues = Set()
+        
+        //--------TEMP----------
+        let circleFillCollectionNonOpt = SymbolCollectionMONonOpt(context: context)
+        circleFillCollectionNonOpt.dateCreated = Date()
+        circleFillCollectionNonOpt.title = "Circle Fill Non Opt"
+        circleFillCollectionNonOpt.infoSymbolRawValue = SFSymbol.folder_circle_fill.rawValue
+        circleFillCollectionNonOpt.symbolsRawValues = Set(Constants.circleFillSymbols().map { $0.rawValue })
+        
+        let checkmarkCollectionNonOpt = SymbolCollectionMONonOpt(context: context)
+        checkmarkCollectionNonOpt.dateCreated = Date()
+        checkmarkCollectionNonOpt.title = "Checkmark Non Opt"
+        checkmarkCollectionNonOpt.infoSymbolRawValue = SFSymbol.checkmark_seal_fill.rawValue
+        checkmarkCollectionNonOpt.symbolsRawValues = Set(Constants.checkmarkSymbols().map { $0.rawValue })
+        
+        let emptyCollectionNonOpt = SymbolCollectionMONonOpt(context: context)
+        emptyCollectionNonOpt.dateCreated = Date()
+        emptyCollectionNonOpt.symbolsRawValues = Set()
+
+        //--------TEMP----------
 
         do {
             
@@ -41,6 +64,13 @@ extension PersistenceController {
         }
         
     }
+    
+}
+
+
+extension SymbolCollectionMO {
+    
+    
     
 }
         

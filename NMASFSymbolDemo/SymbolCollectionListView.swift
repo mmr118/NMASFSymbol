@@ -12,8 +12,13 @@ import NMASFSymbol
 struct SymbolCollectionListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
+    
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMO.dateCreated, ascending: true)], animation: .default)
     private var collectionMOs: FetchedResults<SymbolCollectionMO>
+
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMONonOpt.dateCreated, ascending: true)], animation: .default)
+    private var collectionMONonOpts: FetchedResults<SymbolCollectionMONonOpt>
+
     
     var body: some View {
         NavigationView {
@@ -33,6 +38,25 @@ struct SymbolCollectionListView: View {
                     .onDelete(perform: deleteItems)
                     
                 }
+                
+                //------TEMP-------//
+                
+                Section("Non-Optional") {
+                    
+                    ForEach(collectionMONonOpts) { collection in
+                        
+                        NavigationLink(destination: Text(collection.title)) {
+                            Label(collection.title, sfSymbol: collection.infoSymbol)
+                            
+                        }
+
+                    }
+                    .onDelete(perform: deleteItems)
+                    
+                }
+                
+                
+                //------TEMP-------//
                 
                 Section("System") {
                     
@@ -84,6 +108,7 @@ struct SymbolCollectionListView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        SymbolCollectionListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        SymbolCollectionListView()
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
