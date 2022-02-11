@@ -61,7 +61,7 @@ struct SymbolGridView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        let previewCollectionMO = PersistenceController.previewSymbolCollectionMO()
+        let previewCollectionMO = PersistenceController.previewSymbolCollectionMO(PersistenceController.preview.mainContext)
         SymbolGridView(collection: previewCollectionMO)
             .environment(\.managedObjectContext, PersistenceController.preview.mainContext)
 

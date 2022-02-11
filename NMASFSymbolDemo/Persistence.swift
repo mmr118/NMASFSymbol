@@ -6,9 +6,14 @@
 //
 
 import CoreData
+import NMASFSymbol
 
 struct PersistenceController {
-    static let shared = PersistenceController()
+    static let shared: PersistenceController  = {
+        let result = PersistenceController()
+        loadTestData(result.container.viewContext)
+        return result
+    }()
 
     let container: NSPersistentContainer
     let isPreview: Bool
@@ -39,4 +44,34 @@ struct PersistenceController {
             }
         })
     }
+}
+
+
+extension PersistenceController {
+    
+    static let DID_LOAD_TEST_DATA_KEY = "didLoadTestData"
+    
+    static func loadTestData(_ context: NSManagedObjectContext) {
+        
+        guard UserDefaults.standard.bool(forKey: DID_LOAD_TEST_DATA_KEY) == false else { return }
+        
+        let _ : SymbolCollectionMO = {
+            let collection = SymbolCollectionMO(context: context)
+            collection.dateCreated = Date()
+            collection.title = "Preview Collection"
+            collection.infoSymbolRawValue = SFSymbol.allCases.randomElement()!.rawValue
+            collection.symbolsRawValues =   Set(Constants.circleFillSymbols().map { $0.rawValue })
+            return collection
+        }()
+        
+        let _ = SymbolCollectionMONonOpt(context, title: "Preview Collection", infoSymbol: .checkmark_seal_fill, symbols: Constants.checkmarkSymbols())
+        
+        do {
+            try context.save()
+            UserDefaults.standard.set(true, forKey: DID_LOAD_TEST_DATA_KEY)
+        } catch let nserror as NSError {
+            fatalError(nserror.userInfo.description)
+        }
+    }
+    
 }
