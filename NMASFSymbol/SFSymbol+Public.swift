@@ -9,17 +9,13 @@ import UIKit
 import SwiftUI
 
 
-// MARK: Init
+// MARK: Common
 public extension SFSymbol {
     
     var id: String { return rawValue }
     
     var systemName: String { rawValue }
-    
-    var uiImage: UIImage? { UIImage(sfSymbol: self) }
-    
-    var image: Image? { Image(sfSymbol: self) }
-    
+            
     var displayName: String { rawValue.replacingOccurrences(of: ".", with: " ") }
     
     init?(name: String) {
@@ -27,6 +23,21 @@ public extension SFSymbol {
     }
     
 }
+
+// MARK: - UIKit
+public extension SFSymbol {
+        
+    var uiImage: UIImage? { UIImage(sfSymbol: self) }
+
+}
+
+// MARK: - SwiftUI
+public extension SFSymbol {
+    
+    var image: Image? { Image(sfSymbol: self) }
+        
+}
+
 
 // MARK: - System Category Collection Arrays
 public extension SFSymbol {

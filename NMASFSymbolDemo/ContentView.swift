@@ -27,7 +27,6 @@ struct ContentView: View {
                     ForEach(collectionMOs) { collection in
                         
                         NavigationLink(destination: Text(collection.title ?? "N/A")) {
-                            
                             Label {
                                 Text(collection.title ?? "N/A")
                                     .tint(.black)
@@ -51,14 +50,15 @@ struct ContentView: View {
                     ForEach(systemCollections, id:\.self) { collection in
                         
                         NavigationLink(destination: Text(collection.title)) {
-                            Label {
-                                Text(collection.title)
-                                    .tint(.black)
-                            } icon: {
-                                Image(sfSymbol: collection.infoSymbol)
-                                    .font(.system(size: 16))
-//                                    .foregroundColor(.tealNMA)
-                            }
+                            Label(collection.title, systemImage: SFSymbol.gear.systemName)
+//                            Label {
+//                                Text(collection.title)
+//                                    .tint(.black)
+//                            } icon: {
+//                                Image(sfSymbol: collection.infoSymbol)
+//                                    .font(.system(size: 16))
+////                                    .foregroundColor(.tealNMA)
+//                            }
                         }
                         
                     }
