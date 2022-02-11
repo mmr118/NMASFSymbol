@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import NMASFSymbol
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -23,6 +24,7 @@ struct ContentView: View {
                     NavigationLink {
                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
                     } label: {
+                        Image(sfSymbol: SFSymbol.allCases.randomElement()!)
                         Text(item.timestamp!, formatter: itemFormatter)
                     }
                 }

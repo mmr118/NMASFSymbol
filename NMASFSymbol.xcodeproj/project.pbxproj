@@ -33,6 +33,8 @@
 		DD222DF027B6DCCF001AE5F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD222DEF27B6DCCF001AE5F6 /* Preview Assets.xcassets */; };
 		DD222DF227B6DCCF001AE5F6 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD222DF127B6DCCF001AE5F6 /* Persistence.swift */; };
 		DD222DF527B6DCCF001AE5F6 /* NMASFSymbolDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD222DF327B6DCCF001AE5F6 /* NMASFSymbolDemo.xcdatamodeld */; };
+		DD222DFA27B6DDB7001AE5F6 /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */; };
+		DD222DFB27B6DDB7001AE5F6 /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +45,28 @@
 			remoteGlobalIDString = DD222D6527B6D64A001AE5F6;
 			remoteInfo = NMASFSymbol;
 		};
+		DD222DFC27B6DDB7001AE5F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD222D5D27B6D64A001AE5F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD222D6527B6D64A001AE5F6;
+			remoteInfo = NMASFSymbol;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD222DFE27B6DDB7001AE5F6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DD222DFB27B6DDB7001AE5F6 /* NMASFSymbol.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMASFSymbol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD222DFA27B6DDB7001AE5F6 /* NMASFSymbol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +133,7 @@
 				DD222D7427B6D64A001AE5F6 /* NMASFSymbolTests */,
 				DD222DE727B6DCCD001AE5F6 /* NMASFSymbolDemo */,
 				DD222D6727B6D64A001AE5F6 /* Products */,
+				DD222DF927B6DDB7001AE5F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +209,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		DD222DF927B6DDB7001AE5F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -241,10 +273,12 @@
 				DD222DE227B6DCCD001AE5F6 /* Sources */,
 				DD222DE327B6DCCD001AE5F6 /* Frameworks */,
 				DD222DE427B6DCCD001AE5F6 /* Resources */,
+				DD222DFE27B6DDB7001AE5F6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DD222DFD27B6DDB7001AE5F6 /* PBXTargetDependency */,
 			);
 			name = NMASFSymbolDemo;
 			productName = NMASFSymbolDemo;
@@ -369,6 +403,11 @@
 			isa = PBXTargetDependency;
 			target = DD222D6527B6D64A001AE5F6 /* NMASFSymbol */;
 			targetProxy = DD222D7227B6D64A001AE5F6 /* PBXContainerItemProxy */;
+		};
+		DD222DFD27B6DDB7001AE5F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD222D6527B6D64A001AE5F6 /* NMASFSymbol */;
+			targetProxy = DD222DFC27B6DDB7001AE5F6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
