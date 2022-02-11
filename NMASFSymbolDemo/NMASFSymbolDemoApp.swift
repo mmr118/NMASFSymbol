@@ -2,7 +2,7 @@
 //  NMASFSymbolDemoApp.swift
 //  NMASFSymbolDemo
 //
-//  Created by Monica Rondón on 2/10/22.
+//  Created by Monica Rondón on 2/11/22.
 //
 
 import SwiftUI
@@ -13,19 +13,8 @@ struct NMASFSymbolDemoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            CollectionListView()
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
-
-
-/*
- 
- PLAN
- 
- - Handle everything as SFSymbolCollectionProtocol
- - Only allow editing on SFMutableSymbolCollectionProtocol
- - MO have dateCreate on them
- 
- */
