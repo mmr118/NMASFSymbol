@@ -39,6 +39,7 @@
 		DD241E9B27B701A60062234A /* SymbolGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241E9A27B701A60062234A /* SymbolGridView.swift */; };
 		DD241E9E27B70AF00062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241E9C27B70AF00062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift */; };
 		DD241E9F27B70AF00062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241E9D27B70AF00062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift */; };
+		DD241EA127B7137F0062234A /* LiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD241EA027B7137F0062234A /* LiteLogger.swift */; };
 		DDC17E4027B6E1C400D7D72B /* Persistence+Perview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC17E3F27B6E1C400D7D72B /* Persistence+Perview.swift */; };
 		DDC17E4227B6E60800D7D72B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC17E4127B6E60800D7D72B /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +108,7 @@
 		DD241E9A27B701A60062234A /* SymbolGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolGridView.swift; sourceTree = "<group>"; };
 		DD241E9C27B70AF00062234A /* SymbolCollectionMONonOpt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolCollectionMONonOpt+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DD241E9D27B70AF00062234A /* SymbolCollectionMONonOpt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolCollectionMONonOpt+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD241EA027B7137F0062234A /* LiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LiteLogger.swift; path = ../../../Desktop/NMASFSymbol/NMASFSymbolDemo/LiteLogger.swift; sourceTree = "<group>"; };
 		DDC17E3F27B6E1C400D7D72B /* Persistence+Perview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Persistence+Perview.swift"; sourceTree = "<group>"; };
 		DDC17E4127B6E60800D7D72B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				DDC17E4127B6E60800D7D72B /* Constants.swift */,
+				DD241EA027B7137F0062234A /* LiteLogger.swift */,
 				DD222E0327B6DF91001AE5F6 /* Views */,
 				DD222DEC27B6DCCF001AE5F6 /* Assets.xcassets */,
 				DD222DFF27B6DF1C001AE5F6 /* Launch Screen.storyboard */,
@@ -437,6 +440,7 @@
 				DD222DF227B6DCCF001AE5F6 /* Persistence.swift in Sources */,
 				DDC17E4227B6E60800D7D72B /* Constants.swift in Sources */,
 				DD241E9B27B701A60062234A /* SymbolGridView.swift in Sources */,
+				DD241EA127B7137F0062234A /* LiteLogger.swift in Sources */,
 				DDC17E4027B6E1C400D7D72B /* Persistence+Perview.swift in Sources */,
 				DD222DEB27B6DCCD001AE5F6 /* SymbolCollectionListView.swift in Sources */,
 				DD222DE927B6DCCD001AE5F6 /* NMASFSymbolDemoApp.swift in Sources */,

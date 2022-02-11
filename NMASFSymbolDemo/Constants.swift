@@ -28,6 +28,47 @@ struct Constants {
     
 }
 
+
+import UIKit
+import SwiftUI
+import CoreData
+
+
+
+let llog = LiteLogger()
+
+// MARK: - RawRepresentable+Extensions
+extension RawRepresentable {
+    var selfString: String { String(describing: self.self) }
+}
+
+
+// MARK: - UIColor+Extensions
+extension UIColor {
+    static let peal2 = UIColor(named: "Peal2")!
+    static let pealWIU = UIColor(named: "PealWIU")!
+    static let purpleNMA = UIColor(named: "PurpleNMA")!
+    static let purpleWIU = UIColor(named: "PurpleWIU")!
+    static let tealNMA = UIColor(named: "TealNMA")!
+    static let teal2 = UIColor(named: "Teal2")!
+    static let turple2 = UIColor(named: "Turple2")!
+    static let turpleWIU = UIColor(named: "TurpleWIU")!
+}
+
+
+// MARK: - Color+Extensions
+extension Color {
+    static let peal2 = Color(.peal2)
+    static let pealWIU = Color(.pealWIU)
+    static let purpleNMA = Color(.purpleNMA)
+    static let purpleWIU = Color(.purpleWIU)
+    static let tealNMA = Color(.tealNMA)
+    static let teal2 = Color(.teal2)
+    static let turple2 = Color(.turple2)
+    static let turpleWIU = Color(.turpleWIU)
+}
+
+
 /*
 
 extension SymbolCollectionMO: SFMutableSymbolCollectionProtocol {

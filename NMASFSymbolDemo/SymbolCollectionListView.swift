@@ -29,11 +29,10 @@ struct SymbolCollectionListView: View {
                     
                     ForEach(collectionMOs) { collection in
                         
-                        NavigationLink(destination: Text(collection.title)) {
-                            let sfSymbol = SFSymbol(name: collection.infoSymbolRawValue ?? SFSymbol.questionmark_app_fill.rawValue) ?? .questionmark_app_fill
-                            Label(collection.title, sfSymbol: sfSymbol)
-                            
+                        NavigationLink(destination: SymbolGridView(collection: collection).environment(\.managedObjectContext, viewContext)) {
+                            listLabel(for: collection)
                         }
+                        
                     }
                     .onDelete(perform: deleteItems)
                     
@@ -45,9 +44,8 @@ struct SymbolCollectionListView: View {
                     
                     ForEach(collectionMONonOpts) { collection in
                         
-                        NavigationLink(destination: Text(collection.title)) {
-                            Label(collection.title, sfSymbol: collection.infoSymbol)
-                            
+                        NavigationLink(destination: SymbolGridView(collection: collection).environment(\.managedObjectContext, viewContext)) {
+                            listLabel(for: collection)
                         }
 
                     }
@@ -64,13 +62,18 @@ struct SymbolCollectionListView: View {
                     
                     ForEach(systemCollections, id:\.self) { collection in
                         
-                        NavigationLink(destination: Text(collection.title)) {
-                            Label(collection.title, sfSymbol: collection.infoSymbol)
+                        NavigationLink(destination: SymbolGridView(collection: collection).environment(\.managedObjectContext, viewContext)) {
+                            listLabel(for: collection)
                         }
-                        
                     }
                 }
             }
+            .navigationTitle("NMASFSymbol Demo")
+//            .sheet(isPresented: $isPresenting) {
+//                // handle dismiss
+//                EditSFSCollectionView(model: SFSCollectionModel())
+//                    .environment(\.managedObjectContext, viewContext)
+//            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -81,7 +84,21 @@ struct SymbolCollectionListView: View {
                     }
                 }
             }
+            .listStyle(InsetGroupedListStyle())
+            
             Text("Select an item")
+        }
+    }
+    
+    @ViewBuilder
+    private func listLabel<C: SFSymbolCollectionProtocol>(for collection: C) -> some View {
+        Label {
+            Text(collection.title)
+                .tint(.black)
+        } icon: {
+            Image(sfSymbol: collection.infoSymbol)
+                .font(.system(size: 16))
+                .foregroundColor(.tealNMA)
         }
     }
     
