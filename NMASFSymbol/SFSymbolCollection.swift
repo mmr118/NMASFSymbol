@@ -16,6 +16,8 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     
     internal static let defaultInfoSymbol: SFSymbol = .square_grid_2x2
     
+    public let uuid = UUID()
+    
     public var title: String = defaultTitle
     
     public var count: Int { symbolSet.count }

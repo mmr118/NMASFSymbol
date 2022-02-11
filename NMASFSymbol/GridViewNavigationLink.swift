@@ -5,6 +5,7 @@
 //  Created by Rondon Monica on 2/2/22.
 //
 
+/*
 import SwiftUI
 import NMASFSymbol
 
@@ -35,3 +36,4 @@ struct GridViewNavigationLink_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
     }
 }
+*/

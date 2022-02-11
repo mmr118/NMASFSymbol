@@ -13,7 +13,6 @@ extension PersistenceController {
     
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
-        loadMockData(result.container.viewContext)
         return result
     }()
 

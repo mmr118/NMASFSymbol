@@ -5,6 +5,8 @@
 //  Created by Rondon Monica on 2/1/22.
 //
 
+
+/*
 import SwiftUI
 import CoreData
 import NMASFSymbol
@@ -73,3 +75,4 @@ struct SFSymbolCollectionView_Previews: PreviewProvider {
     }
 }
 
+*/

@@ -3,10 +3,11 @@
     <entity name="SymbolCollectionMO" representedClassName="SymbolCollectionMO" syncable="YES" codeGenerationType="class">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="infoSymbolRawValue" optional="YES" attributeType="String"/>
+        <attribute name="internalUUID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="symbolsRawValues" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="Set&lt;String&gt;"/>
     </entity>
     <elements>
-        <element name="SymbolCollectionMO" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="SymbolCollectionMO" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>

@@ -9,7 +9,9 @@ import Foundation
 
 /// A type that contains a collection of unique `SFSymbol`s and basic
 /// identifiable information; such as a title and infoSymbol.
-public protocol SFSymbolCollectionProtocol {
+public protocol SFSymbolCollectionProtocol: Hashable {
+    
+    var uuid: UUID { get }
     
     /// The title of the collection
     var title: String { get }
@@ -49,4 +51,21 @@ public protocol SFSymbolCollectionProtocol {
     /// - Returns: `true` if `self` does not contain any of the passed symbols; otherwise, `false`.
     func contains<S: Sequence>(noneOf symbols: S) -> Bool where S.Element == SFSymbol
     
+}
+
+
+// MARK: Hashable Conformance
+extension SFSymbolCollectionProtocol {
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(title.hash)
+        hasher.combine(title.hashValue)
+        hasher.combine(uuid.hashValue)
+    }
+    
+    public static func ==(lhs: Self, rhs: Self) -> Bool {
+        return lhs.title == rhs.title
+        && Set(lhs.symbols()) == Set(rhs.symbols())
+        && lhs.infoSymbol == rhs.infoSymbol
+    }
 }

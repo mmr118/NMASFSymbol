@@ -5,6 +5,7 @@
 //  Created by Rondon Monica on 2/1/22.
 //
 
+/*
 import SwiftUI
 import CoreData
 import NMASFSymbol
@@ -90,3 +91,4 @@ struct SFSymbolCollectionListView_Previews: PreviewProvider {
         SFSymbolCollectionListView().preferredColorScheme(.dark).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+*/

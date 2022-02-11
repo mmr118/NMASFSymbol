@@ -5,6 +5,7 @@
 //  Created by Monica Rondón on 2/9/22.
 //
 
+/*
 import SwiftUI
 import NMASFSymbol
 
@@ -231,3 +232,4 @@ struct EditSFSCollectionView_Previews: PreviewProvider {
         EditSFSCollectionView(model: model).environment(\.managedObjectContext, persistance.mainContext)
     }
 }
+*/

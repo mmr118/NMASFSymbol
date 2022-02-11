@@ -5,6 +5,8 @@
 //  Created by Monica Rondón on 2/8/22.
 //
 
+/*
+
 import SwiftUI
 import NMASFSymbol
 
@@ -83,3 +85,5 @@ struct SFSymbolView_Previews: PreviewProvider {
         //            .previewLayout(.fixed(width: 100, height: 150))
     }
 }
+
+*/

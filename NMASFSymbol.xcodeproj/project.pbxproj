@@ -7,42 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		975B197227AB270300BCDBBA /* GridViewNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */; };
-		975B197627AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */; };
-		9776911A27AAB50C0000D4E6 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9776911927AAB50C0000D4E6 /* Utilites.swift */; };
-		97BD1C0B27A9B01E006F2A1A /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
-		97BD1C0C27A9B01E006F2A1A /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */; };
-		97C8961B27A98C46008E9E3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C8961A27A98C46008E9E3C /* Assets.xcassets */; };
-		97C8961E27A98C46008E9E3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C8961D27A98C46008E9E3C /* Preview Assets.xcassets */; };
-		97C8962027A98C46008E9E3C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8961F27A98C46008E9E3C /* Persistence.swift */; };
-		97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */; };
-		97C8962827A98CB6008E9E3C /* SFSymbolCollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */; };
 		DD008F5227B3DE6800EEFA2A /* Extensions+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008F5127B3DE6800EEFA2A /* Extensions+Internal.swift */; };
-		DD008F5427B3FC7C00EEFA2A /* Persistence+Perview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008F5327B3FC7C00EEFA2A /* Persistence+Perview.swift */; };
-		DD008F5827B4313200EEFA2A /* LiteLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD008F5727B4313200EEFA2A /* LiteLogger.swift */; };
 		DD07EE9427B5BD43001C4F28 /* Extensions+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD07EE9327B5BD43001C4F28 /* Extensions+Public.swift */; };
 		DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0A708627AC49C9009CE835 /* NMACache.swift */; };
-		DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41DA27A9E23600362EAB /* SFSCollection.swift */; };
-		DD1B41DD27A9E46600362EAB /* SFSCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */; };
 		DD31EE8527B5329100C022E4 /* SFSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */; };
 		DD31EE8927B53B5600C022E4 /* SFSymbolCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */; };
 		DD31EE8B27B57D7300C022E4 /* SFSystemSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */; };
 		DD31EE8F27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */; };
 		DD31EE9127B5900D00C022E4 /* SFSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9027B5900D00C022E4 /* SFSymbolCollectionProtocol.swift */; };
 		DD31EE9527B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD31EE9427B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift */; };
-		DD5F8A1627B47EEC00F1135F /* CacheUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5F8A1527B47EEC00F1135F /* CacheUtility.swift */; };
-		DD68C94F27B329F4009DDEEA /* SFSymbolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68C94E27B329F4009DDEEA /* SFSymbolView.swift */; };
-		DD68C95127B3385A009DDEEA /* SelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD68C95027B3385A009DDEEA /* SelectionViewModel.swift */; };
 		DDC05E3C27A96E64003BD1E5 /* NMASFSymbol.docc in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E3B27A96E64003BD1E5 /* NMASFSymbol.docc */; };
 		DDC05E4227A96E64003BD1E5 /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */; };
 		DDC05E4727A96E64003BD1E5 /* SFSymbolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E4627A96E64003BD1E5 /* SFSymbolTests.swift */; };
 		DDC05E4827A96E64003BD1E5 /* NMASFSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = DDC05E3A27A96E64003BD1E5 /* NMASFSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DDC05E5227A96E80003BD1E5 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */; };
 		DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */; };
-		DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */; };
 		DDD15CBF27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CBE27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift */; };
-		DDD15CC127B5C57E006A6ADF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CC027B5C57E006A6ADF /* ContentView.swift */; };
 		DDD15CC327B5C57F006A6ADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD15CC227B5C57F006A6ADF /* Assets.xcassets */; };
 		DDD15CC627B5C57F006A6ADF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDD15CC527B5C57F006A6ADF /* Preview Assets.xcassets */; };
 		DDD15CC827B5C57F006A6ADF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CC727B5C57F006A6ADF /* Persistence.swift */; };
@@ -53,19 +33,10 @@
 		DDD15CD827B5C803006A6ADF /* Persistence+Perview.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CD727B5C803006A6ADF /* Persistence+Perview.swift */; };
 		DDD15CDA27B5C827006A6ADF /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CD927B5C827006A6ADF /* Utilites.swift */; };
 		DDD15CDE27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CDD27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift */; };
-		DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */; };
-		DDE3428D27B4566A00EF0851 /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3428C27B4566A00EF0851 /* CommonViews.swift */; };
-		DDE3428F27B458F100EF0851 /* EditSFSCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDE3428E27B458F100EF0851 /* EditSFSCollectionView.swift */; };
+		DDD15CE027B5D4C4006A6ADF /* CollectionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD15CDF27B5D4C4006A6ADF /* CollectionListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		97BD1C0D27A9B01F006F2A1A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DDC05E2E27A96E64003BD1E5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DDC05E3627A96E64003BD1E5;
-			remoteInfo = NMASFSymbol;
-		};
 		DDC05E4327A96E64003BD1E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DDC05E2E27A96E64003BD1E5 /* Project object */;
@@ -83,17 +54,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		97BD1C0F27A9B01F006F2A1A /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				97BD1C0C27A9B01E006F2A1A /* NMASFSymbol.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDD15CD327B5C591006A6ADF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,32 +68,21 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewNavigationLink.swift; sourceTree = "<group>"; };
-		975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionGridView.swift; sourceTree = "<group>"; };
-		9776911927AAB50C0000D4E6 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
-		97C8961427A98C43008E9E3C /* NMASFSymbolDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMASFSymbolDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolDemoAppApp.swift; sourceTree = "<group>"; };
-		97C8961A27A98C46008E9E3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		97C8961D27A98C46008E9E3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		97C8961F27A98C46008E9E3C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NMASFSymbolDemoApp.xcdatamodel; sourceTree = "<group>"; };
-		97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionListView.swift; sourceTree = "<group>"; };
 		DD008F5127B3DE6800EEFA2A /* Extensions+Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Internal.swift"; sourceTree = "<group>"; };
-		DD008F5327B3FC7C00EEFA2A /* Persistence+Perview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Perview.swift"; sourceTree = "<group>"; };
-		DD008F5727B4313200EEFA2A /* LiteLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiteLogger.swift; sourceTree = "<group>"; };
 		DD07EE9327B5BD43001C4F28 /* Extensions+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Public.swift"; sourceTree = "<group>"; };
 		DD0A708627AC49C9009CE835 /* NMACache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMACache.swift; sourceTree = "<group>"; };
-		DD1B41DA27A9E23600362EAB /* SFSCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCollection.swift; sourceTree = "<group>"; };
-		DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSCollectionProtocol.swift; sourceTree = "<group>"; };
+		DD222D3027B6D051001AE5F6 /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
+		DD222D3127B6D051001AE5F6 /* EditSFSCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSFSCollectionView.swift; sourceTree = "<group>"; };
+		DD222D3227B6D051001AE5F6 /* SFSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolView.swift; sourceTree = "<group>"; };
+		DD222D3327B6D051001AE5F6 /* SFSymbolCollectionGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionGridView.swift; sourceTree = "<group>"; };
+		DD222D3427B6D051001AE5F6 /* SFSymbolCollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionListView.swift; sourceTree = "<group>"; };
+		DD222D3527B6D051001AE5F6 /* GridViewNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridViewNavigationLink.swift; sourceTree = "<group>"; };
 		DD31EE8427B5329100C022E4 /* SFSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollection.swift; sourceTree = "<group>"; };
 		DD31EE8827B53B5600C022E4 /* SFSymbolCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionTests.swift; sourceTree = "<group>"; };
 		DD31EE8A27B57D7300C022E4 /* SFSystemSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSymbolCollection.swift; sourceTree = "<group>"; };
 		DD31EE8E27B5880D00C022E4 /* SFSystemSymbolCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSymbolCollectionTests.swift; sourceTree = "<group>"; };
 		DD31EE9027B5900D00C022E4 /* SFSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
 		DD31EE9427B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMutableSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
-		DD5F8A1527B47EEC00F1135F /* CacheUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheUtility.swift; sourceTree = "<group>"; };
-		DD68C94E27B329F4009DDEEA /* SFSymbolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolView.swift; sourceTree = "<group>"; };
-		DD68C95027B3385A009DDEEA /* SelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionViewModel.swift; sourceTree = "<group>"; };
 		DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMASFSymbol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDC05E3A27A96E64003BD1E5 /* NMASFSymbol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMASFSymbol.h; sourceTree = "<group>"; };
 		DDC05E3B27A96E64003BD1E5 /* NMASFSymbol.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NMASFSymbol.docc; sourceTree = "<group>"; };
@@ -141,10 +90,8 @@
 		DDC05E4627A96E64003BD1E5 /* SFSymbolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolTests.swift; sourceTree = "<group>"; };
 		DDC05E5127A96E80003BD1E5 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		DDC05E5327A96F60003BD1E5 /* SFSymbol+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Public.swift"; sourceTree = "<group>"; };
-		DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSSystemCollection.swift; sourceTree = "<group>"; };
 		DDD15CBC27B5C57E006A6ADF /* NMASFSymbolDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMASFSymbolDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDD15CBE27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolDemoApp.swift; sourceTree = "<group>"; };
-		DDD15CC027B5C57E006A6ADF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DDD15CC227B5C57F006A6ADF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDD15CC527B5C57F006A6ADF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DDD15CC727B5C57F006A6ADF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -154,20 +101,10 @@
 		DDD15CD727B5C803006A6ADF /* Persistence+Perview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Persistence+Perview.swift"; sourceTree = "<group>"; };
 		DDD15CD927B5C827006A6ADF /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		DDD15CDD27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SymbolCollectionMO+Extensions.swift"; sourceTree = "<group>"; };
-		DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		DDE3428C27B4566A00EF0851 /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
-		DDE3428E27B458F100EF0851 /* EditSFSCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSFSCollectionView.swift; sourceTree = "<group>"; };
+		DDD15CDF27B5D4C4006A6ADF /* CollectionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		97C8961127A98C43008E9E3C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97BD1C0B27A9B01E006F2A1A /* NMASFSymbol.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDC05E3427A96E64003BD1E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,33 +138,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		97C8961527A98C43008E9E3C /* NMASFSymbolDemoApp */ = {
-			isa = PBXGroup;
-			children = (
-				9776911927AAB50C0000D4E6 /* Utilites.swift */,
-				DD5F8A1527B47EEC00F1135F /* CacheUtility.swift */,
-				DD008F5727B4313200EEFA2A /* LiteLogger.swift */,
-				DDE3428A27B450FC00EF0851 /* Views */,
-				DDE3429027B458F900EF0851 /* Models */,
-				DDD1AA1D27AB51BE0002EFA9 /* Launch Screen.storyboard */,
-				97C8961A27A98C46008E9E3C /* Assets.xcassets */,
-				97C8961627A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift */,
-				97C8961F27A98C46008E9E3C /* Persistence.swift */,
-				DD008F5327B3FC7C00EEFA2A /* Persistence+Perview.swift */,
-				97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */,
-				97C8961C27A98C46008E9E3C /* Preview Content */,
-			);
-			path = NMASFSymbolDemoApp;
-			sourceTree = "<group>";
-		};
-		97C8961C27A98C46008E9E3C /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				97C8961D27A98C46008E9E3C /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		DD27380427AB65A3005B224A /* SFSymbol */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,9 +158,12 @@
 		DD31EE8627B53B0000C022E4 /* Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				DD1B41DC27A9E46600362EAB /* SFSCollectionProtocol.swift */,
-				DD1B41DA27A9E23600362EAB /* SFSCollection.swift */,
-				DDC9E4CD27A973F10029D4F1 /* SFSSystemCollection.swift */,
+				DD222D3027B6D051001AE5F6 /* CommonViews.swift */,
+				DD222D3427B6D051001AE5F6 /* SFSymbolCollectionListView.swift */,
+				DD222D3127B6D051001AE5F6 /* EditSFSCollectionView.swift */,
+				DD222D3527B6D051001AE5F6 /* GridViewNavigationLink.swift */,
+				DD222D3327B6D051001AE5F6 /* SFSymbolCollectionGridView.swift */,
+				DD222D3227B6D051001AE5F6 /* SFSymbolView.swift */,
 			);
 			name = Deprecated;
 			sourceTree = "<group>";
@@ -270,7 +183,6 @@
 			children = (
 				DDC05E3927A96E64003BD1E5 /* NMASFSymbol */,
 				DDC05E4527A96E64003BD1E5 /* NMASFSymbolTests */,
-				97C8961527A98C43008E9E3C /* NMASFSymbolDemoApp */,
 				DDD15CBD27B5C57E006A6ADF /* NMASFSymbolDemo */,
 				DDC05E3827A96E64003BD1E5 /* Products */,
 				97C8960A27A98B57008E9E3C /* Frameworks */,
@@ -282,7 +194,6 @@
 			children = (
 				DDC05E3727A96E64003BD1E5 /* NMASFSymbol.framework */,
 				DDC05E4127A96E64003BD1E5 /* NMASFSymbolTests.xctest */,
-				97C8961427A98C43008E9E3C /* NMASFSymbolDemoApp.app */,
 				DDD15CBC27B5C57E006A6ADF /* NMASFSymbolDemo.app */,
 			);
 			name = Products;
@@ -332,7 +243,7 @@
 		DDD15CDB27B5C8D9006A6ADF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DDD15CC027B5C57E006A6ADF /* ContentView.swift */,
+				DDD15CDF27B5D4C4006A6ADF /* CollectionListView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -340,33 +251,12 @@
 		DDD15CDC27B5C8F7006A6ADF /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				DDD15CC727B5C57F006A6ADF /* Persistence.swift */,
 				DDD15CDD27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift */,
+				DDD15CC727B5C57F006A6ADF /* Persistence.swift */,
 				DDD15CD727B5C803006A6ADF /* Persistence+Perview.swift */,
 				DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */,
 			);
 			name = "Core Data";
-			sourceTree = "<group>";
-		};
-		DDE3428A27B450FC00EF0851 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				DDE3428C27B4566A00EF0851 /* CommonViews.swift */,
-				97C8962727A98CB6008E9E3C /* SFSymbolCollectionListView.swift */,
-				DDE3428E27B458F100EF0851 /* EditSFSCollectionView.swift */,
-				975B197127AB270300BCDBBA /* GridViewNavigationLink.swift */,
-				975B197527AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift */,
-				DD68C94E27B329F4009DDEEA /* SFSymbolView.swift */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		DDE3429027B458F900EF0851 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DD68C95027B3385A009DDEEA /* SelectionViewModel.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,25 +273,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		97C8961327A98C43008E9E3C /* NMASFSymbolDemoApp */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 97C8962427A98C46008E9E3C /* Build configuration list for PBXNativeTarget "NMASFSymbolDemoApp" */;
-			buildPhases = (
-				97C8961027A98C43008E9E3C /* Sources */,
-				97C8961127A98C43008E9E3C /* Frameworks */,
-				97C8961227A98C43008E9E3C /* Resources */,
-				97BD1C0F27A9B01F006F2A1A /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				97BD1C0E27A9B01F006F2A1A /* PBXTargetDependency */,
-			);
-			name = NMASFSymbolDemoApp;
-			productName = NMASFSymbolDemoApp;
-			productReference = 97C8961427A98C43008E9E3C /* NMASFSymbolDemoApp.app */;
-			productType = "com.apple.product-type.application";
-		};
 		DDC05E3627A96E64003BD1E5 /* NMASFSymbol */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DDC05E4B27A96E64003BD1E5 /* Build configuration list for PBXNativeTarget "NMASFSymbol" */;
@@ -467,9 +338,6 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					97C8961327A98C43008E9E3C = {
-						CreatedOnToolsVersion = 13.2.1;
-					};
 					DDC05E3627A96E64003BD1E5 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -496,23 +364,12 @@
 			targets = (
 				DDC05E3627A96E64003BD1E5 /* NMASFSymbol */,
 				DDC05E4027A96E64003BD1E5 /* NMASFSymbolTests */,
-				97C8961327A98C43008E9E3C /* NMASFSymbolDemoApp */,
 				DDD15CBB27B5C57E006A6ADF /* NMASFSymbolDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		97C8961227A98C43008E9E3C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DDD1AA1E27AB51BE0002EFA9 /* Launch Screen.storyboard in Resources */,
-				97C8961E27A98C46008E9E3C /* Preview Assets.xcassets in Resources */,
-				97C8961B27A98C46008E9E3C /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDC05E3527A96E64003BD1E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,27 +396,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		97C8961027A98C43008E9E3C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97C8962327A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld in Sources */,
-				97C8962027A98C46008E9E3C /* Persistence.swift in Sources */,
-				DD008F5427B3FC7C00EEFA2A /* Persistence+Perview.swift in Sources */,
-				DD68C95127B3385A009DDEEA /* SelectionViewModel.swift in Sources */,
-				975B197227AB270300BCDBBA /* GridViewNavigationLink.swift in Sources */,
-				DDE3428F27B458F100EF0851 /* EditSFSCollectionView.swift in Sources */,
-				975B197627AB34FF00BCDBBA /* SFSymbolCollectionGridView.swift in Sources */,
-				97C8961727A98C43008E9E3C /* NMASFSymbolDemoAppApp.swift in Sources */,
-				DD008F5827B4313200EEFA2A /* LiteLogger.swift in Sources */,
-				97C8962827A98CB6008E9E3C /* SFSymbolCollectionListView.swift in Sources */,
-				9776911A27AAB50C0000D4E6 /* Utilites.swift in Sources */,
-				DD5F8A1627B47EEC00F1135F /* CacheUtility.swift in Sources */,
-				DDE3428D27B4566A00EF0851 /* CommonViews.swift in Sources */,
-				DD68C94F27B329F4009DDEEA /* SFSymbolView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DDC05E3327A96E64003BD1E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,13 +403,10 @@
 				DDC05E5227A96E80003BD1E5 /* SFSymbol.swift in Sources */,
 				DD31EE8B27B57D7300C022E4 /* SFSystemSymbolCollection.swift in Sources */,
 				DD31EE8527B5329100C022E4 /* SFSymbolCollection.swift in Sources */,
-				DD1B41DB27A9E23600362EAB /* SFSCollection.swift in Sources */,
 				DDC05E3C27A96E64003BD1E5 /* NMASFSymbol.docc in Sources */,
 				DDC05E5427A96F60003BD1E5 /* SFSymbol+Public.swift in Sources */,
 				DD31EE9527B5995D00C022E4 /* SFMutableSymbolCollectionProtocol.swift in Sources */,
-				DD1B41DD27A9E46600362EAB /* SFSCollectionProtocol.swift in Sources */,
 				DD07EE9427B5BD43001C4F28 /* Extensions+Public.swift in Sources */,
-				DDC9E4CE27A973F10029D4F1 /* SFSSystemCollection.swift in Sources */,
 				DD31EE9127B5900D00C022E4 /* SFSymbolCollectionProtocol.swift in Sources */,
 				DD008F5227B3DE6800EEFA2A /* Extensions+Internal.swift in Sources */,
 				DD0A708727AC49C9009CE835 /* NMACache.swift in Sources */,
@@ -598,21 +431,16 @@
 				DDD15CD627B5C7DA006A6ADF /* LiteLogger.swift in Sources */,
 				DDD15CCB27B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld in Sources */,
 				DDD15CC827B5C57F006A6ADF /* Persistence.swift in Sources */,
-				DDD15CC127B5C57E006A6ADF /* ContentView.swift in Sources */,
 				DDD15CBF27B5C57E006A6ADF /* NMASFSymbolDemoApp.swift in Sources */,
 				DDD15CDA27B5C827006A6ADF /* Utilites.swift in Sources */,
 				DDD15CDE27B5C920006A6ADF /* SymbolCollectionMO+Extensions.swift in Sources */,
+				DDD15CE027B5D4C4006A6ADF /* CollectionListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		97BD1C0E27A9B01F006F2A1A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DDC05E3627A96E64003BD1E5 /* NMASFSymbol */;
-			targetProxy = 97BD1C0D27A9B01F006F2A1A /* PBXContainerItemProxy */;
-		};
 		DDC05E4427A96E64003BD1E5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DDC05E3627A96E64003BD1E5 /* NMASFSymbol */;
@@ -626,66 +454,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		97C8962527A98C46008E9E3C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NMASFSymbolDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 4DHQU43U3E;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.NMASFSymbolDemoApp;
-				PRODUCT_NAME = NMASFSymbolDemoApp;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		97C8962627A98C46008E9E3C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"NMASFSymbolDemoApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 4DHQU43U3E;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.NMASFSymbolDemoApp;
-				PRODUCT_NAME = NMASFSymbolDemoApp;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		DDC05E4927A96E64003BD1E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -967,15 +735,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97C8962427A98C46008E9E3C /* Build configuration list for PBXNativeTarget "NMASFSymbolDemoApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				97C8962527A98C46008E9E3C /* Debug */,
-				97C8962627A98C46008E9E3C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		DDC05E3127A96E64003BD1E5 /* Build configuration list for PBXProject "NMASFSymbol" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1015,16 +774,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		97C8962127A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */,
-			);
-			currentVersion = 97C8962227A98C46008E9E3C /* NMASFSymbolDemoApp.xcdatamodel */;
-			path = NMASFSymbolDemoApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		DDD15CC927B5C57F006A6ADF /* NMASFSymbolDemo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

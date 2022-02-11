@@ -14,6 +14,8 @@ extension SymbolCollectionMO: SFMutableSymbolCollectionProtocol {
     // MARK: - Collection conformance
     private static let defaultInfoSymbol: SFSymbol = .square_stack_3d_down_right_fill
     
+    public var uuid: UUID { internalUUID ?? UUID() }
+    
     public var title: String {
         get { self.name ?? "New Collection (MO)" }
         set { self.name = newValue }

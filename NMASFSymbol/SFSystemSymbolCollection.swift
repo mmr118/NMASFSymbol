@@ -12,10 +12,12 @@ import Foundation
 /// The contents of each `SFSystemSymbolCollection` come
 /// from **Apple**'s desktop application, **SF Symbols.app, version 3.2**
 public final class SFSystemSymbolCollection: SFSymbolCollectionProtocol {
+
+    public static let allSystemCollections = SFSymbolSystemCategory.allCases.map { $0.collection() }
     
     public static let allSymbols = SFSystemSymbolCollection(.allSymbols, symbols: SFSymbol.allCases, infoSymbol: .square_grid_2x2)
     public static let whats_new = SFSystemSymbolCollection(.whats_new, symbols: SFSymbol.WhatsNew, infoSymbol: .sparkles)
-    public static let multicolor = SFSystemSymbolCollection(.multicolor, symbols: SFSymbol.Multicolor, infoSymbol: .sparkles)
+    public static let multicolor = SFSystemSymbolCollection(.multicolor, symbols: SFSymbol.Multicolor, infoSymbol: .paintpalette)
     public static let communication = SFSystemSymbolCollection(.communication, symbols: SFSymbol.Communication, infoSymbol: .message)
     public static let weather = SFSystemSymbolCollection(.weather, symbols: SFSymbol.Weather, infoSymbol: .cloud_sun)
     public static let objects_and_tools = SFSystemSymbolCollection(.objects_and_tools, symbols: SFSymbol.ObjectsAndTools, infoSymbol: .folder)
@@ -37,6 +39,8 @@ public final class SFSystemSymbolCollection: SFSymbolCollectionProtocol {
     public static let indices = SFSystemSymbolCollection(.indices, symbols: SFSymbol.Indices, infoSymbol: .a_circle)
     public static let math = SFSystemSymbolCollection(.math, symbols: SFSymbol.Math, infoSymbol: .function)
 
+    public let uuid = UUID()
+    
     public let category: SystemCategory
     public let title: String
     public let infoSymbol: SFSymbol
@@ -90,6 +94,7 @@ extension SFSystemSymbolCollection {
                 
         public var title: String {
             switch self {
+            case .allSymbols: return "All Symbols"
             case .whats_new: return "What's New"
             case .objects_and_tools: return "Objects And Tools"
             case .text_formatting: return "Text Formatting"
