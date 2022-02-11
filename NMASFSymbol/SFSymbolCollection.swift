@@ -137,5 +137,9 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     public func remove<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
         symbolSet.subtract(symbols)
     }
+    
+    public func removeAll() {
+        symbolSet.removeAll()
+    }
         
 }

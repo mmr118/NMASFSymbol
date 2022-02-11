@@ -29,9 +29,9 @@ struct SymbolCollectionListView: View {
                     
                     ForEach(collectionMOs) { collection in
                         
-                        NavigationLink(destination: Text(collection.title ?? "N/A")) {
+                        NavigationLink(destination: Text(collection.title)) {
                             let sfSymbol = SFSymbol(name: collection.infoSymbolRawValue ?? SFSymbol.questionmark_app_fill.rawValue) ?? .questionmark_app_fill
-                            Label(collection.title ?? "N/A", sfSymbol: sfSymbol)
+                            Label(collection.title, sfSymbol: sfSymbol)
                             
                         }
                     }
@@ -109,6 +109,6 @@ struct SymbolCollectionListView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         SymbolCollectionListView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environment(\.managedObjectContext, PersistenceController.preview.mainContext)
     }
 }

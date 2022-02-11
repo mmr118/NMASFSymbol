@@ -11,8 +11,12 @@ struct PersistenceController {
     static let shared = PersistenceController()
 
     let container: NSPersistentContainer
-
+    let isPreview: Bool
+    
+    var mainContext: NSManagedObjectContext { container.viewContext }
+    
     init(inMemory: Bool = false) {
+        isPreview = inMemory
         container = NSPersistentContainer(name: "NMASFSymbolDemo")
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")

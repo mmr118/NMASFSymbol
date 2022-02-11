@@ -25,4 +25,7 @@ public protocol SFMutableSymbolCollectionProtocol: SFSymbolCollectionProtocol {
     /// Removes the symbols from `self`.
     func remove<S: Sequence>(_ symbols: S) where S.Element == SFSymbol
     
+    /// Removes all symbols from `self`
+    func removeAll()
+    
 }

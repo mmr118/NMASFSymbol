@@ -12,13 +12,16 @@ import NMASFSymbol
 
 @objc(SymbolCollectionMONonOpt)
 public class SymbolCollectionMONonOpt: NSManagedObject {
-    
-    convenience init<S: Sequence>(context: NSManagedObjectContext, title: String, symbols: S, infoSymbol: SFSymbol) where S.Element == SFSymbol {
+
+    convenience init<S: Sequence>(_ context: NSManagedObjectContext, title: String, infoSymbol: SFSymbol? = nil, symbols: S) where S.Element == SFSymbol {
         self.init(context: context)
         self.dateCreated = Date()
+        self.uuid = UUID()
         self.title = title
-        self.infoSymbolRawValue = infoSymbol.rawValue
+        self.infoSymbolRawValue = infoSymbol?.rawValue ?? Default.infoSymbol.rawValue
         self.symbolsRawValues = Set(symbols.map { $0.rawValue })
     }
 
 }
+
+
