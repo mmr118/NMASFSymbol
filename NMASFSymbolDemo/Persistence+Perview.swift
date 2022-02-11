@@ -18,18 +18,13 @@ extension PersistenceController {
         return result
     }()
     
-    static func previewSymbolCollectionMO(_ context: NSManagedObjectContext) -> SymbolCollectionMO {
+    static func previewSymbolCollectionMO() -> SymbolCollectionMO {
+        let context = PersistenceController.preview.mainContext
         let collection = SymbolCollectionMO(context: context)
         collection.dateCreated = Date()
         collection.title = "Preview Collection"
         collection.infoSymbolRawValue = SFSymbol.allCases.randomElement()!.rawValue
         collection.symbolsRawValues =   Set(Constants.circleFillSymbols().map { $0.rawValue })
-        return collection
-    }
-    
-    static func previewSymbolCollectionMONonOpt(_ context: NSManagedObjectContext) -> SymbolCollectionMONonOpt {
-//        assert(isPreview)
-        let collection = SymbolCollectionMONonOpt(PersistenceController.preview.container.viewContext, title: "Preview Collection", infoSymbol: .checkmark_seal_fill, symbols: Constants.checkmarkSymbols())
         return collection
     }
     
@@ -50,16 +45,6 @@ extension PersistenceController {
         emptyCollection.dateCreated = Date()
         emptyCollection.symbolsRawValues = Set()
         
-        //--------TEMP----------
-        let _ = SymbolCollectionMONonOpt(context, title: "Circle Fill Non Opt", infoSymbol: .folder_circle_fill, symbols: Constants.circleFillSymbols())
-        let _ = SymbolCollectionMONonOpt(context, title: "Checkmark Non Opt", infoSymbol: .checkmark_seal_fill, symbols: Constants.checkmarkSymbols())
-        
-        let emptyCollectionNonOpt = SymbolCollectionMONonOpt(context: context)
-        emptyCollectionNonOpt.dateCreated = Date()
-        emptyCollectionNonOpt.symbolsRawValues = Set()
-
-        //--------TEMP----------
-
         do {
             
             try context.save()

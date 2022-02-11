@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21D5025f" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="SymbolCollectionMO" representedClassName="SymbolCollectionMO" syncable="YES" codeGenerationType="class">
-        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="infoSymbolRawValue" optional="YES" attributeType="String" defaultValueString="square.stack.3d.down.right.fill"/>
-        <attribute name="iUUID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String" defaultValueString="New Collection"/>
-        <attribute name="symbolsRawValues" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="Set&lt;String&gt;"/>
-    </entity>
-    <entity name="SymbolCollectionMONonOpt" representedClassName="SymbolCollectionMONonOpt" syncable="YES">
+    <entity name="SymbolCollectionMO" representedClassName="SymbolCollectionMO" syncable="YES">
         <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="infoSymbolRawValue" attributeType="String" defaultValueString="exclamationmark.circle.fill"/>
+        <attribute name="infoSymbolRawValue" attributeType="String" defaultValueString="square.stack.3d.down.right.fill"/>
         <attribute name="symbolsRawValues" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromDataTransformer" customClassName="Set&lt;String&gt;"/>
-        <attribute name="title" attributeType="String" defaultValueString="New Collection NonOp"/>
+        <attribute name="title" attributeType="String" defaultValueString="New Collection"/>
         <attribute name="uuid" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
         <element name="SymbolCollectionMO" positionX="-63" positionY="-18" width="128" height="104"/>
-        <element name="SymbolCollectionMONonOpt" positionX="-63" positionY="9" width="128" height="104"/>
     </elements>
 </model>

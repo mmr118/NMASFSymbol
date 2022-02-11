@@ -63,9 +63,7 @@ extension PersistenceController {
             collection.symbolsRawValues =   Set(Constants.circleFillSymbols().map { $0.rawValue })
             return collection
         }()
-        
-        let _ = SymbolCollectionMONonOpt(context, title: "Preview Collection", infoSymbol: .checkmark_seal_fill, symbols: Constants.checkmarkSymbols())
-        
+                
         do {
             try context.save()
             UserDefaults.standard.set(true, forKey: DID_LOAD_TEST_DATA_KEY)

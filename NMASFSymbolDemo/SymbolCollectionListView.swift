@@ -15,10 +15,6 @@ struct SymbolCollectionListView: View {
     
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMO.dateCreated, ascending: true)], animation: .default)
     private var collectionMOs: FetchedResults<SymbolCollectionMO>
-
-    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMONonOpt.dateCreated, ascending: true)], animation: .default)
-    private var collectionMONonOpts: FetchedResults<SymbolCollectionMONonOpt>
-
     
     var body: some View {
         NavigationView {
@@ -37,25 +33,7 @@ struct SymbolCollectionListView: View {
                     .onDelete(perform: deleteItems)
                     
                 }
-                
-                //------TEMP-------//
-                
-                Section("Non-Optional") {
-                    
-                    ForEach(collectionMONonOpts) { collection in
-                        
-                        NavigationLink(destination: SymbolGridView(collection: collection).environment(\.managedObjectContext, viewContext)) {
-                            listLabel(for: collection)
-                        }
-
-                    }
-                    .onDelete(perform: deleteItems)
-                    
-                }
-                
-                
-                //------TEMP-------//
-                
+                                
                 Section("System") {
                     
                     let systemCollections = SFSystemSymbolCollection.allSystemCollections
