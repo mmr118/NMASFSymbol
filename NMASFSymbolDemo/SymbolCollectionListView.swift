@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  SymbolCollectionListView.swift
 //  NMASFSymbolDemo
 //
 //  Created by Monica Rondón on 2/11/22.
@@ -9,12 +9,10 @@ import SwiftUI
 import CoreData
 import NMASFSymbol
 
-struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+struct SymbolCollectionListView: View {
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMO.dateCreated, ascending: true)],
-        animation: .default)
+    @Environment(\.managedObjectContext) private var viewContext
+    @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMO.dateCreated, ascending: true)], animation: .default)
     private var collectionMOs: FetchedResults<SymbolCollectionMO>
     
     var body: some View {
@@ -27,15 +25,8 @@ struct ContentView: View {
                     ForEach(collectionMOs) { collection in
                         
                         NavigationLink(destination: Text(collection.title ?? "N/A")) {
-                            Label {
-                                Text(collection.title ?? "N/A")
-                                    .tint(.black)
-                            } icon: {
-                                let sfSymbol = SFSymbol(name: collection.infoSymbolRawValue ?? SFSymbol.questionmark_app_fill.rawValue) ?? .questionmark_app_fill
-                                Image(sfSymbol: sfSymbol)
-                                    .font(.system(size: 16))
-//                                    .foregroundColor(.tealNMA)
-                            }
+                            let sfSymbol = SFSymbol(name: collection.infoSymbolRawValue ?? SFSymbol.questionmark_app_fill.rawValue) ?? .questionmark_app_fill
+                            Label(collection.title ?? "N/A", sfSymbol: sfSymbol)
                             
                         }
                     }
@@ -50,15 +41,7 @@ struct ContentView: View {
                     ForEach(systemCollections, id:\.self) { collection in
                         
                         NavigationLink(destination: Text(collection.title)) {
-                            Label(collection.title, systemImage: SFSymbol.gear.systemName)
-//                            Label {
-//                                Text(collection.title)
-//                                    .tint(.black)
-//                            } icon: {
-//                                Image(sfSymbol: collection.infoSymbol)
-//                                    .font(.system(size: 16))
-////                                    .foregroundColor(.tealNMA)
-//                            }
+                            Label(collection.title, sfSymbol: collection.infoSymbol)
                         }
                         
                     }
@@ -101,6 +84,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        SymbolCollectionListView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
