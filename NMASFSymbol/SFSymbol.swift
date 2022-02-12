@@ -8,6 +8,8 @@
 import Foundation
 
 // MARK: - SFSymbol
+
+/// An enumeration for the available system images.
 public enum SFSymbol: String, CaseIterable, Identifiable {
 
     case square_and_arrow_up = "square.and.arrow.up"

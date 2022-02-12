@@ -15,30 +15,27 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     private static let defaultTitle = "New Collection"
     
     internal static let defaultInfoSymbol: SFSymbol = .square_grid_2x2
-    
-    public let uuid = UUID()
-    
+        
     public var title: String = defaultTitle
     
-    public var count: Int { symbolSet.count }
+    public var count: Int { symbols.count }
     
-    public var isEmpty: Bool { symbolSet.isEmpty }
+    public var isEmpty: Bool { symbols.isEmpty }
     
     public private(set) lazy var infoSymbol: SFSymbol = Self.defaultInfoSymbol
 
-    private var symbolSet = Set<SFSymbol>()
-
-
-    /// Create a new collection with no symbols.
+    public private(set) var symbols = Set<SFSymbol>()
+    
+    /// Creates a new collection with no symbols.
     ///
     /// If a title is not specified the value defaults to "New Collection"
     public init(title: String? = nil) {
         self.title = title ?? Self.defaultTitle
         self.infoSymbol = Self.defaultInfoSymbol
-        self.symbolSet = []
+        self.symbols = Set()
     }
 
-    /// Create a new collection with the given title and symbols.
+    /// Creates a new collection with the given title and symbols.
     ///
     /// If a title is not specified the value defaults to "New Collection"
     /// - Parameters:
@@ -46,10 +43,10 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     ///   - symbols: inital symbols in the collection
     public init<S: Sequence>(title: String? = nil, symbols: S) where S.Element == SFSymbol {
         self.title = title ?? Self.defaultTitle
-        self.symbolSet = Set(symbols)
+        self.symbols = Set(symbols)
     }
 
-    /// Create a new collection with the given title, symbols and infoSymbol.
+    /// Creates a new collection with the given title, symbols and infoSymbol.
     ///
     /// - Parameters:
     ///   - title: name of the collection
@@ -59,87 +56,104 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     ///   in the collection's symbols
     public convenience init<S: Sequence>(title: String, symbols: S, infoSymbol: SFSymbol, includeInfoInCollection: Bool = true) where S.Element == SFSymbol {
         self.init(title: title, symbols: symbols)
-        let shouldRemove = symbolSet.contains(self.infoSymbol)
-        updateInfoSymbol(infoSymbol, includeNew: includeInfoInCollection, removeOld: shouldRemove)
+        let shouldRemove = symbols.contains(self.infoSymbol)
+        updateInfoSymbol(infoSymbol, includeNewInCollection: includeInfoInCollection, removeOldFromCollection: shouldRemove)
+    }
+
+    /// Create a new collection with the given title, symbols from passed collection and infoSymbol.
+    ///
+    /// - Parameters:
+    ///   - title: name of the collection
+    ///   - collection: collection whose symbols to include
+    ///   - infoSymbol: the symbol used for quick information or summary reasons
+    ///   - includeInfoInCollection: should the passed `infoSymbol` be included
+    ///   in the collection's symbols
+    public convenience init<C: SFSymbolCollectionProtocol>(title: String? = nil, infoSymbol: SFSymbol? = nil, symbolsIn collection: C, includeInfoInCollection: Bool = true) {
+        self.init(title: title ?? Self.defaultTitle, symbols: collection.symbols, infoSymbol: infoSymbol ?? Self.defaultInfoSymbol, includeInfoInCollection: includeInfoInCollection)
     }
     
-    /// Updates the symbol used for information/summary purposes.
+    /// Create a new collection with the given title, symbols from passed collection and infoSymbol.
     ///
-    /// If `removeOld` is set to `false`, the old symbol will be added to the
-    /// collection if it was not previously there.
     /// - Parameters:
-    ///   - newSymbol: the new symbol
-    ///   - includeNew: should the new symbol should be included in `self.symbols()`
-    ///   symbols; default `true`
-    ///   - removeOld: should the old (current symbol before the update) be
-    ///   removed from `self`; default `false`
-    /// - Returns: the old `infoSymbol`, the symbol that was replaced
-    ///
-    ///   If `removeOld` is set to `false`, the old symbol will be added to `self`
-    ///   if it was not previously there.
-    ///
+    ///   - title: name of the collection
+    ///   - collections: the collections whose symbols to include
+    ///   - infoSymbol: the symbol used for quick information or summary reasons
+    ///   - includeInfoInCollection: should the passed `infoSymbol` be included
+    ///   in the collection's symbols
+    public convenience init<S: Sequence>(title: String? = nil, infoSymbol: SFSymbol? = nil, symbolsIn collections: S, includeInfoInCollection: Bool = true) where S.Element: SFSymbolCollectionProtocol {
+        let symbols = collections.reduce(Set<SFSymbol>()) { $0.union($1.symbols) }
+        self.init(title: title ?? Self.defaultTitle, symbols: symbols, infoSymbol: infoSymbol ?? Self.defaultInfoSymbol, includeInfoInCollection: includeInfoInCollection)
+    }
+
     @discardableResult
-    public func updateInfoSymbol(_ newSymbol: SFSymbol, includeNew: Bool = true, removeOld: Bool = false) -> SFSymbol {
+    public func updateInfoSymbol(_ newSymbol: SFSymbol, includeNewInCollection includeNew: Bool = true, removeOldFromCollection removeOld: Bool = false) -> SFSymbol {
         let oldSymbol = infoSymbol
         
         if removeOld {
-            symbolSet.remove(oldSymbol)
+            symbols.remove(oldSymbol)
         } else {
-            symbolSet.insert(oldSymbol)
+            symbols.insert(oldSymbol)
         }
         
         if includeNew {
-            symbolSet.insert(newSymbol)
+            symbols.insert(newSymbol)
         }
         
         infoSymbol = newSymbol
         return oldSymbol
     }
     
-    
-    // MARK: - SFSymbolCollectionProtocol function conformance
-    public func symbols() -> [SFSymbol] {
-        return Array(symbolSet)
-    }
-    
-    public func contains(_ symbol: SFSymbol) -> Bool {
-        return symbolSet.contains(symbol)
-    }
-    
-    public func contains<S: Sequence>(allOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return symbolSet.isSuperset(of: symbols)
-    }
-    
-    public func contains<S: Sequence>(anyOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return !symbolSet.isDisjoint(with: symbols)
-    }
-    
-    public func contains<S: Sequence>(noneOf symbols: S) -> Bool where S.Element == SFSymbol {
-        return !contains(anyOf: symbols)
-    }
-
-    
     // MARK: - SFMutableSymbolCollectionProtocol conformance
-    @discardableResult
-    public func add(_ symbol: SFSymbol) -> Bool {
-        return symbolSet.insert(symbol).inserted
-    }
-
-    public func add<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
-        symbolSet.formUnion(symbols)
-    }
-
-    @discardableResult
-    public func remove(_ symbol: SFSymbol) -> SFSymbol? {
-        return symbolSet.remove(symbol)
-    }
-
-    public func remove<S: Sequence>(_ symbols: S) where S.Element == SFSymbol {
-        symbolSet.subtract(symbols)
+    public func setSymbols<S: Sequence>(_ newSymbols: S) where S.Element == SFSymbol {
+        self.symbols = Set(newSymbols)
     }
     
-    public func removeAll() {
-        symbolSet.removeAll()
+    @discardableResult
+    public func add(_ newSymbol: SFSymbol) -> Bool {
+        return self.symbols.insert(newSymbol).inserted
     }
-        
+
+    public func add<S: Sequence>(_ newSymbols: S) where S.Element == SFSymbol {
+        self.symbols.formUnion(newSymbols)
+    }
+    
+    @discardableResult
+    public func remove(_ targetSymbol: SFSymbol) -> SFSymbol? {
+        return symbols.remove(targetSymbol)
+    }
+
+    public func remove<S: Sequence>(_ targetSymbols: S) where S.Element == SFSymbol {
+        self.symbols.subtract(targetSymbols)
+    }
+    
+    public func removeAllSymbols() {
+        self.symbols.removeAll()
+    }
+    
+    public func mergeSymbols<C: SFSymbolCollectionProtocol>(from collection: C) -> Set<SFSymbol> {
+        let symbolsBefore = symbols
+        add(collection.symbols)
+        return symbols.subtracting(symbolsBefore)
+    }
+    
+    public func mergeSymbols<S: Sequence>(from collections: S)  -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol {
+        let symbolsBefore = symbols
+        let newSymbols = collections.reduce(Set<SFSymbol>()) { $0.union($1.symbols) }
+        add(newSymbols)
+        return symbols.subtracting(symbolsBefore)
+    }
+    
+    public func separateSymbols<C: SFSymbolCollectionProtocol>(from collection: C) -> Set<SFSymbol> {
+        let symbolsBefore = symbols
+        remove(collection.symbols)
+        return symbolsBefore.subtracting(symbols)
+    }
+
+    public func separateSymbols<S: Sequence>(from collections: S) -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol {
+        let symbolsBefore = symbols
+        let targetSymbols = collections.reduce(Set<SFSymbol>()) { $0.union($1.symbols) }
+        remove(targetSymbols)
+        return symbolsBefore.subtracting(symbols)
+    }
+
 }

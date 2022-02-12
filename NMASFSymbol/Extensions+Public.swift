@@ -53,11 +53,13 @@ public extension UIImage {
 
 
 // MARK: - Image+Extensions
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public extension Image {
     
     /// Creates a system symbol image.
     ///
     /// - Parameter sfSymbol: The `SFSymbol` for the system symbol image.
+    @available(macOS 11.0, *)
     init(sfSymbol: SFSymbol) {
         self.init(systemName: sfSymbol.systemName)
     }
@@ -87,27 +89,3 @@ extension Label where Title == Text, Icon == Image {
         self.init(title, systemImage: sfSymbol.systemName)
     }
 }
-
-
-//extension Label where Title == Text, Icon == Image {
-//    
-//    /// Creates a label with a system icon image and a title generated from a
-//    /// localized string.
-//    ///
-//    /// - Parameters:
-//    ///    - titleKey: A title generated from a localized string.
-//    ///    - systemImage: The name of the image resource to lookup.
-//    public init(_ titleKey: LocalizedStringKey, sfSymbol: SFSymbol) {
-//        self.init(titleKey, systemImage: sfSymbol.systemName)
-//    }
-//        
-//    /// Creates a label with a system icon image and a title generated from a
-//    /// string.
-//    ///
-//    /// - Parameters:
-//    ///    - title: A string used as the label's title.
-//    ///    - systemImage: The name of the image resource to lookup.
-//    public init<S>(_ title: S, systemImage name: String) where S : StringProtocol
-//}
-//
-//

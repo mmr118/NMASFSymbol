@@ -23,7 +23,7 @@ class SFSystemSymbolCollectionTests: XCTestCase {
     }
 
     func testSFSystemSymbolCollection() throws {
-        let systemCategories = SFSystemSymbolCollection.SystemCategory.allCases
+        let systemCategories = SFSymbol.SystemCategory.allCases
         
         for category in systemCategories {
             systemCollectionUT = category.collection()
@@ -31,7 +31,7 @@ class SFSystemSymbolCollectionTests: XCTestCase {
             
         }
         
-        let expectedCategory = SFSystemSymbolCollection.SystemCategory.whats_new
+        let expectedCategory = SFSymbolSystemCategory.whats_new
         let expectedSymbols = SFSymbol.WhatsNew
         let expectedInfoSymbol = SFSymbol.sparkles
         let expectedSymbolsPart: [SFSymbol] = [.beats_fit_pro, .beats_fit_pro_left, .beats_fit_pro_right]
@@ -42,7 +42,7 @@ class SFSystemSymbolCollectionTests: XCTestCase {
         XCTAssertEqual(systemCollectionUT.category, expectedCategory)
         XCTAssertEqual(systemCollectionUT.title, expectedCategory.title)
         XCTAssertEqual(systemCollectionUT.infoSymbol, expectedInfoSymbol)
-        XCTAssertEqual(Set(systemCollectionUT.symbols()), Set(expectedSymbols))
+        XCTAssertEqual(Set(systemCollectionUT.symbols), Set(expectedSymbols))
         XCTAssertTrue(systemCollectionUT.contains(expectedSymbols[0]))
         XCTAssertFalse(systemCollectionUT.contains(notIncludedSymbols[0]))
         
@@ -59,7 +59,7 @@ class SFSystemSymbolCollectionTests: XCTestCase {
         XCTAssertTrue(systemCollectionUT.contains(noneOf: notIncludedSymbols))
     }
     
-    private func assertOnSystemCollection(for category: SFSystemSymbolCollection.SystemCategory) {
+    private func assertOnSystemCollection(for category: SFSymbolSystemCategory) {
         XCTAssertNotNil(systemCollectionUT)
         XCTAssertEqual(systemCollectionUT.title, category.title)
     }
