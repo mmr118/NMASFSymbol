@@ -15,6 +15,8 @@ struct SymbolCollectionListView: View {
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMO.dateCreated, ascending: true)], animation: .default)
     private var collectionMOs: FetchedResults<SymbolCollectionMO>
     
+    @State var isPresenting: Bool = false
+    
     var body: some View {
         NavigationView {
             
@@ -39,18 +41,18 @@ struct SymbolCollectionListView: View {
                     
                     ForEach(systemCollections, id:\.self) { collection in
                         
-                        NavigationLink(destination: SymbolGridView(collection: collection)) { // .environment(\.managedObjectContext, viewContext)) {
+                        NavigationLink(destination: SymbolGridView(collection: collection).environment(\.managedObjectContext, viewContext)) {
                             listLabel(for: collection)
                         }
                     }
                 }
             }
             .navigationTitle("NMASFSymbol Demo")
-//            .sheet(isPresented: $isPresenting) {
-//                // handle dismiss
-//                EditSFSCollectionView(model: SFSCollectionModel())
-//                    .environment(\.managedObjectContext, viewContext)
-//            }
+            .sheet(isPresented: $isPresenting) {
+                // handle dismiss
+                SymbolCollectionEditView(collection: newCollection())
+                    .environment(\.managedObjectContext, viewContext)
+            }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -65,6 +67,15 @@ struct SymbolCollectionListView: View {
             
             Text("Select an item")
         }
+    }
+    
+    private func newCollection() -> SymbolCollectionMO {
+        let collection = SymbolCollectionMO(context: viewContext)
+        collection.dateCreated = Date()
+        collection.title = "New Collection"
+        collection.infoSymbol = .square_grid_2x2
+        collection.symbolsRVs = Set()
+        return collection
     }
     
     @ViewBuilder

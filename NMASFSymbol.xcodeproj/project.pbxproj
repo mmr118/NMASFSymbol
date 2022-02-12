@@ -35,6 +35,7 @@
 		DD27D44527B83A4F004361D9 /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD27D44A27B83ABF004361D9 /* SymbolGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27D44927B83ABF004361D9 /* SymbolGridView.swift */; };
 		DD27D44C27B83AF0004361D9 /* SymbolSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27D44B27B83AF0004361D9 /* SymbolSelectionView.swift */; };
+		DD27D44F27B841D5004361D9 /* SymbolCollectionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27D44E27B841D5004361D9 /* SymbolCollectionEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		DD27D44227B83A3E004361D9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DD27D44927B83ABF004361D9 /* SymbolGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolGridView.swift; sourceTree = "<group>"; };
 		DD27D44B27B83AF0004361D9 /* SymbolSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolSelectionView.swift; sourceTree = "<group>"; };
+		DD27D44E27B841D5004361D9 /* SymbolCollectionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCollectionEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				DD27D43B27B839A8004361D9 /* SymbolCollectionListView.swift */,
 				DD27D44927B83ABF004361D9 /* SymbolGridView.swift */,
 				DD27D44B27B83AF0004361D9 /* SymbolSelectionView.swift */,
+				DD27D44E27B841D5004361D9 /* SymbolCollectionEditView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				DD27D43D27B839A8004361D9 /* SymbolCollectionListView.swift in Sources */,
 				DD27D42827B83937004361D9 /* NMASFSymbolDemoApp.swift in Sources */,
 				DD27D44027B83A09004361D9 /* Constants.swift in Sources */,
+				DD27D44F27B841D5004361D9 /* SymbolCollectionEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
