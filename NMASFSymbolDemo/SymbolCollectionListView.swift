@@ -12,7 +12,6 @@ import NMASFSymbol
 struct SymbolCollectionListView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
-    
     @FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \SymbolCollectionMO.dateCreated, ascending: true)], animation: .default)
     private var collectionMOs: FetchedResults<SymbolCollectionMO>
     
@@ -40,7 +39,7 @@ struct SymbolCollectionListView: View {
                     
                     ForEach(systemCollections, id:\.self) { collection in
                         
-                        NavigationLink(destination: SymbolGridView(collection: collection).environment(\.managedObjectContext, viewContext)) {
+                        NavigationLink(destination: SymbolGridView(collection: collection)) { // .environment(\.managedObjectContext, viewContext)) {
                             listLabel(for: collection)
                         }
                     }

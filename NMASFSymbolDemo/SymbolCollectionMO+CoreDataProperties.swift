@@ -22,6 +22,30 @@ extension SymbolCollectionMO {
     @NSManaged public var uuid: UUID
     @NSManaged public var title: String
     @NSManaged public var symbolsRawValues: Set<String>
+    
+    func validate() {
+        
+        if dateCreated == nil {
+            dateCreated = Date()
+        }
+        
+        if infoSymbolRawValue == nil {
+            infoSymbolRawValue = Default.infoSymbol.rawValue
+        }
+        
+        if uuid == nil {
+            uuid = UUID()
+        }
+        
+        if title == nil {
+            title = Default.collectionTitle
+        }
+        
+        if symbolsRawValues == nil {
+            symbolsRawValues = Set()
+        }
+        
+    }
 
 }
 

@@ -13,45 +13,49 @@ extension PersistenceController {
     
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        loadPreviewData(viewContext)
+        loadPreviewData(result)
         return result
     }()
     
     static func previewSymbolCollectionMO() -> SymbolCollectionMO {
         let context = PersistenceController.preview.mainContext
-        let collection = SymbolCollectionMO(context: context)
-        collection.dateCreated = Date()
-        collection.title = "Preview Collection"
-        collection.infoSymbolRawValue = SFSymbol.allCases.randomElement()!.rawValue
-        collection.symbolsRawValues =   Set(Constants.circleFillSymbols().map { $0.rawValue })
-        return collection
+        return SymbolCollectionMO(context, title: "Preview Collection", infoSymbol: SFSymbol.allCases.randomElement()!, symbols: Set(Constants.circleFillSymbols()))
     }
     
-    static func loadPreviewData(_ context: NSManagedObjectContext) {
-        let circleFillCollection = SymbolCollectionMO(context: context)
-        circleFillCollection.dateCreated = Date()
-        circleFillCollection.title = "Circle Fill"
-        circleFillCollection.infoSymbolRawValue = SFSymbol.folder_circle_fill.rawValue
-        circleFillCollection.symbolsRawValues = Set(Constants.circleFillSymbols().map { $0.rawValue })
+    static func loadPreviewData(_ controller: PersistenceController) {
+//        let _ = SymbolCollectionMO(controller.mainContext, title: "Circle Fill", infoSymbol: .folder_circle_fill, symbols: Set(Constants.circleFillSymbols()))
+//        let _ = SymbolCollectionMO(controller.mainContext, title: "Checkmark", infoSymbol: .checkmark_seal_fill, symbols: Set(Constants.checkmarkSymbols()))
+//        let _ = SymbolCollectionMO(context: controller.mainContext)
+//        controller.saveMainContext()
+
         
-        let checkmarkCollection = SymbolCollectionMO(context: context)
-        checkmarkCollection.dateCreated = Date()
-        checkmarkCollection.title = "Checkmark"
-        checkmarkCollection.infoSymbolRawValue = SFSymbol.checkmark_seal_fill.rawValue
-        checkmarkCollection.symbolsRawValues = Set(Constants.checkmarkSymbols().map { $0.rawValue })
         
-        let emptyCollection = SymbolCollectionMO(context: context)
-        emptyCollection.dateCreated = Date()
-        emptyCollection.symbolsRawValues = Set()
+//        let circleFillCollection = SymbolCollectionMO(context: context)
+//        circleFillCollection.dateCreated = Date()
+//        circleFillCollection.title = "Circle Fill"
+//        circleFillCollection.infoSymbolRawValue = SFSymbol.folder_circle_fill.rawValue
+//        circleFillCollection.symbolsRawValues = Set(Constants.circleFillSymbols().map { $0.rawValue })
         
-        do {
-            
-            try context.save()
-            
-        } catch let nserror as NSError {
-            fatalError(nserror.userInfo.description)
-        }
+
+//        let checkmarkCollection = SymbolCollectionMO(context: context)
+//        checkmarkCollection.dateCreated = Date()
+//        checkmarkCollection.title = "Checkmark"
+//        checkmarkCollection.infoSymbolRawValue = SFSymbol.checkmark_seal_fill.rawValue
+//        checkmarkCollection.symbolsRawValues = Set(Constants.checkmarkSymbols().map { $0.rawValue })
+        
+//        let emptyCollection = SymbolCollectionMO(context: context)
+//        emptyCollection.dateCreated = Date()
+//        emptyCollection.symbolsRawValues = Set()
+        
+//        controller.saveMainContext()
+        
+//        do {
+//
+//            try context.save()
+//
+//        } catch let nserror as NSError {
+//            fatalError(nserror.userInfo.description)
+//        }
         
     }
     

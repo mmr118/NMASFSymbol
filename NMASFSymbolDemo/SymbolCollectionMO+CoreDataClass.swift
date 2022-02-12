@@ -13,15 +13,24 @@ import NMASFSymbol
 @objc(SymbolCollectionMO)
 public class SymbolCollectionMO: NSManagedObject {
     
-    convenience init(_ context: NSManagedObjectContext) {
-        self.init(context: context)
+    override public init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
+        super.init(entity: entity, insertInto: context)
+        self.uuid = UUID()
+        self.dateCreated = Date()
+        self.title = Default.collectionTitle
+        self.infoSymbolRawValue = Default.infoSymbol.rawValue
+        self.symbolsRawValues = Set()
+    }
+    
+    init(context: NSManagedObjectContext) {
+        super.init(entity: Self.entity(), insertInto: context)
         self.dateCreated = Date()
         self.uuid = UUID()
         self.title = Default.collectionTitle
         self.infoSymbolRawValue = Default.infoSymbol.rawValue
         self.symbolsRawValues = Set()
     }
-    
+        
     convenience init(_ context: NSManagedObjectContext, title: String) {
         self.init(context: context)
         self.dateCreated = Date()

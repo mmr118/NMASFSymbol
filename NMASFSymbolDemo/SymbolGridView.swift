@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-import CoreData
+//import CoreData
 import NMASFSymbol
 
 struct SymbolGridView<T: SFSymbolCollectionProtocol>: View {
     
-    @Environment(\.managedObjectContext) private var viewContext
+//    @Environment(\.managedObjectContext) private var viewContext
     
     var collection: T
     
@@ -58,8 +58,9 @@ struct SymbolGridView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        SymbolGridView(collection: PersistenceController.previewSymbolCollectionMO())
-            .environment(\.managedObjectContext, PersistenceController.preview.mainContext)
+        let collection = SFSymbolSystemCategory.devices.collection()
+        SymbolGridView(collection: collection)
+//            .environment(\.managedObjectContext, PersistenceController.preview.mainContext)
 
     }
 }
