@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import NMASFSymbol
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -13,11 +14,14 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
+        previewCollectionMO(viewContext)
         return result
     }()
 
     let container: NSPersistentContainer
 
+    var mainContext: NSManagedObjectContext { container.viewContext }
+    
     init(inMemory: Bool = false) {
         container = NSPersistentContainer(name: "NMASFSymbolDemo")
         if inMemory {
@@ -40,5 +44,25 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+    }
+}
+
+extension PersistenceController {
+    
+    @discardableResult
+    static func previewCollectionMO(_ context: NSManagedObjectContext) -> SymbolCollectionMO {
+        let collectionMO = SymbolCollectionMO(context: context)
+        collectionMO.dateCreated = Date()
+        collectionMO.title = "Collection MO"
+        collectionMO.infoSymbol = SFSymbol.hammer
+        collectionMO.symbolsRVs = Set(SFSymbol.allCases.filter { $0.systemName.contains("hammer") }.map { $0.rawValue })
+
+        do {
+            try context.save()
+        } catch let nserror as NSError {
+            fatalError(nserror.userInfo.description)
+        }
+        
+        return collectionMO
     }
 }

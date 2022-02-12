@@ -194,9 +194,7 @@
 			children = (
 				DD27D43E27B83A09004361D9 /* Constants.swift */,
 				DD27D43F27B83A09004361D9 /* LiteLogger.swift */,
-				DD27D43B27B839A8004361D9 /* SymbolCollectionListView.swift */,
-				DD27D44927B83ABF004361D9 /* SymbolGridView.swift */,
-				DD27D44B27B83AF0004361D9 /* SymbolSelectionView.swift */,
+				DD27D44D27B83C56004361D9 /* Views */,
 				DD27D42727B83937004361D9 /* NMASFSymbolDemoApp.swift */,
 				DD27D42B27B83939004361D9 /* Assets.xcassets */,
 				DD27D43027B83939004361D9 /* Persistence.swift */,
@@ -213,6 +211,16 @@
 				DD27D42E27B83939004361D9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DD27D44D27B83C56004361D9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD27D43B27B839A8004361D9 /* SymbolCollectionListView.swift */,
+				DD27D44927B83ABF004361D9 /* SymbolGridView.swift */,
+				DD27D44B27B83AF0004361D9 /* SymbolSelectionView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		DDC17E4427B6EA2C00D7D72B /* Protocols */ = {

@@ -7,6 +7,34 @@
 
 import Foundation
 import NMASFSymbol
+import UIKit
+import SwiftUI
+import CoreData
+
+extension SymbolCollectionMO: SFSymbolCollectionProtocol {
+    
+    public var title: String {
+        get { name ?? "New Collection" }
+        set { name = newValue }
+    }
+        
+    public var infoSymbol: SFSymbol {
+        get {
+            guard let rawValue = infoSymbolRV else { return .square_grid_2x2_fill }
+            return SFSymbol(name: rawValue) ?? .square_grid_2x2_fill
+        }
+        
+        set { infoSymbolRV = newValue.rawValue }
+    }
+    
+    public var symbols: Set<SFSymbol> {
+        get {
+            guard let rawValues = symbolsRVs else { return Set() }
+            return Set(rawValues.compactMap { SFSymbol(name: $0) })
+        }
+    }
+    
+}
 
 
 typealias Default = Constants.Default
@@ -27,12 +55,6 @@ struct Constants {
     }
     
 }
-
-
-import UIKit
-import SwiftUI
-import CoreData
-
 
 
 let llog = LiteLogger()

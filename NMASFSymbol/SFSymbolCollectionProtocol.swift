@@ -31,6 +31,10 @@ public protocol SFSymbolCollectionProtocol: Hashable {
 
 public extension SFSymbolCollectionProtocol {
     
+    var isEmpty: Bool { symbols.isEmpty }
+    
+    var count: Int { symbols.count }
+    
     /// Returns a `Bool` indicating if the symbol exists in `self`
     /// - Parameter targetSymbol: the symbol to look for
     /// - Returns: `true` if it exists in the collection; otherwise, `false`.
