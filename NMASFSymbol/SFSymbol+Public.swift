@@ -20,7 +20,7 @@ public extension SFSymbol {
     var systemName: String { rawValue }
     
     /// The name of the system symbol using spaces instead of `.`
-    var displayName: String { rawValue.replacingOccurrences(of: ".", with: " ") }
+    var displayName: String { rawValue.reduce(into: String()) { $1 == "." ? $0.append(" ") : $0.append($1) } }
     
     init?(name: String) {
         self.init(rawValue: name)
