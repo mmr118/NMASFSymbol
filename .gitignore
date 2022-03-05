@@ -1,8 +1,13 @@
+## From global
+*~
+.DS_Store
+
+########################################
 # Created by https://www.toptal.com/developers/gitignore/api/xcode
 # Edit at https://www.toptal.com/developers/gitignore?templates=xcode
 
 ### Xcode ###
-## User settings
+## Excludes User settings
 xcuserdata/
 
 ## Xcode 8 and earlier
@@ -10,10 +15,15 @@ xcuserdata/
 *.xccheckout
 
 ### Xcode Patch ###
+## Excludes entire project
 *.xcodeproj/*
+
+## Readds needed dir
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
+
+## Excludes following
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
