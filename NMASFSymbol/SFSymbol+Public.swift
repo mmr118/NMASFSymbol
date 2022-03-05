@@ -30,7 +30,7 @@ public extension SFSymbol {
 public extension SFSymbol {
         
     /// Returns an image object of the system symbol image.
-    var uiImage: UIImage? { UIImage(sfSymbol: self) }
+    var uiImage: UIImage? { UIImage(symbol: self) }
     
     /// Returns an image object of the system symbol image with the
     /// specified configuration.
@@ -40,7 +40,7 @@ public extension SFSymbol {
     /// which variant of the image you want. For example, you can request a
     /// symbol image with a specified weight.
     func uiImage(with configuration: UIImage.SymbolConfiguration) -> UIImage? {
-        return UIImage(sfSymbol: self, withConfiguration: configuration)
+        return UIImage(symbol: self, withConfiguration: configuration)
     }
     
     /// Returns an image object of the system symbol image appropriate for the
@@ -51,7 +51,7 @@ public extension SFSymbol {
     /// variant of the image is loaded. If you specify nil, this method uses the
     /// traits associated with the main screen.
     func uiImage(compatibleWith traitCollection: UITraitCollection?) -> UIImage? {
-        return UIImage(sfSymbol: self, compatibleWith: traitCollection)
+        return UIImage(symbol: self, compatibleWith: traitCollection)
     }
 
 }
@@ -60,6 +60,6 @@ public extension SFSymbol {
 public extension SFSymbol {
     
     /// Returns a system symbol image.
-    var image: Image? { Image(sfSymbol: self) }
+    var image: Image? { Image(symbol: self) }
         
 }

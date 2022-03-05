@@ -13,7 +13,7 @@ struct SymbolSelectionView: View {
     
     @Environment(\.editMode) private var editMode
     
-    var sfSymbol: SFSymbol
+    var symbol: SFSymbol
     
     @State var isSelected: Bool
     
@@ -23,14 +23,14 @@ struct SymbolSelectionView: View {
             
             GroupBox {
                 
-                Image(systemName: sfSymbol.systemName)
+                Image(systemName: symbol.systemName)
                     .foregroundColor(.pealWIU)
                     .font(.system(size: 35))
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 40, maxHeight: .infinity, alignment: .center)
                     .cornerRadius(10)
                     .padding (0)
                 
-                Text(sfSymbol.systemName)
+                Text(symbol.systemName)
                     .font(.system(size: 12))
                     .lineLimit(2)
                     .multilineTextAlignment(.center)
@@ -60,9 +60,9 @@ struct SymbolSelectionView: View {
     
     private func selectionImage() -> Image {
         if $isSelected.wrappedValue {
-            return Image(sfSymbol: .checkmark_circle_fill)
+            return Image(symbol: .checkmark_circle_fill)
         } else {
-            return Image(sfSymbol: .circle)
+            return Image(symbol: .circle)
         }
         
     }
@@ -70,10 +70,10 @@ struct SymbolSelectionView: View {
 
 struct SymbolSelectionView_Preview: PreviewProvider {
     static var previews: some View {
-        SymbolSelectionView(sfSymbol: SFSymbol.allCases.randomElement()!, isSelected: true).environment(\.editMode, Binding.constant(EditMode.active))
+        SymbolSelectionView(symbol: SFSymbol.allCases.randomElement()!, isSelected: true).environment(\.editMode, Binding.constant(EditMode.active))
             .previewLayout(.fixed(width: 100, height: 150))
         
-        SymbolSelectionView(sfSymbol: SFSymbol.allCases.randomElement()!, isSelected: true).environment(\.editMode, Binding.constant(EditMode.inactive))
+        SymbolSelectionView(symbol: SFSymbol.allCases.randomElement()!, isSelected: true).environment(\.editMode, Binding.constant(EditMode.inactive))
             .previewLayout(.fixed(width: 100, height: 150))
         
     }

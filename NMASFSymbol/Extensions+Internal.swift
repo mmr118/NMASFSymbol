@@ -10,8 +10,6 @@ import Foundation
 
 internal extension RawRepresentable {
     
-    var rawString: String { String(describing: self) }
-    
     var caseString: String { String(describing: self.self) }
 
 }

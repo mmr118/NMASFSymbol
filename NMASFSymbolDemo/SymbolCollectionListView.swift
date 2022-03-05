@@ -84,7 +84,7 @@ struct SymbolCollectionListView: View {
             Text(collection.title)
                 .tint(.black)
         } icon: {
-            Image(sfSymbol: collection.infoSymbol)
+            Image(symbol: collection.infoSymbol)
                 .font(.system(size: 16))
                 .foregroundColor(.tealNMA)
         }

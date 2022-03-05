@@ -28,7 +28,7 @@ struct SymbolGridView<T: SFSymbolCollectionProtocol>: View {
             LazyVGrid(columns: gridItemLayout, spacing: 10) {
                 
                 ForEach(filteredSymbols, id: \.self) { symbol in
-                    SymbolSelectionView(sfSymbol: symbol, isSelected: false) // selectionModel.isExistingOrSelected(symbol)).environment(\.editMode, $editMode)
+                    SymbolSelectionView(symbol: symbol, isSelected: false) // selectionModel.isExistingOrSelected(symbol)).environment(\.editMode, $editMode)
                         .environment(\.editMode, $editMode)
                         .onTapGesture {
                             $editMode.animation().wrappedValue = ($editMode.wrappedValue == .inactive) ? .active : .inactive

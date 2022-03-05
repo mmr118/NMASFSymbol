@@ -14,9 +14,9 @@ public extension UIImage {
     
     /// Creates an image object that contains a system symbol image.
     ///
-    /// - parameter sfSymbol: The `SFSymbol` for the system symbol image.
-    convenience init?(sfSymbol: SFSymbol) {
-        self.init(systemName: sfSymbol.systemName)
+    /// - parameter symbol: The `SFSymbol` for the system symbol image.
+    convenience init?(symbol: SFSymbol) {
+        self.init(systemName: symbol.systemName)
     }
 
     
@@ -24,13 +24,13 @@ public extension UIImage {
     /// specified configuration.
     ///
     /// - parameters:
-    ///   - sfSymbol: The `SFSymbol` for the system symbol image.
+    ///   - symbol: The `SFSymbol` for the system symbol image.
     ///   - configuration: The image configuration that you want.
     ///   Use this parameter to specify traits and other details that define
     ///   which variant of the image you want. For example, you can request a
     ///   symbol image with a specified weight.
-    convenience init?(sfSymbol: SFSymbol, withConfiguration configuration: UIImage.SymbolConfiguration) {
-        self.init(systemName: sfSymbol.systemName, withConfiguration: configuration)
+    convenience init?(symbol: SFSymbol, withConfiguration configuration: UIImage.SymbolConfiguration) {
+        self.init(systemName: symbol.systemName, withConfiguration: configuration)
     }
     
     
@@ -38,14 +38,14 @@ public extension UIImage {
     /// for the specified traits.
     ///
     /// - parameters:
-    ///   - sfSymbol: The `SFSymbol` for the system symbol image.
+    ///   - symbol: The `SFSymbol` for the system symbol image.
     ///   - traitCollection: The traits associated with the intended environment
     ///   for the image.
     ///   Use this parameter to ensure that the correct variant of the image
     ///   is loaded. If you specify nil, this method uses the traits associated
     ///   with the main screen.
-    convenience init?(sfSymbol: SFSymbol, compatibleWith traitCollection: UITraitCollection?) {
-        self.init(systemName: sfSymbol.systemName, compatibleWith: traitCollection)
+    convenience init?(symbol: SFSymbol, compatibleWith traitCollection: UITraitCollection?) {
+        self.init(systemName: symbol.systemName, compatibleWith: traitCollection)
     }
         
 }
@@ -58,10 +58,10 @@ public extension Image {
     
     /// Creates a system symbol image.
     ///
-    /// - Parameter sfSymbol: The `SFSymbol` for the system symbol image.
+    /// - Parameter symbol: The `SFSymbol` for the system symbol image.
     @available(macOS 11.0, *)
-    init(sfSymbol: SFSymbol) {
-        self.init(systemName: sfSymbol.systemName)
+    init(symbol: SFSymbol) {
+        self.init(systemName: symbol.systemName)
     }
     
 }
@@ -74,9 +74,9 @@ extension Label where Title == Text, Icon == Image {
     ///
     /// - Parameters:
     ///    - titleKey: A title generated from a localized string.
-    ///    - sfSymbol: The sfSymbol of the image resource.
-    public init(_ titleKey: LocalizedStringKey, sfSymbol: SFSymbol) {
-        self.init(titleKey, systemImage: sfSymbol.systemName)
+    ///    - symbol: The symbol of the image resource.
+    public init(_ titleKey: LocalizedStringKey, symbol: SFSymbol) {
+        self.init(titleKey, systemImage: symbol.systemName)
     }
         
     /// Creates a label with a system icon image and a title generated from a
@@ -84,8 +84,8 @@ extension Label where Title == Text, Icon == Image {
     ///
     /// - Parameters:
     ///    - title: A string used as the label's title.
-    ///    - sfSymbol: The sfSymbol of the image resource.
-    public init<S>(_ title: S, sfSymbol: SFSymbol) where S : StringProtocol {
-        self.init(title, systemImage: sfSymbol.systemName)
+    ///    - symbol: The symbol of the image resource.
+    public init<S>(_ title: S, symbol: SFSymbol) where S : StringProtocol {
+        self.init(title, systemImage: symbol.systemName)
     }
 }
