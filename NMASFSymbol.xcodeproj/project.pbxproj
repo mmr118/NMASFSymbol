@@ -245,8 +245,8 @@
 			isa = PBXGroup;
 			children = (
 				DD222DC627B6DA5D001AE5F6 /* SFSymbolCollection.swift */,
-				DD222DBF27B6DA5D001AE5F6 /* SFSystemSymbolCollection.swift */,
 				DD27D40927B7F5B2004361D9 /* SFSymbol+SystemCategory.swift */,
+				DD222DBF27B6DA5D001AE5F6 /* SFSystemSymbolCollection.swift */,
 			);
 			name = "Symbol Collections";
 			sourceTree = "<group>";

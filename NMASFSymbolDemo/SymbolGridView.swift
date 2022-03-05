@@ -58,7 +58,7 @@ struct SymbolGridView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        let collection = SFSymbolSystemCategory.devices.collection()
+        let collection = SFSymbolSystemCategory.devices.collection
 //        let context = PersistenceController.preview.mainContext
 //        let collection = PersistenceController.previewCollectionMO(context)
         SymbolGridView(collection: collection)

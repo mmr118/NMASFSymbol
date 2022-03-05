@@ -37,7 +37,7 @@ struct SymbolCollectionListView: View {
                                 
                 Section("System") {
                     
-                    let systemCollections = SFSystemSymbolCollection.allSystemCollections
+                    let systemCollections = SFSymbolSystemCollection.allCollections
                     
                     ForEach(systemCollections, id:\.self) { collection in
                         
