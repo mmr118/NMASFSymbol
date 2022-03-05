@@ -1,5 +1,5 @@
 //
-//  SFSystemSymbolCollection.swift
+//  SystemSFSymbolCollection.swift
 //  NMASFSymbol
 //
 //  Created by Monica Rondón on 2/10/22.

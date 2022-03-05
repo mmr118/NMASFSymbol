@@ -1,5 +1,5 @@
 //
-//  SFSystemSymbolCollectionTests.swift
+//  SystemSFSymbolCollectionTests.swift
 //  NMASFSymbolTests
 //
 //  Created by Monica Rondón on 2/10/22.
@@ -8,9 +8,9 @@
 import XCTest
 @testable import NMASFSymbol
 
-class SFSystemSymbolCollectionTests: XCTestCase {
+class SystemSFSymbolCollectionTests: XCTestCase {
     
-    var systemCollectionUT: SFSystemSymbolCollection!
+    var systemCollectionUT: SystemSymbolCollection!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
@@ -22,22 +22,22 @@ class SFSystemSymbolCollectionTests: XCTestCase {
         systemCollectionUT = nil
     }
 
-    func testSFSystemSymbolCollection() throws {
+    func testSystemSFSymbolCollection() throws {
         let systemCategories = SFSymbol.SystemCategory.allCases
         
         for category in systemCategories {
-            systemCollectionUT = category.collection()
+            systemCollectionUT = category.collection
             assertOnSystemCollection(for: category)
             
         }
         
-        let expectedCategory = SFSymbolSystemCategory.whats_new
+        let expectedCategory = SystemSymbolCategory.whats_new
         let expectedSymbols = SFSymbol.WhatsNew
         let expectedInfoSymbol = SFSymbol.sparkles
         let expectedSymbolsPart: [SFSymbol] = [.beats_fit_pro, .beats_fit_pro_left, .beats_fit_pro_right]
         let notIncludedSymbols: [SFSymbol] = [.house_fill, .house_circle, .house_circle_fill, .gamecontroller]
         
-        systemCollectionUT = SFSystemSymbolCollection.whats_new
+        systemCollectionUT = SystemSFSymbolCollection.whats_new
         
         XCTAssertEqual(systemCollectionUT.category, expectedCategory)
         XCTAssertEqual(systemCollectionUT.title, expectedCategory.title)
@@ -59,7 +59,7 @@ class SFSystemSymbolCollectionTests: XCTestCase {
         XCTAssertTrue(systemCollectionUT.contains(noneOf: notIncludedSymbols))
     }
     
-    private func assertOnSystemCollection(for category: SFSymbolSystemCategory) {
+    private func assertOnSystemCollection(for category: SystemSymbolCategory) {
         XCTAssertNotNil(systemCollectionUT)
         XCTAssertEqual(systemCollectionUT.title, category.title)
     }
