@@ -30,4 +30,5 @@ struct SymbolCollectionEditView_Previews: PreviewProvider {
             .environment(\.managedObjectContext, PersistenceController.preview.mainContext)
 
     }
+    
 }

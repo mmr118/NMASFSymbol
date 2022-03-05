@@ -37,6 +37,8 @@
 		DD27D44C27B83AF0004361D9 /* SymbolSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27D44B27B83AF0004361D9 /* SymbolSelectionView.swift */; };
 		DD27D44F27B841D5004361D9 /* SymbolCollectionEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD27D44E27B841D5004361D9 /* SymbolCollectionEditView.swift */; };
 		DDDF0E0227D3970C00F1831C /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF0E0127D3970C00F1831C /* PerformanceTests.swift */; };
+		DDDF0E0627D39D5F00F1831C /* CollectionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF0E0527D39D5F00F1831C /* CollectionList.swift */; };
+		DDDF0E0827D3A1A100F1831C /* ExtensionsAndHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF0E0727D3A1A100F1831C /* ExtensionsAndHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		DD27D44B27B83AF0004361D9 /* SymbolSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolSelectionView.swift; sourceTree = "<group>"; };
 		DD27D44E27B841D5004361D9 /* SymbolCollectionEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCollectionEditView.swift; sourceTree = "<group>"; };
 		DDDF0E0127D3970C00F1831C /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
+		DDDF0E0527D39D5F00F1831C /* CollectionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionList.swift; sourceTree = "<group>"; };
+		DDDF0E0727D3A1A100F1831C /* ExtensionsAndHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsAndHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,7 +198,9 @@
 		DD27D42627B83937004361D9 /* NMASFSymbolDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DDDF0E0527D39D5F00F1831C /* CollectionList.swift */,
 				DD27D43E27B83A09004361D9 /* Constants.swift */,
+				DDDF0E0727D3A1A100F1831C /* ExtensionsAndHelpers.swift */,
 				DD27D43F27B83A09004361D9 /* LiteLogger.swift */,
 				DD27D44D27B83C56004361D9 /* Views */,
 				DD27D42727B83937004361D9 /* NMASFSymbolDemoApp.swift */,
@@ -424,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDF0E0627D39D5F00F1831C /* CollectionList.swift in Sources */,
 				DD27D44A27B83ABF004361D9 /* SymbolGridView.swift in Sources */,
 				DD27D43927B83957004361D9 /* NMASFSymbolDemo.xcdatamodeld in Sources */,
 				DD27D44127B83A09004361D9 /* LiteLogger.swift in Sources */,
@@ -432,6 +439,7 @@
 				DD27D43D27B839A8004361D9 /* SymbolCollectionListView.swift in Sources */,
 				DD27D42827B83937004361D9 /* NMASFSymbolDemoApp.swift in Sources */,
 				DD27D44027B83A09004361D9 /* Constants.swift in Sources */,
+				DDDF0E0827D3A1A100F1831C /* ExtensionsAndHelpers.swift in Sources */,
 				DD27D44F27B841D5004361D9 /* SymbolCollectionEditView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
