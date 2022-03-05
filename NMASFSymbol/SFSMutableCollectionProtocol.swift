@@ -1,5 +1,5 @@
 //
-//  SFMutableSymbolCollectionProtocol.swift
+//  SFSMutableCollectionProtocol.swift
 //  NMASFSymbol
 //
 //  Created by Monica Rondón on 2/10/22.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol SFMutableSymbolCollectionProtocol: SFSymbolCollectionProtocol {
+public protocol SFSMutableCollectionProtocol: SFSCollectionProtocol {
     
     /// Updates the symbol used for information/summary purposes.
     ///
@@ -50,22 +50,22 @@ public protocol SFMutableSymbolCollectionProtocol: SFSymbolCollectionProtocol {
     /// Adds the symbols from the passed collection to `self`'s symbols.
     /// - Parameter collection: the collection whose symbols are to be added.
     /// - Returns: symbols added to `self`
-    func mergeSymbols<C: SFSymbolCollectionProtocol>(from collection: C) -> Set<SFSymbol>
+    func mergeSymbols<C: SFSCollectionProtocol>(from collection: C) -> Set<SFSymbol>
     
     /// Adds the symbols from the passed collections to `self`'s symbols.
     /// - Parameter collections: the collections whose symbols are to be added.
     /// - Returns: symbols added to `self`
-    func mergeSymbols<S: Sequence>(from collections: S) -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol
+    func mergeSymbols<S: Sequence>(from collections: S) -> Set<SFSymbol> where S.Element: SFSCollectionProtocol
 
     /// Removes the symbols in the passed collection from `self`'s symbols.
     /// - Parameter collections: the collection whose symbols are to be removed.
     /// - Returns: symbols removed from `self`
-    func separateSymbols<C: SFSymbolCollectionProtocol>(from collection: C) -> Set<SFSymbol>
+    func separateSymbols<C: SFSCollectionProtocol>(from collection: C) -> Set<SFSymbol>
     
     /// Removes the symbols in the passed collections from `self`'s symbols.
     /// - Parameter collections: the collections whose symbols are to be removed.
     /// - Returns: symbols removed from `self`
-    func separateSymbols<S: Sequence>(from collections: S)  -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol
+    func separateSymbols<S: Sequence>(from collections: S)  -> Set<SFSymbol> where S.Element: SFSCollectionProtocol
 
     
 }

@@ -11,6 +11,11 @@ import SwiftUI
 // MARK: Common
 public extension SFSymbol {
     
+    /// A random `SFSymbol`
+    static func random() -> SFSymbol {
+        allCases.randomElement() ?? .questionmark_circle
+    }
+    
     /// The name of the system symbol image used in `Swift`
     var systemName: String { rawValue }
     
@@ -20,15 +25,11 @@ public extension SFSymbol {
     init?(name: String) {
         self.init(rawValue: name)
     }
-        
-    /// A random `SFSymbol`
-    static func random() -> SFSymbol {
-        allCases.randomElement() ?? .questionmark_circle
-    }
     
 }
 
-// MARK: Identifiable Conformance
+// MARK: - SFSymbol Identifiable conformance
+@available(macOS 10.15, iOS 13, tvOS 13, watchOS 6, *)
 extension SFSymbol: Identifiable {
     
     public var id: String { return rawValue }

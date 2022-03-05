@@ -1,5 +1,5 @@
 //
-//  SFSymbolCollectionProtocol.swift
+//  SFSCollectionProtocol.swift
 //  NMASFSymbol
 //
 //  Created by Monica Rondón on 2/10/22.
@@ -9,7 +9,7 @@ import Foundation
 
 /// A type that contains a collection of unique `SFSymbol`s and basic
 /// identifiable information; such as a title and infoSymbol.
-public protocol SFSymbolCollectionProtocol: Hashable {
+public protocol SFSCollectionProtocol: Hashable {
     
     /// The title of the collection
     var title: String { get }
@@ -29,7 +29,7 @@ public protocol SFSymbolCollectionProtocol: Hashable {
     
 }
 
-public extension SFSymbolCollectionProtocol {
+public extension SFSCollectionProtocol {
     
     var isEmpty: Bool { symbols.isEmpty }
     
@@ -67,33 +67,33 @@ public extension SFSymbolCollectionProtocol {
     
 }
 
-extension SFSymbolCollectionProtocol {
+extension SFSCollectionProtocol {
     
     /// Returns a `Bool` that indicating if all the symbols from the passed collection exist in `self`
     /// - Parameter targetSymbol: the collection whose symbols to look for
     /// - Returns: `true` if it exists in the collection; otherwise, `false`.
-    func contains<C: SFSymbolCollectionProtocol>(allSymbolsFrom collection: C) -> Bool {
+    func contains<C: SFSCollectionProtocol>(allSymbolsFrom collection: C) -> Bool {
         return contains(allOf: collection.symbols)
     }
     
     /// Returns a `Bool` indicating if `self` contains at least 1 symbol in common with the passed collection
     /// - Parameter targetSymbol: the collection whose symbols to look for
     /// - Returns: `true` if it exists in the collection; otherwise, `false`.
-    func contains<C: SFSymbolCollectionProtocol>(anySymbolsFrom collection: C) -> Bool {
+    func contains<C: SFSCollectionProtocol>(anySymbolsFrom collection: C) -> Bool {
         return contains(anyOf: collection.symbols)
     }
     
     /// Returns a `Bool` indicating if `self` has no symbols in common with passed collection
     /// - Parameter targetSymbol: the symbols to look for
     /// - Returns: `true` if `self` does not contain any of the passed symbols; otherwise, `false`.
-    func contains<C: SFSymbolCollectionProtocol>(noSymbolsFrom collection: C) -> Bool {
+    func contains<C: SFSCollectionProtocol>(noSymbolsFrom collection: C) -> Bool {
         return contains(noneOf: collection.symbols)
     }
     
 }
 
 // MARK: Hashable Conformance
-extension SFSymbolCollectionProtocol {
+extension SFSCollectionProtocol {
     
     public func hash(into hasher: inout Hasher) {
         hasher.combine(title.hash)
@@ -109,20 +109,20 @@ extension SFSymbolCollectionProtocol {
 }
 
 
-// MARK: - SFSymbol+SFSymbolCollectionProtocol
+// MARK: - SFSymbol+SFSCollectionProtocol
 public extension SFSymbol {
     
     /// Gives all the symbols present in the specified collections
     /// - parameter collections: The collections whose symbols to combine
     /// - Returns: a set of symbols from the given collections
-    static func allSymbols<S: Sequence>(from collections: S) -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol {
+    static func allSymbols<S: Sequence>(from collections: S) -> Set<SFSymbol> where S.Element: SFSCollectionProtocol {
         return collections.reduce(Set<SFSymbol>()) { $0.union($1.symbols) }
     }
     
     /// Gives all common symbols in the specified collections
     /// - parameter collections: The collections whose symbols to find comminality with
     /// - Returns: a set of symbols that are common to the given collections
-    static func commonSymbols<S: Sequence>(in collections: S) -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol {
+    static func commonSymbols<S: Sequence>(in collections: S) -> Set<SFSymbol> where S.Element: SFSCollectionProtocol {
         let allSymbols = allSymbols(from: collections)
         return collections.reduce(allSymbols) { $0.intersection($1.symbols) }
     }

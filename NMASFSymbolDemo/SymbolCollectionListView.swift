@@ -37,7 +37,7 @@ struct SymbolCollectionListView: View {
                                 
                 Section("System") {
                     
-                    let systemCollections = SFSymbolSystemCollection.allCollections
+                    let systemCollections = SystemSFSymbolCollection.allCollections
                     
                     ForEach(systemCollections, id:\.self) { collection in
                         
@@ -79,7 +79,7 @@ struct SymbolCollectionListView: View {
     }
     
     @ViewBuilder
-    private func listLabel<C: SFSymbolCollectionProtocol>(for collection: C) -> some View {
+    private func listLabel<C: SFSCollectionProtocol>(for collection: C) -> some View {
         Label {
             Text(collection.title)
                 .tint(.black)

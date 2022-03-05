@@ -9,7 +9,7 @@ import SwiftUI
 import NMASFSymbol
 import CoreData
 
-struct SymbolGridView<T: SFSymbolCollectionProtocol>: View {
+struct SymbolGridView<T: SFSCollectionProtocol>: View {
     
         @Environment(\.managedObjectContext) private var viewContext
     

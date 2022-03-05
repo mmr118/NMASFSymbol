@@ -11,7 +11,7 @@ import UIKit
 import SwiftUI
 import CoreData
 
-extension SymbolCollectionMO: SFSymbolCollectionProtocol {
+extension SymbolCollectionMO: SFSCollectionProtocol {
     
     public var title: String {
         get { name ?? "New Collection" }
@@ -93,7 +93,7 @@ extension Color {
 
 /*
 
-extension SymbolCollectionMO: SFMutableSymbolCollectionProtocol {
+extension SymbolCollectionMO: SFSMutableCollectionProtocol {
     
     // MARK: - Collection conformance
     private static let defaultInfoSymbol: SFSymbol = .square_stack_3d_down_right_fill

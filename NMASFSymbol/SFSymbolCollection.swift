@@ -8,9 +8,11 @@
 import Foundation
 
 
+public typealias SymbolCollection = SFSymbolCollection
+
 /// A subject that represents a collection of unique `SFSymbol`s and basic
 /// identifiable information; such as a title and infoSymbol.
-open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
+open class SFSymbolCollection: SFSMutableCollectionProtocol {
     
     private static let defaultTitle = "New Collection"
     
@@ -68,7 +70,7 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     ///   - infoSymbol: the symbol used for quick information or summary reasons
     ///   - includeInfoInCollection: should the passed `infoSymbol` be included
     ///   in the collection's symbols
-    public convenience init<C: SFSymbolCollectionProtocol>(title: String? = nil, infoSymbol: SFSymbol? = nil, symbolsIn collection: C, includeInfoInCollection: Bool = true) {
+    public convenience init<C: SFSCollectionProtocol>(title: String? = nil, infoSymbol: SFSymbol? = nil, symbolsIn collection: C, includeInfoInCollection: Bool = true) {
         self.init(title: title ?? Self.defaultTitle, symbols: collection.symbols, infoSymbol: infoSymbol ?? Self.defaultInfoSymbol, includeInfoInCollection: includeInfoInCollection)
     }
     
@@ -80,7 +82,7 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
     ///   - infoSymbol: the symbol used for quick information or summary reasons
     ///   - includeInfoInCollection: should the passed `infoSymbol` be included
     ///   in the collection's symbols
-    public convenience init<S: Sequence>(title: String? = nil, infoSymbol: SFSymbol? = nil, symbolsIn collections: S, includeInfoInCollection: Bool = true) where S.Element: SFSymbolCollectionProtocol {
+    public convenience init<S: Sequence>(title: String? = nil, infoSymbol: SFSymbol? = nil, symbolsIn collections: S, includeInfoInCollection: Bool = true) where S.Element: SFSCollectionProtocol {
         let symbols = collections.reduce(Set<SFSymbol>()) { $0.union($1.symbols) }
         self.init(title: title ?? Self.defaultTitle, symbols: symbols, infoSymbol: infoSymbol ?? Self.defaultInfoSymbol, includeInfoInCollection: includeInfoInCollection)
     }
@@ -103,7 +105,7 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
         return oldSymbol
     }
     
-    // MARK: - SFMutableSymbolCollectionProtocol conformance
+    // MARK: - SFSMutableCollectionProtocol conformance
     public func setSymbols<S: Sequence>(_ newSymbols: S) where S.Element == SFSymbol {
         self.symbols = Set(newSymbols)
     }
@@ -130,26 +132,26 @@ open class SFSymbolCollection: SFMutableSymbolCollectionProtocol {
         self.symbols.removeAll()
     }
     
-    public func mergeSymbols<C: SFSymbolCollectionProtocol>(from collection: C) -> Set<SFSymbol> {
+    public func mergeSymbols<C: SFSCollectionProtocol>(from collection: C) -> Set<SFSymbol> {
         let symbolsBefore = symbols
         add(collection.symbols)
         return symbols.subtracting(symbolsBefore)
     }
     
-    public func mergeSymbols<S: Sequence>(from collections: S)  -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol {
+    public func mergeSymbols<S: Sequence>(from collections: S)  -> Set<SFSymbol> where S.Element: SFSCollectionProtocol {
         let symbolsBefore = symbols
         let newSymbols = collections.reduce(Set<SFSymbol>()) { $0.union($1.symbols) }
         add(newSymbols)
         return symbols.subtracting(symbolsBefore)
     }
     
-    public func separateSymbols<C: SFSymbolCollectionProtocol>(from collection: C) -> Set<SFSymbol> {
+    public func separateSymbols<C: SFSCollectionProtocol>(from collection: C) -> Set<SFSymbol> {
         let symbolsBefore = symbols
         remove(collection.symbols)
         return symbolsBefore.subtracting(symbols)
     }
 
-    public func separateSymbols<S: Sequence>(from collections: S) -> Set<SFSymbol> where S.Element: SFSymbolCollectionProtocol {
+    public func separateSymbols<S: Sequence>(from collections: S) -> Set<SFSymbol> where S.Element: SFSCollectionProtocol {
         let symbolsBefore = symbols
         let targetSymbols = collections.reduce(Set<SFSymbol>()) { $0.union($1.symbols) }
         remove(targetSymbols)
