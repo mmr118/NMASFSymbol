@@ -154,11 +154,8 @@
 			children = (
 				DD27D40827B7F4F2004361D9 /* Extensions */,
 				DDC17E4427B6EA2C00D7D72B /* Protocols */,
-				DD222DC827B6DA5D001AE5F6 /* SFSymbol.swift */,
-				DD222DC027B6DA5D001AE5F6 /* SFSymbol+Public.swift */,
-				DD222DC627B6DA5D001AE5F6 /* SFSymbolCollection.swift */,
-				DD222DBF27B6DA5D001AE5F6 /* SFSystemSymbolCollection.swift */,
-				DD27D40927B7F5B2004361D9 /* SFSymbol+SystemCategory.swift */,
+				DDDF0DFF27D37C3E00F1831C /* Symbols */,
+				DDDF0E0027D37C4B00F1831C /* Symbol Collections */,
 				DD222D6927B6D64A001AE5F6 /* NMASFSymbol.h */,
 				DD222D6A27B6D64A001AE5F6 /* NMASFSymbol.docc */,
 			);
@@ -233,6 +230,25 @@
 				DD222DBE27B6DA5D001AE5F6 /* SFMutableSymbolCollectionProtocol.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		DDDF0DFF27D37C3E00F1831C /* Symbols */ = {
+			isa = PBXGroup;
+			children = (
+				DD222DC827B6DA5D001AE5F6 /* SFSymbol.swift */,
+				DD222DC027B6DA5D001AE5F6 /* SFSymbol+Public.swift */,
+			);
+			name = Symbols;
+			sourceTree = "<group>";
+		};
+		DDDF0E0027D37C4B00F1831C /* Symbol Collections */ = {
+			isa = PBXGroup;
+			children = (
+				DD222DC627B6DA5D001AE5F6 /* SFSymbolCollection.swift */,
+				DD222DBF27B6DA5D001AE5F6 /* SFSystemSymbolCollection.swift */,
+				DD27D40927B7F5B2004361D9 /* SFSymbol+SystemCategory.swift */,
+			);
+			name = "Symbol Collections";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -13,6 +13,11 @@ public typealias SFSymbolSystemCategory = SFSymbol.SystemCategory
 
 public extension SFSymbol {
     
+    /// Returns a random `SFSymbol` from the given `SystemCategory`
+    static func random(in category: SystemCategory) -> SFSymbol {
+        return category.symbols.randomElement()!
+    }
+    
     /// An enumeration representing the categories in **Apple**'s desktop
     /// application, **SF Symbols.app, version 3.2**
     @frozen enum SystemCategory: Int, CaseIterable, Identifiable {

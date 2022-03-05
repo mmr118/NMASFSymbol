@@ -10,7 +10,7 @@ import Foundation
 // MARK: - SFSymbol
 
 /// An enumeration for the available system images.
-public enum SFSymbol: String, CaseIterable, Identifiable {
+public enum SFSymbol: String, CaseIterable {
 
     case square_and_arrow_up = "square.and.arrow.up"
     case square_and_arrow_up_fill = "square.and.arrow.up.fill"
