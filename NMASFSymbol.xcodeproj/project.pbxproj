@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD9CF6222832A28F00FA9E93 /* NMASFSymbol.docc in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6212832A28F00FA9E93 /* NMASFSymbol.docc */; };
-		DD9CF6282832A28F00FA9E93 /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */; };
+		DD9CF6282832A28F00FA9E93 /* SFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */; };
 		DD9CF62D2832A28F00FA9E93 /* NMASFSymbolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF62C2832A28F00FA9E93 /* NMASFSymbolTests.swift */; };
 		DD9CF62E2832A28F00FA9E93 /* NMASFSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = DD9CF6202832A28F00FA9E93 /* NMASFSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMASFSymbol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SFSymbol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9CF6202832A28F00FA9E93 /* NMASFSymbol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMASFSymbol.h; sourceTree = "<group>"; };
 		DD9CF6212832A28F00FA9E93 /* NMASFSymbol.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NMASFSymbol.docc; sourceTree = "<group>"; };
 		DD9CF6272832A28F00FA9E93 /* NMASFSymbolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NMASFSymbolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD9CF6282832A28F00FA9E93 /* NMASFSymbol.framework in Frameworks */,
+				DD9CF6282832A28F00FA9E93 /* SFSymbol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 		DD9CF61E2832A28F00FA9E93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */,
+				DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */,
 				DD9CF6272832A28F00FA9E93 /* NMASFSymbolTests.xctest */,
 			);
 			name = Products;
@@ -114,7 +114,7 @@
 			);
 			name = NMASFSymbol;
 			productName = NMASFSymbol;
-			productReference = DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */;
+			productReference = DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DD9CF6262832A28F00FA9E93 /* NMASFSymbolTests */ = {
@@ -356,8 +356,8 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.NMASFSymbol;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.sfsymbol;
+				PRODUCT_NAME = SFSymbol;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -384,8 +384,8 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.NMASFSymbol;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.sfsymbol;
+				PRODUCT_NAME = SFSymbol;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
