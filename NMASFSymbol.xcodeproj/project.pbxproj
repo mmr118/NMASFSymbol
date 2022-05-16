@@ -12,13 +12,10 @@
 		DD9CF62D2832A28F00FA9E93 /* NMASFSymbolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF62C2832A28F00FA9E93 /* NMASFSymbolTests.swift */; };
 		DD9CF62E2832A28F00FA9E93 /* NMASFSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = DD9CF6202832A28F00FA9E93 /* NMASFSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD9CF63F2832A3BB00FA9E93 /* SFSymbol+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF63E2832A3BB00FA9E93 /* SFSymbol+Public.swift */; };
-		DD9CF6402832A3BB00FA9E93 /* SFMutableSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6382832A3BB00FA9E93 /* SFMutableSymbolCollectionProtocol.swift */; };
 		DD9CF6412832A3BB00FA9E93 /* Extensions+Internal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF63A2832A3BB00FA9E93 /* Extensions+Internal.swift */; };
 		DD9CF6422832A3BB00FA9E93 /* Extensions+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6392832A3BB00FA9E93 /* Extensions+Public.swift */; };
-		DD9CF6432832A3BB00FA9E93 /* SFSystemSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6372832A3BB00FA9E93 /* SFSystemSymbolCollection.swift */; };
-		DD9CF6442832A3BB00FA9E93 /* SFSymbolCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF63D2832A3BB00FA9E93 /* SFSymbolCollection.swift */; };
-		DD9CF6452832A3BB00FA9E93 /* SFSymbolCollectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF63B2832A3BB00FA9E93 /* SFSymbolCollectionProtocol.swift */; };
 		DD9CF6462832A3BB00FA9E93 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF63C2832A3BB00FA9E93 /* SFSymbol.swift */; };
+		DD9CF6492832A46000FA9E93 /* SFSymbol+SystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6482832A46000FA9E93 /* SFSymbol+SystemCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,14 +34,11 @@
 		DD9CF6212832A28F00FA9E93 /* NMASFSymbol.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NMASFSymbol.docc; sourceTree = "<group>"; };
 		DD9CF6272832A28F00FA9E93 /* NMASFSymbolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NMASFSymbolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9CF62C2832A28F00FA9E93 /* NMASFSymbolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolTests.swift; sourceTree = "<group>"; };
-		DD9CF6372832A3BB00FA9E93 /* SFSystemSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSymbolCollection.swift; sourceTree = "<group>"; };
-		DD9CF6382832A3BB00FA9E93 /* SFMutableSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFMutableSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
 		DD9CF6392832A3BB00FA9E93 /* Extensions+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Public.swift"; sourceTree = "<group>"; };
 		DD9CF63A2832A3BB00FA9E93 /* Extensions+Internal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Internal.swift"; sourceTree = "<group>"; };
-		DD9CF63B2832A3BB00FA9E93 /* SFSymbolCollectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollectionProtocol.swift; sourceTree = "<group>"; };
 		DD9CF63C2832A3BB00FA9E93 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
-		DD9CF63D2832A3BB00FA9E93 /* SFSymbolCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolCollection.swift; sourceTree = "<group>"; };
 		DD9CF63E2832A3BB00FA9E93 /* SFSymbol+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Public.swift"; sourceTree = "<group>"; };
+		DD9CF6482832A46000FA9E93 /* SFSymbol+SystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+SystemCollection.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +83,9 @@
 			children = (
 				DD9CF63A2832A3BB00FA9E93 /* Extensions+Internal.swift */,
 				DD9CF6392832A3BB00FA9E93 /* Extensions+Public.swift */,
-				DD9CF6382832A3BB00FA9E93 /* SFMutableSymbolCollectionProtocol.swift */,
 				DD9CF63C2832A3BB00FA9E93 /* SFSymbol.swift */,
 				DD9CF63E2832A3BB00FA9E93 /* SFSymbol+Public.swift */,
-				DD9CF63D2832A3BB00FA9E93 /* SFSymbolCollection.swift */,
-				DD9CF63B2832A3BB00FA9E93 /* SFSymbolCollectionProtocol.swift */,
-				DD9CF6372832A3BB00FA9E93 /* SFSystemSymbolCollection.swift */,
+				DD9CF6482832A46000FA9E93 /* SFSymbol+SystemCollection.swift */,
 				DD9CF6202832A28F00FA9E93 /* NMASFSymbol.h */,
 				DD9CF6212832A28F00FA9E93 /* NMASFSymbol.docc */,
 			);
@@ -218,14 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD9CF6452832A3BB00FA9E93 /* SFSymbolCollectionProtocol.swift in Sources */,
+				DD9CF6492832A46000FA9E93 /* SFSymbol+SystemCollection.swift in Sources */,
 				DD9CF6412832A3BB00FA9E93 /* Extensions+Internal.swift in Sources */,
-				DD9CF6402832A3BB00FA9E93 /* SFMutableSymbolCollectionProtocol.swift in Sources */,
 				DD9CF6422832A3BB00FA9E93 /* Extensions+Public.swift in Sources */,
 				DD9CF6222832A28F00FA9E93 /* NMASFSymbol.docc in Sources */,
-				DD9CF6442832A3BB00FA9E93 /* SFSymbolCollection.swift in Sources */,
 				DD9CF63F2832A3BB00FA9E93 /* SFSymbol+Public.swift in Sources */,
-				DD9CF6432832A3BB00FA9E93 /* SFSystemSymbolCollection.swift in Sources */,
 				DD9CF6462832A3BB00FA9E93 /* SFSymbol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

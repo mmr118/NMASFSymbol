@@ -10,14 +10,16 @@ import Foundation
 
 internal extension RawRepresentable {
     
-//    var rawString: String { String(describing: self) }
+    var rawString: String { String(describing: self) }
     
     var caseString: String { String(describing: self.self) }
 
 }
 
 
-//internal extension RawRepresentable where RawValue == String {
-//    var rawString: String { return rawValue }
-//}
+internal extension RawRepresentable where RawValue == String {
+    
+    var rawString: String { return rawValue }
+    
+}
 

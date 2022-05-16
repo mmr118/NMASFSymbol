@@ -24,6 +24,10 @@ public extension SFSymbol {
         self.init(rawValue: name)
     }
     
+    func random() -> SFSymbol {
+        return SFSymbol.allCases.randomElement()!
+    }
+    
 }
 
 // MARK: - UIKit
