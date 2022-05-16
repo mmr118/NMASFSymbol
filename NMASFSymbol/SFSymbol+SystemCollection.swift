@@ -9,7 +9,21 @@ import Foundation
 
 public extension SFSymbol {
     
-    enum SystemCollection: String {
+    enum SystemCollection: String, CaseIterable, Identifiable {
+        
+        public var displayName: String {
+            switch self {
+            case .allSymbols: return "All Symbols"
+            case .whatsNew: return "What's New"
+            case .objectsAndTools: return "Objects & Tools"
+            case .textFormatting: return "Text Formatting"
+            default: return rawValue.capitalized
+            }
+        }
+        
+        public var id: String { rawValue }
+        
+        case allSymbols
         case whatsNew
         case multicolor
         case communication
@@ -35,6 +49,7 @@ public extension SFSymbol {
         
         public var symbols: [SFSymbol] {
             switch self {
+            case .allSymbols: return SFSymbol.allCases
             case .whatsNew: return SFSymbol.WhatsNew
             case .multicolor: return SFSymbol.Multicolor
             case .communication: return SFSymbol.Communication
@@ -60,8 +75,9 @@ public extension SFSymbol {
             }
         }
         
-        var infoSymbol: SFSymbol {
+        public var infoSymbol: SFSymbol {
             switch self {
+            case .allSymbols: return SFSymbol.circle_grid_2x2
             case .whatsNew: return .sparkles
             case .multicolor: return .paintpalette
             case .communication: return .message
