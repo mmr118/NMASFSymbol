@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD9CF6222832A28F00FA9E93 /* NMASFSymbol.docc in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6212832A28F00FA9E93 /* NMASFSymbol.docc */; };
-		DD9CF6282832A28F00FA9E93 /* SFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */; };
+		DD9CF6282832A28F00FA9E93 /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */; };
 		DD9CF62D2832A28F00FA9E93 /* NMASFSymbolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF62C2832A28F00FA9E93 /* NMASFSymbolTests.swift */; };
 		DD9CF62E2832A28F00FA9E93 /* NMASFSymbol.h in Headers */ = {isa = PBXBuildFile; fileRef = DD9CF6202832A28F00FA9E93 /* NMASFSymbol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD9CF63F2832A3BB00FA9E93 /* SFSymbol+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF63E2832A3BB00FA9E93 /* SFSymbol+Public.swift */; };
@@ -16,6 +16,12 @@
 		DD9CF6422832A3BB00FA9E93 /* Extensions+Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6392832A3BB00FA9E93 /* Extensions+Public.swift */; };
 		DD9CF6462832A3BB00FA9E93 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF63C2832A3BB00FA9E93 /* SFSymbol.swift */; };
 		DD9CF6492832A46000FA9E93 /* SFSymbol+SystemCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6482832A46000FA9E93 /* SFSymbol+SystemCollection.swift */; };
+		DD9CF6692832A86200FA9E93 /* NMASFSymbolDemoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF6682832A86200FA9E93 /* NMASFSymbolDemoAppApp.swift */; };
+		DD9CF66B2832A86200FA9E93 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9CF66A2832A86200FA9E93 /* ContentView.swift */; };
+		DD9CF66D2832A86400FA9E93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9CF66C2832A86400FA9E93 /* Assets.xcassets */; };
+		DD9CF6702832A86400FA9E93 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD9CF66F2832A86400FA9E93 /* Preview Assets.xcassets */; };
+		DD9CF6752832A89400FA9E93 /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */; };
+		DD9CF6762832A89400FA9E93 /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,10 +32,31 @@
 			remoteGlobalIDString = DD9CF61C2832A28F00FA9E93;
 			remoteInfo = NMASFSymbol;
 		};
+		DD9CF6772832A89400FA9E93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD9CF6142832A28F00FA9E93 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD9CF61C2832A28F00FA9E93;
+			remoteInfo = NMASFSymbol;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		DD9CF6792832A89400FA9E93 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DD9CF6762832A89400FA9E93 /* NMASFSymbol.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SFSymbol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NMASFSymbol.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD9CF6202832A28F00FA9E93 /* NMASFSymbol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NMASFSymbol.h; sourceTree = "<group>"; };
 		DD9CF6212832A28F00FA9E93 /* NMASFSymbol.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = NMASFSymbol.docc; sourceTree = "<group>"; };
 		DD9CF6272832A28F00FA9E93 /* NMASFSymbolTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NMASFSymbolTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +66,11 @@
 		DD9CF63C2832A3BB00FA9E93 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
 		DD9CF63E2832A3BB00FA9E93 /* SFSymbol+Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+Public.swift"; sourceTree = "<group>"; };
 		DD9CF6482832A46000FA9E93 /* SFSymbol+SystemCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SFSymbol+SystemCollection.swift"; sourceTree = "<group>"; };
+		DD9CF6662832A86200FA9E93 /* NMASFSymbolDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NMASFSymbolDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD9CF6682832A86200FA9E93 /* NMASFSymbolDemoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NMASFSymbolDemoAppApp.swift; sourceTree = "<group>"; };
+		DD9CF66A2832A86200FA9E93 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD9CF66C2832A86400FA9E93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD9CF66F2832A86400FA9E93 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +85,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD9CF6282832A28F00FA9E93 /* SFSymbol.framework in Frameworks */,
+				DD9CF6282832A28F00FA9E93 /* NMASFSymbol.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD9CF6632832A86200FA9E93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD9CF6752832A89400FA9E93 /* NMASFSymbol.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,15 +105,18 @@
 			children = (
 				DD9CF61F2832A28F00FA9E93 /* NMASFSymbol */,
 				DD9CF62B2832A28F00FA9E93 /* NMASFSymbolTests */,
+				DD9CF6672832A86200FA9E93 /* NMASFSymbolDemoApp */,
 				DD9CF61E2832A28F00FA9E93 /* Products */,
+				DD9CF6742832A89400FA9E93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		DD9CF61E2832A28F00FA9E93 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */,
+				DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */,
 				DD9CF6272832A28F00FA9E93 /* NMASFSymbolTests.xctest */,
+				DD9CF6662832A86200FA9E93 /* NMASFSymbolDemoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,6 +141,32 @@
 				DD9CF62C2832A28F00FA9E93 /* NMASFSymbolTests.swift */,
 			);
 			path = NMASFSymbolTests;
+			sourceTree = "<group>";
+		};
+		DD9CF6672832A86200FA9E93 /* NMASFSymbolDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				DD9CF6682832A86200FA9E93 /* NMASFSymbolDemoAppApp.swift */,
+				DD9CF66A2832A86200FA9E93 /* ContentView.swift */,
+				DD9CF66C2832A86400FA9E93 /* Assets.xcassets */,
+				DD9CF66E2832A86400FA9E93 /* Preview Content */,
+			);
+			path = NMASFSymbolDemoApp;
+			sourceTree = "<group>";
+		};
+		DD9CF66E2832A86400FA9E93 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DD9CF66F2832A86400FA9E93 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DD9CF6742832A89400FA9E93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,7 +198,7 @@
 			);
 			name = NMASFSymbol;
 			productName = NMASFSymbol;
-			productReference = DD9CF61D2832A28F00FA9E93 /* SFSymbol.framework */;
+			productReference = DD9CF61D2832A28F00FA9E93 /* NMASFSymbol.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DD9CF6262832A28F00FA9E93 /* NMASFSymbolTests */ = {
@@ -150,6 +219,25 @@
 			productReference = DD9CF6272832A28F00FA9E93 /* NMASFSymbolTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DD9CF6652832A86200FA9E93 /* NMASFSymbolDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD9CF6712832A86400FA9E93 /* Build configuration list for PBXNativeTarget "NMASFSymbolDemoApp" */;
+			buildPhases = (
+				DD9CF6622832A86200FA9E93 /* Sources */,
+				DD9CF6632832A86200FA9E93 /* Frameworks */,
+				DD9CF6642832A86200FA9E93 /* Resources */,
+				DD9CF6792832A89400FA9E93 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD9CF6782832A89400FA9E93 /* PBXTargetDependency */,
+			);
+			name = NMASFSymbolDemoApp;
+			productName = NMASFSymbolDemoApp;
+			productReference = DD9CF6662832A86200FA9E93 /* NMASFSymbolDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -164,6 +252,9 @@
 						CreatedOnToolsVersion = 13.3.1;
 					};
 					DD9CF6262832A28F00FA9E93 = {
+						CreatedOnToolsVersion = 13.3.1;
+					};
+					DD9CF6652832A86200FA9E93 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
@@ -183,6 +274,7 @@
 			targets = (
 				DD9CF61C2832A28F00FA9E93 /* NMASFSymbol */,
 				DD9CF6262832A28F00FA9E93 /* NMASFSymbolTests */,
+				DD9CF6652832A86200FA9E93 /* NMASFSymbolDemoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -199,6 +291,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD9CF6642832A86200FA9E93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD9CF6702832A86400FA9E93 /* Preview Assets.xcassets in Resources */,
+				DD9CF66D2832A86400FA9E93 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +327,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD9CF6622832A86200FA9E93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD9CF66B2832A86200FA9E93 /* ContentView.swift in Sources */,
+				DD9CF6692832A86200FA9E93 /* NMASFSymbolDemoAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -233,6 +343,11 @@
 			isa = PBXTargetDependency;
 			target = DD9CF61C2832A28F00FA9E93 /* NMASFSymbol */;
 			targetProxy = DD9CF6292832A28F00FA9E93 /* PBXContainerItemProxy */;
+		};
+		DD9CF6782832A89400FA9E93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD9CF61C2832A28F00FA9E93 /* NMASFSymbol */;
+			targetProxy = DD9CF6772832A89400FA9E93 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -377,7 +492,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.sfsymbol;
-				PRODUCT_NAME = SFSymbol;
+				PRODUCT_NAME = NMASFSymbol;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -405,7 +520,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.notmoniapps.sfsymbol;
-				PRODUCT_NAME = SFSymbol;
+				PRODUCT_NAME = NMASFSymbol;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -447,6 +562,64 @@
 			};
 			name = Release;
 		};
+		DD9CF6722832A86400FA9E93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NMASFSymbolDemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DHQU43U3E;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notmoniapps.sfsymbol-demo-app";
+				PRODUCT_NAME = NMASFSymbolDemoApp;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD9CF6732832A86400FA9E93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NMASFSymbolDemoApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 4DHQU43U3E;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.notmoniapps.sfsymbol-demo-app";
+				PRODUCT_NAME = NMASFSymbolDemoApp;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -473,6 +646,15 @@
 			buildConfigurations = (
 				DD9CF6352832A28F00FA9E93 /* Debug */,
 				DD9CF6362832A28F00FA9E93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD9CF6712832A86400FA9E93 /* Build configuration list for PBXNativeTarget "NMASFSymbolDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD9CF6722832A86400FA9E93 /* Debug */,
+				DD9CF6732832A86400FA9E93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
