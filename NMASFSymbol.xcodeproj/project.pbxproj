@@ -26,6 +26,7 @@
 		DDB784672864D924003E51BB /* NMASFSymbol.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */; };
 		DDB784682864D924003E51BB /* NMASFSymbol.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD222D6627B6D64A001AE5F6 /* NMASFSymbol.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DDB7846C2864D92B003E51BB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB784662864D8CC003E51BB /* Launch Screen.storyboard */; };
+		DDB7846E2864DBA9003E51BB /* SymbolCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB7846D2864DBA9003E51BB /* SymbolCollectionView.swift */; };
 		DDDF0E0227D3970C00F1831C /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDF0E0127D3970C00F1831C /* PerformanceTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		DDB7845E2864D880003E51BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDB784612864D880003E51BB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DDB784662864D8CC003E51BB /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		DDB7846D2864DBA9003E51BB /* SymbolCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolCollectionView.swift; sourceTree = "<group>"; };
 		DDDF0E0127D3970C00F1831C /* PerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 			children = (
 				DDB7845A2864D87E003E51BB /* NMASFSymbolDemoApp.swift */,
 				DDB7845C2864D87E003E51BB /* ContentView.swift */,
+				DDB7846D2864DBA9003E51BB /* SymbolCollectionView.swift */,
 				DDB7845E2864D880003E51BB /* Assets.xcassets */,
 				DDB784662864D8CC003E51BB /* Launch Screen.storyboard */,
 				DDB784602864D880003E51BB /* Preview Content */,
@@ -411,6 +414,7 @@
 			files = (
 				DDB7845D2864D87E003E51BB /* ContentView.swift in Sources */,
 				DDB7845B2864D87E003E51BB /* NMASFSymbolDemoApp.swift in Sources */,
+				DDB7846E2864DBA9003E51BB /* SymbolCollectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
