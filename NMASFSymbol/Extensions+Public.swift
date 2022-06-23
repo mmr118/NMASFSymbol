@@ -18,7 +18,7 @@ public extension UIImage {
     convenience init?(symbol: SFSymbol) {
         self.init(systemName: symbol.systemName)
     }
-
+    
     
     /// Creates an image object that contains a system symbol image with the
     /// specified configuration.
@@ -47,7 +47,7 @@ public extension UIImage {
     convenience init?(symbol: SFSymbol, compatibleWith traitCollection: UITraitCollection?) {
         self.init(systemName: symbol.systemName, compatibleWith: traitCollection)
     }
-        
+    
 }
 
 
@@ -66,6 +66,7 @@ public extension Image {
     
 }
 
+// MARK: - Label+Extensions
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 extension Label where Title == Text, Icon == Image {
     
@@ -78,7 +79,7 @@ extension Label where Title == Text, Icon == Image {
     public init(_ titleKey: LocalizedStringKey, symbol: SFSymbol) {
         self.init(titleKey, systemImage: symbol.systemName)
     }
-        
+    
     /// Creates a label with a system icon image and a title generated from a
     /// string.
     ///
@@ -88,4 +89,20 @@ extension Label where Title == Text, Icon == Image {
     public init<S>(_ title: S, symbol: SFSymbol) where S : StringProtocol {
         self.init(title, systemImage: symbol.systemName)
     }
+    
+    /// Creates a label with a system icon image and a the `SFSymbol.displayname` as a title
+    /// - Parameter symbol: The symbol of the image resource.
+    public init(labeledSymbol symbol: SFSymbol) {
+        self.init(symbol.displayName, systemImage: symbol.systemName)
+    }
+    
+    /// Creates a label with a system icon image with an empty `String` as a title
+    /// string.
+    ///
+    /// - Parameters:
+    ///    - symbol: The symbol of the image resource.
+    public init(symbol: SFSymbol) {
+        self.init(String(), systemImage: symbol.systemName)
+    }
+
 }
