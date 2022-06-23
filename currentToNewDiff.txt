@@ -1,3 +1,4 @@
+
 0.circle
 0.circle.fill
 0.square
@@ -903,9 +904,6 @@ camera.circle.fill
 camera.fill
 camera.fill.badge.ellipsis
 camera.filters
-camera.macro
-camera.macro.circle
-camera.macro.circle.fill
 camera.metering.center.weighted
 camera.metering.center.weighted.average
 camera.metering.matrix
@@ -1319,7 +1317,6 @@ dot.squareshape
 dot.squareshape.fill
 dot.squareshape.split.2x2
 dot.viewfinder
-dots.and.line.vertical.and.cursorarrow.rectangle
 dpad
 dpad.down.filled
 dpad.fill
@@ -1837,7 +1834,6 @@ key
 key.fill
 key.icloud
 key.icloud.fill
-key.viewfinder
 keyboard
 keyboard.badge.ellipsis
 keyboard.chevron.compact.down
@@ -2274,8 +2270,6 @@ person.3.sequence.fill
 person.and.arrow.left.and.arrow.right
 person.badge.clock
 person.badge.clock.fill
-person.badge.key
-person.badge.key.fill
 person.badge.minus
 person.badge.plus
 person.circle
@@ -3314,3 +3308,9 @@ zl.rectangle.roundedtop.fill
 zr.rectangle.roundedtop
 zr.rectangle.roundedtop.fill
 zzz
+
+
+
+
+
+
