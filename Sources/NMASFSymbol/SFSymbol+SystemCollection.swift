@@ -10,19 +10,7 @@ import Foundation
 public extension SFSymbol {
     
     enum SystemCollection: String, CaseIterable, Identifiable {
-        
-        public var displayName: String {
-            switch self {
-            case .allSymbols: return "All Symbols"
-            case .whatsNew: return "What's New"
-            case .objectsAndTools: return "Objects & Tools"
-            case .textFormatting: return "Text Formatting"
-            default: return rawValue.capitalized
-            }
-        }
-        
-        public var id: String { rawValue }
-        
+
         case allSymbols
         case whatsNew
         case multicolor
@@ -46,32 +34,44 @@ public extension SFSymbol {
         case arrows
         case indices
         case math
+
+        public var id: String { rawValue }
         
+        public var displayName: String {
+            switch self {
+            case .allSymbols: return "All Symbols"
+            case .whatsNew: return "What's New"
+            case .objectsAndTools: return "Objects & Tools"
+            case .textFormatting: return "Text Formatting"
+            default: return rawValue.capitalized
+            }
+        }
+
         public var symbols: [SFSymbol] {
             switch self {
             case .allSymbols: return SFSymbol.allCases
-            case .whatsNew: return SFSymbol.WhatsNew
-            case .multicolor: return SFSymbol.Multicolor
-            case .communication: return SFSymbol.Communication
-            case .weather: return SFSymbol.Weather
-            case .objectsAndTools: return SFSymbol.ObjectsAndTools
-            case .devices: return SFSymbol.Devices
-            case .gaming: return SFSymbol.Gaming
-            case .connectivity: return SFSymbol.Connectivity
-            case .transportation: return SFSymbol.Transportation
-            case .human: return SFSymbol.Human
-            case .nature: return SFSymbol.Nature
-            case .editing: return SFSymbol.Editing
-            case .textFormatting: return SFSymbol.TextFormatting
-            case .media: return SFSymbol.Media
-            case .keyboard: return SFSymbol.Keyboard
-            case .commerce: return SFSymbol.Commerce
-            case .time: return SFSymbol.Time
-            case .health: return SFSymbol.Health
-            case .shapes: return SFSymbol.Shapes
-            case .arrows: return SFSymbol.Arrows
-            case .indices: return SFSymbol.Indices
-            case .math: return SFSymbol.Math
+            case .whatsNew: return SFSymbol.WhatsNewSymbols
+            case .multicolor: return SFSymbol.MulticolorSymbols
+            case .communication: return SFSymbol.CommunicationSymbols
+            case .weather: return SFSymbol.WeatherSymbols
+            case .objectsAndTools: return SFSymbol.ObjectsAndToolsSymbols
+            case .devices: return SFSymbol.DevicesSymbols
+            case .gaming: return SFSymbol.GamingSymbols
+            case .connectivity: return SFSymbol.ConnectivitySymbols
+            case .transportation: return SFSymbol.TransportationSymbols
+            case .human: return SFSymbol.HumanSymbols
+            case .nature: return SFSymbol.NatureSymbols
+            case .editing: return SFSymbol.EditingSymbols
+            case .textFormatting: return SFSymbol.TextFormattingSymbols
+            case .media: return SFSymbol.MediaSymbols
+            case .keyboard: return SFSymbol.KeyboardSymbols
+            case .commerce: return SFSymbol.CommerceSymbols
+            case .time: return SFSymbol.TimeSymbols
+            case .health: return SFSymbol.HealthSymbols
+            case .shapes: return SFSymbol.ShapesSymbols
+            case .arrows: return SFSymbol.ArrowsSymbols
+            case .indices: return SFSymbol.IndicesSymbols
+            case .math: return SFSymbol.MathSymbols
             }
         }
         
