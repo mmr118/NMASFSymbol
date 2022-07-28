@@ -64,7 +64,7 @@ public extension SFSymbol {
 public extension SFSymbol {
     
     /// Returns a system symbol image.
-    var image: Image? { Image(symbol: self) }
+    var image: Image { Image(symbol: self) }
     
 }
 
